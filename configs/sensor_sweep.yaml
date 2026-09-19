@@ -1,0 +1,8 @@
+# Paired counts within a seed; independent sampling/training between seeds.
+sensor_counts: [5, 10, 20, 50]
+seeds: [0, 1, 2, 3, 4]
+reference_dataset: data/synthetic/dataset/dataset.npz
+inverse_config: configs/inverse_pinn.yaml
+noise_std: 0.005
+output_dir: results/sensor_sweep
+workers: 2

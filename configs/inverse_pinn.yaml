@@ -1,0 +1,25 @@
+experiment:
+  name: inverse_pinn
+  seed: 42
+dataset: data/synthetic/dataset/dataset.npz
+output_dir: results/inverse_pinn
+n_sensors: 20
+width: 64
+depth: 3
+steps: 6000
+learning_rate: 0.001
+data_batch: 512
+collocation_batch: 512
+initial_batch: 128
+boundary_per_edge: 64
+loss_weights:
+  data: 10.0
+  pde: 1.0
+  initial: 1.0
+  boundary: 1.0
+# Hypothesis: one source, known width; these are guesses, not loaded truth.
+source_initial:
+  x_s: 0.5
+  y_s: 0.5
+  Q: 0.5
+  sigma: 0.08

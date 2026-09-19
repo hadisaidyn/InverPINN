@@ -1,0 +1,33 @@
+# Intentionally blocked until verified real inputs and permissions are supplied.
+data_kind: real
+permission_confirmed: false
+observations: data/processed/almaty/modeling.nc
+meteorology: data/processed/almaty/meteorology.nc
+provenance: data/processed/almaty/provenance.json
+output_dir: results/real_case_study
+split_seed: 42
+holdout_fraction: 0.2
+training_seeds: [0, 1, 2]
+map_size: 81
+episode:
+  duration_hours: 24
+  minimum_sensors_per_hour: 3
+  local_timezone: Asia/Almaty
+training:
+  steps: 6000
+  width: 64
+  depth: 3
+  learning_rate: 0.001
+  data_batch: 512
+  collocation_batch: 512
+  initial_batch: 128
+  boundary_per_edge: 64
+  time_scale_seconds: 3600.0
+  concentration_scale_ug_m3: 100.0
+  # Assumed effective diffusion, not a quantity measured by ERA5.
+  diffusion_m2_s: 100.0
+  loss_weights: {data: 10.0, pde: 1.0, initial: 1.0, boundary: 1.0}
+  # Fixed K=2 and widths are hypotheses, not a claim of two actual emitters.
+  sources:
+    - {x_fraction: 0.35, y_fraction: 0.65, Q_ug_m3_s: 0.001, sigma_m: 5000.0}
+    - {x_fraction: 0.65, y_fraction: 0.35, Q_ug_m3_s: 0.001, sigma_m: 5000.0}

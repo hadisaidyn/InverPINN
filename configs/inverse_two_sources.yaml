@@ -1,0 +1,16 @@
+experiment: {name: inverse_two_sources, seed: 42}
+dataset: data/synthetic/two_sources/dataset.npz
+output_dir: results/inverse_two_sources
+n_sensors: 50
+width: 64
+depth: 3
+steps: 6000
+learning_rate: 0.001
+data_batch: 512
+collocation_batch: 512
+initial_batch: 128
+boundary_per_edge: 64
+loss_weights: {data: 10.0, pde: 1.0, initial: 1.0, boundary: 1.0}
+source_initial:
+  - {x_s: 0.4, y_s: 0.4, Q: 0.5, sigma: 0.08}
+  - {x_s: 0.6, y_s: 0.6, Q: 0.5, sigma: 0.08}

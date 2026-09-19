@@ -1,0 +1,91 @@
+label: InverPINN synthetic paper experiments
+output_dir: results/paper
+seed: 42
+# This workspace is not yet a Git repository. Null is recorded, never fabricated.
+# Set true after initializing/committing the repository for an archival release.
+require_git_commit: false
+publication: {dpi: 300}
+stages:
+  - id: dataset
+    kind: dataset
+    config: configs/dataset.yaml
+    required: [dataset.npz, metadata.json, metrics.json, sensor_positions.pdf]
+  - id: data_baseline
+    kind: data_baseline
+    config: configs/data_baseline.yaml
+    overrides: {dataset: "${dataset}/dataset.npz"}
+    required: [metrics.json, model.pt, training_curve.pdf, predicted_concentration.pdf]
+  - id: forward_pinn
+    kind: forward_pinn
+    config: configs/pinn.yaml
+    overrides: {dataset: "${dataset}/dataset.npz", metadata: "${dataset}/metadata.json"}
+    required: [metrics.json, ground_truth.pdf, pinn_prediction.pdf, absolute_error.pdf, training_losses.pdf]
+  - id: inverse_pinn
+    kind: inverse_pinn
+    config: configs/inverse_pinn.yaml
+    overrides: {dataset: "${dataset}/dataset.npz"}
+    required: [metrics.json, source_parameters.pdf, training_losses.pdf, pinn_prediction.pdf]
+  - id: inverse_evaluation
+    kind: evaluation
+    overrides: {run_dir: "${inverse_pinn}"}
+    required: [metrics.json, source_localization.pdf]
+  - id: classical_inverse
+    kind: classical_inverse
+    config: configs/classical_inverse.yaml
+    overrides: {dataset: "${dataset}/dataset.npz"}
+    required: [metrics.json, classical_inverse.pdf]
+  - id: spatial_baselines
+    kind: spatial_baselines
+    config: configs/spatial_baselines.yaml
+    overrides: {dataset: "${dataset}/dataset.npz", n_sensors: 20}
+    required: [metrics.csv, baseline_predictions.pdf]
+  - id: sensor_sweep
+    kind: sensor_sweep
+    config: configs/sensor_sweep.yaml
+    overrides: {reference_dataset: "${dataset}/dataset.npz", workers: 1}
+    required: [raw_results.csv, summary.csv, error_vs_sensor_count.pdf]
+  - id: noise_sweep
+    kind: noise_sweep
+    config: configs/noise_sweep.yaml
+    overrides: {reference_dataset: "${dataset}/dataset.npz", workers: 1}
+    required: [raw_results.csv, summary.csv, localization_error_vs_noise.pdf]
+  - id: wind_sweep
+    kind: wind_sweep
+    config: configs/wind_sweep.yaml
+    overrides: {workers: 1}
+    required: [raw_results.csv, summary.csv, localization_error_vs_wind.pdf]
+  - id: ablation
+    kind: ablation
+    config: configs/ablation.yaml
+    overrides: {datasets: ["${dataset}/dataset.npz"], workers: 1}
+    required: [raw_results.csv, summary.csv, ablation_comparison.pdf]
+  - id: two_sources_dataset
+    kind: dataset
+    config: configs/two_sources.yaml
+    required: [dataset.npz, metadata.json, sensor_positions.pdf]
+  - id: two_sources_inverse
+    kind: inverse_pinn
+    config: configs/inverse_two_sources.yaml
+    overrides: {dataset: "${two_sources_dataset}/dataset.npz"}
+    required: [metrics.json, source_parameters.pdf, pinn_prediction.pdf]
+  - id: two_sources_evaluation
+    kind: evaluation
+    overrides: {run_dir: "${two_sources_inverse}"}
+    required: [metrics.json, source_localization.pdf]
+  - id: two_sources_interpolation
+    kind: spatial_baselines
+    config: configs/spatial_baselines.yaml
+    overrides: {dataset: "${two_sources_dataset}/dataset.npz"}
+    required: [metrics.csv, baseline_predictions.pdf]
+  - id: real_case_study
+    kind: real_case_study
+    enabled: false
+    reason: Verified real Almaty observations, meteorology and usage permission are unavailable.
+    config: configs/real_case_study.yaml
+    required: [source_intensity.nc, source_intensity.pdf]
+  - id: thermal_inversions
+    kind: inversions
+    enabled: false
+    reason: Real vertical profiles and confirmed study dates are unavailable; surface variables are insufficient.
+    config: configs/inversions.yaml
+    required: [inversion_events.csv, profile_coverage.csv, inversion_diagnostic.pdf]

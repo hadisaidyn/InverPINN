@@ -1,0 +1,9 @@
+dataset: data/synthetic/dataset/dataset.npz
+output_dir: results/classical_inverse
+n_sensors: 20
+seed: 42
+# Same one-source hypothesis, width and initial guess as the single-source PINN.
+sigma: 0.08
+initial: [0.5, 0.5, 0.5]
+max_nfev: 100
+tolerance: 1.0e-9

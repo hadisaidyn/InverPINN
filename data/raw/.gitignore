@@ -1,0 +1,3 @@
+# Raw measurements and meteorological downloads remain local and immutable.
+*
+!.gitignore

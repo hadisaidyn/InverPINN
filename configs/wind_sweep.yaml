@@ -1,0 +1,12 @@
+speeds: [0.0, 0.2, 0.4]
+directions_deg: [0, 90, 180, 270]
+reference_speed: 0.4
+reference_direction_deg: 0
+# Directions describe flow TOWARD: 0=+x, 90=+y, not meteorological bearings.
+seeds: [0, 1, 2, 3, 4]
+n_sensors: 20
+noise_std: 0.005
+forward_config: configs/forward.yaml
+inverse_config: configs/inverse_pinn.yaml
+output_dir: results/wind_sweep
+workers: 2

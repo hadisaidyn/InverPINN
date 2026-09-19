@@ -1,0 +1,16 @@
+# Gaussian emission field only; no concentration or transport simulation.
+experiment:
+  name: synthetic
+  seed: 42
+source:
+  x_s: 0.30
+  y_s: 0.70
+  Q: 1.0
+  sigma: 0.08
+grid:
+  x_min: 0.0
+  x_max: 1.0
+  y_min: 0.0
+  y_max: 1.0
+  points: 201
+output_dir: results

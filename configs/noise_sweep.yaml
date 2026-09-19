@@ -1,0 +1,9 @@
+noise_percentages: [0, 2, 5, 10, 20]
+seeds: [0, 1, 2, 3, 4]
+n_sensors: 20
+reference_dataset: data/synthetic/dataset/dataset.npz
+inverse_config: configs/inverse_pinn.yaml
+output_dir: results/noise_sweep
+workers: 2
+# Per seed: std = percentage/100 * RMS of all clean sensor readings.
+# Across noise levels: identical positions, unit-noise draws and training seed.

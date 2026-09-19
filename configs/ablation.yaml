@@ -1,0 +1,8 @@
+inverse_config: configs/inverse_pinn.yaml
+# Same stored observations for every condition/seed. Add further datasets here.
+datasets:
+  - data/synthetic/dataset/dataset.npz
+seeds: [0, 1, 2]
+pde_weights: [0.1, 10.0]
+workers: 2
+output_dir: results/ablation

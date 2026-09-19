@@ -1,0 +1,23 @@
+# Forward PINN: all source and transport parameters are known.
+experiment:
+  name: pinn
+  seed: 42
+# Explicit experimental choices; the loss module has no default weights.
+# PDE loss is in concentration^2/time^2; other terms are concentration^2.
+loss_weights:
+  data: 1.0
+  pde: 1.0
+  initial: 1.0
+  boundary: 1.0
+dataset: data/synthetic/dataset/dataset.npz
+metadata: data/synthetic/dataset/metadata.json
+output_dir: results/forward_pinn
+n_sensors: 20
+width: 64
+depth: 3
+steps: 3000
+learning_rate: 0.001
+data_batch: 512
+collocation_batch: 512
+initial_batch: 128
+boundary_per_edge: 64

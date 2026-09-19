@@ -1,0 +1,8 @@
+dataset: data/synthetic/two_sources/dataset.npz
+output_dir: results/spatial_baselines_two_sources
+n_sensors: 50
+# Fixed before inspecting errors. No tuning on dense reference or per method.
+idw_power: 2.0
+rbf_smoothing: 0.0
+kriging_range: 0.2
+kriging_nugget: 0.0

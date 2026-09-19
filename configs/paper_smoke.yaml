@@ -1,0 +1,42 @@
+# Orchestration verification only. These tiny budgets are NOT paper results.
+label: SMOKE TEST - NOT PAPER RESULTS
+output_dir: results/paper_smoke
+seed: 42
+require_git_commit: false
+publication: {dpi: 300}
+stages:
+  - id: dataset
+    kind: dataset
+    config: configs/dataset.yaml
+    overrides:
+      solver: {nx: 11, ny: 11, dt: 0.01, steps: 5}
+      sensor_counts: [5]
+    required: [dataset.npz, metadata.json, metrics.json, sensor_positions.pdf]
+  - id: data_baseline
+    kind: data_baseline
+    config: configs/data_baseline.yaml
+    overrides: {dataset: "${dataset}/dataset.npz", n_sensors: 5, epochs: 2, width: 8, depth: 1, batch_size: 16}
+    required: [metrics.json, model.pt, training_curve.pdf, predicted_concentration.pdf]
+  - id: inverse_pinn
+    kind: inverse_pinn
+    config: configs/inverse_pinn.yaml
+    overrides:
+      dataset: "${dataset}/dataset.npz"
+      n_sensors: 5
+      steps: 2
+      width: 8
+      depth: 1
+      data_batch: 8
+      collocation_batch: 8
+      initial_batch: 4
+      boundary_per_edge: 2
+    required: [metrics.json, source_parameters.pdf, pinn_prediction.pdf]
+  - id: inverse_evaluation
+    kind: evaluation
+    overrides: {run_dir: "${inverse_pinn}"}
+    required: [metrics.json, source_localization.pdf]
+  - id: interpolation
+    kind: spatial_baselines
+    config: configs/spatial_baselines.yaml
+    overrides: {dataset: "${dataset}/dataset.npz", n_sensors: 5}
+    required: [metrics.csv, baseline_predictions.pdf]

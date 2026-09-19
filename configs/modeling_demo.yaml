@@ -1,0 +1,18 @@
+experiment:
+  name: synthetic_meteorology_merge
+  seed: 42
+source_label: "Synthetic schema fixture; not AirKaz or downloaded ERA5 measurements"
+usage_permission: "Generated locally for automated verification"
+purpose: retrospective_reanalysis
+era5_files: [data/synthetic/meteorology_demo/era5.nc]
+sensor_csv: data/synthetic/meteorology_demo/pm25.csv
+raw_cache_dir: data/raw/modeling_demo_cache
+output_dir: data/processed/modeling_demo
+bbox: [76.6, 43.1, 77.3, 43.4]
+start: "2020-01-01T00:00:00Z"
+end: "2020-01-01T03:00:00Z"
+sensor_timezone: null
+timestamp_meaning: instantaneous
+pm25_units: "ug m-3"
+max_age_seconds: 3600.0
+require_blh: false

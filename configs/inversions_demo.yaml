@@ -1,0 +1,9 @@
+data_kind: synthetic_test
+profiles_file: null
+output_dir: results/inversions_method_check
+start: "2020-01-01T00:00:00Z"
+end: "2020-01-01T04:00:00Z"
+cadence_seconds: 3600
+# Synthetic ladder endpoints, not a recommended Almaty height domain.
+height_bounds_m: [0, 1000]
+local_timezone: Asia/Almaty

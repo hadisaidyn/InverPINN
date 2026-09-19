@@ -1,0 +1,9 @@
+seed: 42
+dataset: data/synthetic/dataset/dataset.npz
+output_dir: results/data_baseline
+n_sensors: 20
+width: 64
+depth: 3
+epochs: 1500
+learning_rate: 0.001
+batch_size: 1024

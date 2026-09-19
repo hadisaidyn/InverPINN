@@ -1,0 +1,3 @@
+# Derived data can be regenerated from versioned code and configuration.
+*
+!.gitignore

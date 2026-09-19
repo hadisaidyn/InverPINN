@@ -1,0 +1,22 @@
+# Template only: supply authorized local inputs; no download or scraping occurs.
+experiment:
+  name: almaty
+  seed: 42
+source_label: "User-supplied authorized PM2.5 and ERA5"
+usage_permission: "REPLACE with verified provenance/permission before real-data use"
+purpose: retrospective_reanalysis
+era5_files: [data/raw/incoming/era5.nc]
+sensor_csv: data/raw/incoming/pm25.csv
+raw_cache_dir: data/raw/cache
+output_dir: data/processed/almaty
+# WGS84 order: west, south, east, north (not CDS's north/west/south/east order).
+bbox: [76.5, 43.0, 77.3, 43.5]
+start: "2020-01-01T00:00:00Z"
+end: "2020-01-02T00:00:00Z"
+# null requires explicit offsets in every sensor timestamp. Set an IANA zone
+# only when the provider confirms naive timestamps use it; do not guess.
+sensor_timezone: null
+timestamp_meaning: instantaneous
+pm25_units: "ug m-3"
+max_age_seconds: 3600.0
+require_blh: false

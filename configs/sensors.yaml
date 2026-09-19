@@ -1,0 +1,7 @@
+seed: 42
+forward_checkpoint: results/forward_simulation.pt
+sensor_counts: [5, 10, 20, 50]
+# Absolute concentration units; noise is not clipped at zero.
+noise_std: 0.005
+dataset_dir: data/synthetic/sensors
+output_dir: results/sensors

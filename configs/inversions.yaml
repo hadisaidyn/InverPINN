@@ -1,0 +1,11 @@
+# Fill from verified data/study design. No fabricated study dates or thresholds.
+data_kind: real
+profiles_file: data/processed/almaty/vertical_profiles.nc
+output_dir: results/inversions_almaty
+source_description: null
+usage_permission_confirmed: false
+start: null
+end: null
+cadence_seconds: null
+height_bounds_m: null
+local_timezone: Asia/Almaty
