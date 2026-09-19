@@ -1,0 +1,62 @@
+experiment: single_source_benchmark_revision_3
+output_dir: results/single_source_benchmark
+domain:
+  x: [0.0, 1.0]
+  y: [0.0, 1.0]
+physics: {u: 0.35, v: -0.15, D: 0.005}
+source_family: {kind: gaussian_peak, sigma: 0.08}
+scenario_sampling:
+  development: {count: 10, seed: 1909202601}
+  heldout: {count: 30, seed: 1909202602}
+  position_range: [0.25, 0.75]
+  strength_range: [0.8, 1.4]
+sensors_file: configs/single_source_sensors.json
+sensor_count: 20
+noise_std: 0.0
+measurement_times: {start: 0.0, stop: 0.8, count: 81}
+evaluation_times: [0.1, 0.2, 0.4, 0.8]
+reference:
+  candidates:
+    - {nx: 161, ny: 161, dt: 0.0005, steps: 1600}
+    - {nx: 321, ny: 321, dt: 0.000125, steps: 6400}
+    - {nx: 641, ny: 641, dt: 0.00003125, steps: 25600}
+  selected_grid: 641
+  target_relative_L2: 0.01
+  inference_config: configs/reference_inference.yaml
+training:
+  width: 64
+  depth: 3
+  steps: 6000
+  learning_rate: 0.001
+  data_batch: 512
+  collocation_batch: 512
+  initial_batch: 128
+  boundary_per_edge: 64
+  loss_weights: {data: 10.0, pde: 1.0, initial: 1.0, boundary: 1.0}
+  initial_x: 0.5
+  initial_y: 0.5
+  initial_Q: 0.5
+optimization:
+  primary_seed: 42
+  additional_seeds: [314, 2718]
+  additional_seed_scenarios: [heldout_001, heldout_007, heldout_013, heldout_019, heldout_025]
+diagnostics:
+  seed: 1909202699
+  interior_count: 8192
+  initial_count: 4096
+  boundary_per_edge: 1024
+  prediction_batch: 8192
+recovery:
+  primary_endpoint: continuous_localization_error
+  secondary_localization_max: 0.08
+  secondary_relative_strength_max: 0.20
+  confidence_level: 0.95
+identifiability:
+  scenario_id: heldout_001
+  grid_count: 21
+  position_range: [0.25, 0.75]
+  strength_control: fixed_to_true_Q_evaluation_only
+runtime:
+  workers: 2
+  torch_threads: 1
+plot_dpi: 300

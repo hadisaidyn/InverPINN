@@ -660,3 +660,29 @@ See [synthetic-reference design and measurements](docs/synthetic_reference.md)
 for storage modes, interpolation, accuracy limitations, independent inference
 configuration, and the pilot format. Output directories must be new; use
 `--output-dir` to preserve previous runs. Generated binaries remain Git-ignored.
+
+## Independent single-source benchmark (P0 revision 3)
+
+```bash
+python scripts/run_single_source_benchmark.py
+```
+
+This is a separate, frozen noise-free benchmark: 10 development and 30 held-out
+source scenarios, one fixed 20-sensor geometry, 641² numerical references, and
+the unchanged inverse PINN. It is CPU-intensive. The primary optimization seed
+runs on every scenario; two extra seeds run on five predeclared held-out IDs.
+Source truth and dense reference fields never enter the sparse-only fit API.
+
+Read the [preregistered protocol](docs/single_source_benchmark_protocol.md)
+before running. Existing output is refused; explicit `--resume` verifies the
+frozen protocol/code and preserves completed **and failed** attempts. Optional
+`--stage freeze|generate|train|landscape|report` supports staged execution.
+Outputs in `results/single_source_benchmark/` include raw results, an immutable
+scenario manifest, source/code/data hashes, physical diagnostics and mechanically
+selected best/median/worst figures. Finite training is not scientific recovery.
+This command does not run noise, sensor-count, real-data or multi-source studies.
+
+The completed frozen run recovered **14/30** primary held-out sources under its
+predefined location-and-strength criterion. It supports **unreliable recovery
+for this configuration**, not a broad source-discovery claim. See the
+[results, physical diagnostics and limitations](docs/single_source_benchmark.md).
