@@ -610,7 +610,7 @@ versions, Git status/commit, source snapshots, saved configs and artifact hashes
 No existing run is overwritten. Failures preserve logs and stop dependent stages.
 
 Real-data/inversion stages are explicitly excluded until verified inputs exist.
-This workspace currently has no Git commit; that is recorded as unavailable.
+The pre-validation research state is preserved in Git commit `38230c2`.
 Set `require_git_commit: true` in the manifest for a committed archival release.
 
 For a quick pipeline check, **not paper results**:
@@ -622,3 +622,17 @@ python scripts/reproduce_paper.py --config configs/paper_smoke.yaml
 Use `--output-dir results/paper_new_run` for another run. See the
 [reproduction protocol](docs/reproduce_paper.md) for configuration, determinism,
 artifact selection and publication-format limitations.
+
+## Numerical accuracy validation (P0 revision 1)
+
+```bash
+python scripts/validate_numerics.py --config configs/numerical_validation.yaml
+```
+
+This command validates the existing finite-difference solver without training
+a PINN or regenerating datasets. It measures manufactured-solution spatial
+and temporal convergence, checks the Gaussian synthetic-data resolution, and
+saves errors, plots, final-field checkpoints, configuration and provenance in
+a new `results/numerical_validation/` directory. Use `--output-dir` for a new
+run; existing results are never overwritten. CFL stability is not an accuracy
+certificate. See the [derivations and resolution report](docs/numerical_validation.md).

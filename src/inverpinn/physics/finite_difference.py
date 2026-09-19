@@ -1,7 +1,7 @@
 """Explicit forward simulation on the unit square using PyTorch CPU float64."""
 
 import math
-from collections.abc import Mapping, Sequence
+from collections.abc import Callable, Mapping, Sequence
 
 import torch
 
@@ -26,6 +26,8 @@ def stability_number(*, dx: float, dy: float, dt: float, u: float, v: float, D: 
 def solve_advection_diffusion(
     *, nx: int, ny: int, dt: float, steps: int, u: float, v: float, D: float,
     sources: Sequence[Mapping[str, float]] = (),
+    forcing: Callable[[torch.Tensor, torch.Tensor, float], torch.Tensor] | None = None,
+    return_history: bool = True,
 ) -> torch.Tensor:
     r"""Return C[t,y,x] with shape (steps+1, ny, nx), including initial zeros.
 
@@ -33,6 +35,13 @@ def solve_advection_diffusion(
     x_i=i/(nx-1), y_j=j/(ny-1), and t_n=n*dt. Each source mapping contains
     x_s, y_s, Q, sigma, as in gaussian_source; sources add linearly and remain
     constant in time. Q is a peak concentration/time rate, not total emissions.
+
+    Optional forcing(x_grid, y_grid, t) adds a signed, time-dependent source
+    rate for manufactured-solution validation. It must return a finite tensor
+    of shape (ny, nx), evaluated at t_n (not t_{n+1}) for forward Euler.
+    It does not change the zero initial or boundary conditions. With
+    return_history=False, return only C[y,x] at the final time, using O(nx*ny)
+    storage and exactly the same update as the default full-history mode.
 
     Forward Euler advances time. Wind uses first-order upwind differences:
     positive u looks left, negative u looks right (and similarly for v).
@@ -64,20 +73,28 @@ def solve_advection_diffusion(
     emission = torch.zeros_like(xx)
     for source in sources:
         emission += gaussian_source(xx, yy, **source)
-    history = torch.zeros((steps + 1, ny, nx), dtype=torch.float64)
+    history = torch.zeros((steps + 1, ny, nx), dtype=torch.float64) if return_history else None
+    old = history[0] if return_history else torch.zeros_like(xx)
     for n in range(steps):
-        old = history[n]
+        rate = emission
+        if forcing is not None:
+            extra = forcing(xx, yy, n * dt)
+            if extra.shape != xx.shape or not torch.isfinite(extra).all():
+                raise ValueError("forcing must return a finite (ny, nx) tensor.")
+            rate = emission + extra
+        new = history[n + 1] if return_history else torch.zeros_like(old)
         center = old[1:-1, 1:-1]
         # Wind carries the value from the upstream neighbor into each cell.
         upstream_x = old[1:-1, :-2] if u >= 0 else old[1:-1, 2:]
         upstream_y = old[:-2, 1:-1] if v >= 0 else old[2:, 1:-1]
         # Nonnegative weights make the stability argument visible in the code.
-        history[n + 1, 1:-1, 1:-1] = (
+        new[1:-1, 1:-1] = (
             (1 - cfl) * center
             + dt * abs(u) / dx * upstream_x
             + dt * abs(v) / dy * upstream_y
             + dt * D / dx**2 * (old[1:-1, :-2] + old[1:-1, 2:])
             + dt * D / dy**2 * (old[:-2, 1:-1] + old[2:, 1:-1])
-            + dt * emission[1:-1, 1:-1]
+            + dt * rate[1:-1, 1:-1]
         )
-    return history
+        old = new
+    return history if return_history else old

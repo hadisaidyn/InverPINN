@@ -1,0 +1,28 @@
+# Numerical verification only: no training and no dataset regeneration.
+seed: 42
+output_dir: results/numerical_validation
+synthetic_config: configs/dataset.yaml
+torch_threads: 1
+plot_dpi: 300
+spatial:
+  grids: [41, 81, 161, 321]
+  final_time: 0.8
+  u: 0.35
+  v: -0.15
+  D: 0.005
+  # dt = dt_over_h_squared * h^2, rounded down to hit final_time exactly.
+  dt_over_h_squared: 12.8
+  time_check_factor: 2
+temporal:
+  grid: 81
+  final_time: 0.8
+  u: 0.0
+  v: 0.0
+  D: 0.005
+  initial_dt: 0.004
+  levels: 4
+gaussian:
+  grids: [41, 81, 161, 321, 641]
+  time_check_factor: 2
+  # Reporting target only, not an established scientific acceptance criterion.
+  provisional_relative_L2_target: 0.01
