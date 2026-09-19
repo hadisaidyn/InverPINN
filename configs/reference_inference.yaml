@@ -1,0 +1,9 @@
+# A future classical forward-observation operator, not a fit or benchmark run.
+# This grid is not nested with 641 (640/200 is not an integer).
+domain: {x: [0.0, 1.0], y: [0.0, 1.0]}
+solver: {nx: 201, ny: 201, dt: 0.00025, steps: 3200}
+observation:
+  spatial: bilinear
+  temporal: linear
+  coordinates: physical
+  snap_to_nodes: false

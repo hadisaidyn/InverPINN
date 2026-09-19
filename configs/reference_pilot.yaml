@@ -1,0 +1,15 @@
+output_dir: data/synthetic/reference_pilot
+benchmark_config: configs/reference_benchmark.yaml
+noise: {kind: gaussian_absolute, std: 0.005}
+# Three independently seeded, single-source format/accuracy pilots, not a
+# recovery benchmark. Each repeats the 161/321/641 refinement check.
+scenarios:
+  - scenario_id: pilot_001
+    seed: 101
+    source: {x_s: 0.25, y_s: 0.65, Q: 0.8, sigma: 0.08}
+  - scenario_id: pilot_002
+    seed: 202
+    source: {x_s: 0.50, y_s: 0.35, Q: 1.1, sigma: 0.08}
+  - scenario_id: pilot_003
+    seed: 303
+    source: {x_s: 0.65, y_s: 0.60, Q: 1.4, sigma: 0.08}

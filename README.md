@@ -636,3 +636,27 @@ saves errors, plots, final-field checkpoints, configuration and provenance in
 a new `results/numerical_validation/` directory. Use `--output-dir` for a new
 run; existing results are never overwritten. CFL stability is not an accuracy
 certificate. See the [derivations and resolution report](docs/numerical_validation.md).
+
+## Selective synthetic references (P0 revision 2)
+
+```bash
+python scripts/benchmark_reference.py --config configs/reference_benchmark.yaml
+python scripts/generate_reference_pilot.py --config configs/reference_pilot.yaml
+```
+
+These infrastructure-only commands benchmark three reference resolutions and
+generate at most three single-source pilots. They do not train a model or run
+the experiment sweeps. Selected full-field evaluation times and sparse sensor
+times are independent of internal integration steps; the solver never needs
+a complete high-resolution time history for these commands.
+
+Schema 2 separates source/evaluation truth from the noisy model-input loader,
+records numerical-error estimates and complete provenance, and specifies a
+separate inference grid/observation map. Existing schema-1 datasets and runners
+remain available for historical/debugging checks, **not accuracy-qualified
+benchmark ground truth**. They are not silently migrated or retrained.
+
+See [synthetic-reference design and measurements](docs/synthetic_reference.md)
+for storage modes, interpolation, accuracy limitations, independent inference
+configuration, and the pilot format. Output directories must be new; use
+`--output-dir` to preserve previous runs. Generated binaries remain Git-ignored.

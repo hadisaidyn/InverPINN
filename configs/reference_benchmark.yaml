@@ -1,0 +1,16 @@
+output_dir: results/reference_benchmark
+seed: 42
+torch_threads: 1
+target_relative_L2: 0.01
+domain: {x: [0.0, 1.0], y: [0.0, 1.0]}
+physics: {u: 0.35, v: -0.15, D: 0.005}
+source: {x_s: 0.30, y_s: 0.70, Q: 1.0, sigma: 0.08}
+candidates:
+  - {nx: 161, ny: 161, dt: 0.0005, steps: 1600}
+  - {nx: 321, ny: 321, dt: 0.000125, steps: 6400}
+  - {nx: 641, ny: 641, dt: 0.00003125, steps: 25600}
+evaluation_times: [0.1, 0.2, 0.4, 0.8]
+measurement_times: {start: 0.0, stop: 0.8, count: 81}
+sensors: {count: 20}
+inference_config: configs/reference_inference.yaml
+plot_dpi: 300
