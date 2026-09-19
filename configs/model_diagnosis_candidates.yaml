@@ -1,0 +1,31 @@
+# Fixed after B0's complete gradient audit, before any candidate fit.
+# Every entry is evaluated on ALL ten existing development scenarios.
+scales: {length: 1.0, time: 0.8, concentration: 0.88}
+candidates:
+  - {name: B1, parent: B0, change: nondimensional_loss_scaling, scales: true}
+  - {name: B2, parent: B1, change: positive_concentration, constraint: positive}
+  - {name: B3, parent: B2, change: hard_zero_IC_BC, constraint: hard}
+  - {name: B4, parent: B3, change: prior_midpoint_Q_initialization, initial_Q: 1.1}
+  - {name: B5, parent: B4, change: longer_Adam, steps: 12000}
+  - {name: Q11, parent: B0, change: Q_initialization_1.1, initial_Q: 1.1}
+  - {name: Q15, parent: B0, change: Q_initialization_1.5, initial_Q: 1.5}
+  - {name: E1, parent: B0, change: exponential_Q_parameterization, Q_parameterization: exp}
+  - {name: O1, parent: B0, change: longer_Adam, steps: 12000}
+  - {name: L_UL, parent: B0, change: upper_left_start, initial_x: 0.3, initial_y: 0.7}
+  - {name: L_UR, parent: B0, change: upper_right_start, initial_x: 0.7, initial_y: 0.7}
+  - {name: L_LL, parent: B0, change: lower_left_start, initial_x: 0.3, initial_y: 0.3}
+  - {name: L_LR, parent: B0, change: lower_right_start, initial_x: 0.7, initial_y: 0.3}
+multistart:
+  name: M0
+  candidates: [B0, L_UL, L_UR, L_LL, L_LR]
+  selection: minimum_common_independent_sensor_plus_physics_objective
+  truth_access: forbidden_for_start_selection
+optimizer_study:
+  schedules: [Adam_6000, Adam_12000]
+  learning_rate: 0.001
+  lbfgs: not_tested
+collocation:
+  strategy: uniform_resampled_each_update
+  count: 512
+  adaptive: not_introduced_no_empty_source_neighborhoods_in_B0_audit
+selection_rule: docs/model_diagnosis_selection.md

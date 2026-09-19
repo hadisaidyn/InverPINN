@@ -686,3 +686,51 @@ The completed frozen run recovered **14/30** primary held-out sources under its
 predefined location-and-strength criterion. It supports **unreliable recovery
 for this configuration**, not a broad source-discovery claim. See the
 [results, physical diagnostics and limitations](docs/single_source_benchmark.md).
+
+## Development-only model diagnosis (P0 revision 4)
+
+The existing revision-3 held-out set is **consumed**. Do not rerun it for model
+selection. Revision 4 uses only the ten existing development cases, with a
+development-path allowlist, read-only reference checks and a separate sparse
+training interface. No reference regeneration, sensor/noise/wind sweep, or
+Almaty analysis is part of this milestone.
+
+```bash
+python scripts/run_model_diagnosis.py --stage baseline
+python scripts/run_model_diagnosis.py --stage candidates --resume
+python scripts/report_model_diagnosis.py
+python scripts/supplement_model_diagnosis.py
+```
+
+The baseline audit is a prerequisite for the controlled candidate stage. The
+candidate plan is fixed in `configs/model_diagnosis_candidates.yaml`, and every
+candidate uses the same ten cases. `--resume` runs only unstarted cases, never
+silently overwrites a fit, and verifies frozen scientific code. Failed or
+interrupted attempts require inspection rather than automatic retries. To
+replay from scratch, copy `configs/model_diagnosis.yaml` with a **new**
+`output_dir`, and pass that config to the first three commands. For the final
+supplement, copy `configs/model_diagnosis_supplement.yaml` and point its
+`diagnosis_config` to the same new diagnosis configuration. Original artifacts
+remain untouched. The report refuses an already completed report directory.
+
+The final command performs **no training or model selection**. It adds physical
+and dimensionless term magnitudes, raw-source/Jacobian audits, fixed-window
+parameter movement and boundary-band residual diagnostics to a new locked
+`diagnostic_supplement/` directory. The original report manifest remains
+unchanged. `diagnosis_summary.json` records the frozen selection, full
+configuration, machine-readable candidate/comparison tables, hypotheses,
+evidence and unresolved limitations. Existing summaries or partial supplements
+are never silently overwritten.
+
+`results/model_diagnosis/` contains raw/paired metrics, loss and gradient CSVs,
+per-run checkpoints/configs, physical diagnostics, residual maps, source/code
+snapshots, package versions, reference hashes and PNG/PDF figures. Dense error
+metrics use all four 641² reference snapshots; saved visualization previews
+are explicitly downsampled and are not used to calculate those metrics.
+
+See the [dimensional derivation](docs/nondimensionalization.md),
+[completed pre-intervention audit](docs/model_diagnosis_initial_audit.md),
+[predeclared selection rule](docs/model_diagnosis_selection.md), and
+[diagnosis report](docs/model_diagnosis.md). A nominated `B_revised` remains
+development-selected, not validated on unseen sources. A fresh held-out test
+must be a separate future milestone.

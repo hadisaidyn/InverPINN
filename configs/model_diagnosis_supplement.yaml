@@ -1,0 +1,16 @@
+# Post-selection descriptive checks only; no fitting, ranking or new data.
+diagnosis_config: configs/model_diagnosis.yaml
+output_subdir: diagnostic_supplement
+term_candidates: [B0, B5]
+parameter_candidates: [B0, B5, Q11, Q15, E1]
+motion_pairs: [[B0, O1], [B4, B5]]
+motion_steps: [5000, 6000, 12000]
+boundary_band_sigma_multiple: 1.0
+source_radius_sigma_multiple: 2.0
+gradient_phases:
+  initial: [1, 1]
+  early: [2, 100]
+  middle: [2900, 3100]
+  late_6000: [5001, 6000]
+  late_12000: [11001, 12000]
+comparison_scales: {length: 1.0, time: 0.8, concentration: 0.88}

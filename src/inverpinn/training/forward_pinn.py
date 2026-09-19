@@ -18,7 +18,8 @@ def require_finite(value, name):
         raise FloatingPointError(f"NaN/Inf detected in {name}")
 
 
-def train_forward_pinn(positions, times, observations, known, config, logger, on_step=None, source_model=None):
+def train_forward_pinn(positions, times, observations, known, config, logger, on_step=None, source_model=None,
+                       on_objective=None):
     """Train using sensors and physics only; dense truth is not an argument.
 
     C starts unconstrained. Soft MSE terms impose zero initial concentration
@@ -101,6 +102,10 @@ def train_forward_pinn(positions, times, observations, known, config, logger, on
             require_finite(value, f"step {step}: {name} loss")
         total = combine_losses(losses, weights)
         require_finite(total, f"step {step}: total loss")
+        # Optional read-only diagnostic hook. It must retain the graph and must
+        # not consume RNG state, update parameters, or accumulate .grad values.
+        if on_objective is not None:
+            on_objective(step, losses, weights, model, source_model, interior)
         total.backward()
         named_parameters = list(model.named_parameters())
         if source_model is not None:

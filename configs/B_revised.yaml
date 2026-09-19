@@ -1,0 +1,96 @@
+name: B_revised
+selected_development_candidate: B5
+inference:
+  change: longer_Adam
+  formulation:
+    Q_parameterization: softplus
+    constraint: hard
+    scales:
+      concentration: 0.88
+      length: 1.0
+      time: 0.8
+  name: B5
+  parent: B4
+  training:
+    boundary_per_edge: 64
+    collocation_batch: 512
+    data_batch: 512
+    depth: 3
+    initial_Q: 1.1
+    initial_batch: 128
+    initial_x: 0.5
+    initial_y: 0.5
+    learning_rate: 0.001
+    loss_weights:
+      boundary: 1.0
+      data: 10.0
+      initial: 1.0
+      pde: 1.0
+    steps: 12000
+    width: 64
+source_family:
+  kind: gaussian_peak
+  sigma: 0.08
+  K: 1
+optimization_seed: 42
+optimizer:
+  name: Adam
+  learning_rate: 0.001
+  betas:
+  - 0.9
+  - 0.999
+  eps: 1.0e-08
+  weight_decay: 0
+  amsgrad: false
+  maximize: false
+  foreach: null
+  capturable: false
+  differentiable: false
+  fused: null
+  decoupled_weight_decay: false
+architecture:
+  input_columns:
+  - x
+  - y
+  - t
+  hidden_width: 64
+  hidden_layers: 3
+  hidden_activation: tanh
+  output_features: 1
+  input_normalization: 2*(coordinates-lower)/(upper-lower)-1
+  concentration_output_scale: 1.0
+  linear_initialization: PyTorch nn.Linear defaults under archived package version
+    and seed
+  concentration_transform: hard
+collocation:
+  strategy: uniform_resampled_each_update
+  batch: 512
+  generator_seed: 43
+  adaptive: false
+observation_sampling:
+  strategy: uniform_with_replacement_each_update
+  batch: 512
+domain:
+  x:
+  - 0
+  - 1
+  y:
+  - 0
+  - 1
+  t:
+  - 0
+  - 0.8
+physics:
+  u: 0.35
+  v: -0.15
+  D: 0.005
+dtype: torch.float32
+device: cpu
+torch_threads: 1
+deterministic_algorithms: true
+source_position_transform: sigmoid
+initialization_strategy: single fixed truth-independent location and configured Q
+selection_rule_sha256: 57c5c508f419d43cda5089537f82076f0120c2321cf1385f954b510948a2ccd0
+candidate_source_archive_sha256: c122b5485804742077180fc023f8df46ef4727df0d1b055b25f6ca0a4e40e171
+validation_status: development-selected; NEVER evaluated on old held-out set; fresh
+  test deferred

@@ -1,0 +1,31 @@
+experiment: model_diagnosis_revision_4
+benchmark_root: results/single_source_benchmark
+output_dir: results/model_diagnosis
+scenario_access: existing_development_001_through_010_only
+optimization_seed: 42
+sigma: 0.08
+training:
+  width: 64
+  depth: 3
+  steps: 6000
+  learning_rate: 0.001
+  data_batch: 512
+  collocation_batch: 512
+  initial_batch: 128
+  boundary_per_edge: 64
+  loss_weights: {data: 10.0, pde: 1.0, initial: 1.0, boundary: 1.0}
+  initial_x: 0.5
+  initial_y: 0.5
+  initial_Q: 0.5
+diagnostics:
+  seed: 1909202699
+  interior_count: 8192
+  initial_count: 4096
+  boundary_per_edge: 1024
+  prediction_batch: 8192
+gradient_interval: 100
+residual_map_cases: [development_001, development_005, development_010]
+residual_map_grid: 101
+residual_map_times: [0.2, 0.8]
+workers: 2
+plot_dpi: 200
