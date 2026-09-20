@@ -4,12 +4,12 @@
 
 The controlled research is complete. J1 **failed: 23/30 recoveries, required 27/30**. These commands read saved evidence; they never train a model, load a model checkpoint, generate a source, solve the PDE or use the network.
 
-From the repository root, after the [README installation](../README.md):
+From the repository root, after the [README report-only setup](../README.md#quick-start):
 
 ```bash
 python scripts/build_paper.py --verify-only
 python scripts/build_paper.py
-python -m pytest tests/test_paper_reporting.py -q
+python -m pytest tests/test_paper_reporting.py tests/test_repository_docs.py -q
 ```
 
 The build normally takes seconds (canonical rendering about 3.8 s, excluding first-use font-cache startup). It creates `paper/reproduced/`; if that exists, choose a new `--output-dir`. No overwrite/force/resume option exists. Destinations inside frozen `results/`, `data/`, `src/`, `configs/` or the evidence bundle are rejected. A partial reporting failure remains visible in its new directory; fix reporting only and choose another output path. Never patch frozen results to make a report pass.
@@ -78,4 +78,28 @@ python scripts/package_paper_evidence.py --verify-preservation
 
 The packager is an archive-maintenance utility, not needed for a reader's build. It refuses overwrite and never fits or simulates.
 
-Only the new report-only tests are executed for this milestone. The full scientific suite includes tiny model-training tests, so rerunning it would violate the no-training instruction. Its frozen report (**451 passed**) is preserved and explicitly **historical**, not represented as a new run. New tests cover integrity, numerical aggregation, no-training boundaries, complete rendering, no overwrite, links and short-description word counts.
+This historical inventory also includes ignored `src/inverpinn.egg-info/` build
+metadata. An editable package installation can regenerate those files and make
+the strict archive check fail even when every scientific file is unchanged.
+GitHub-polish verification found exactly three such changes; see the
+[polish audit](github_polish_audit.md). The inventory and checker were preserved,
+not weakened or rewritten to conceal that difference.
+
+Only report/document tests are executed during GitHub polish. The full scientific suite includes tiny model-training tests, so rerunning it would violate the no-training instruction. Its frozen report (**451 passed**) is preserved and explicitly **historical**, not represented as a new run. Reporting tests cover integrity, numerical aggregation, no-training boundaries, complete rendering, no overwrite and short-description word counts. Documentation tests cover clean-checkout links, citation/workflow metadata and README numbers against the sealed raw results.
+
+## Lightweight CI and documentation checks
+
+The [workflow](../.github/workflows/ci.yml) uses Python 3.13, the unchanged report
+dependency pins and a dependency-free package installation. It runs an import
+smoke check, evidence verification, `scripts/check_docs.py`, the two report/docs
+test files above, and a build in a fresh output directory. It needs no ignored
+archive, private data, PyTorch, GPU or training. Hosted CI status is not claimed
+until the workflow actually runs on GitHub.
+
+The standard-library link checker examines tracked and new nonignored Markdown
+and validates relative targets/images, heading anchors and machine-local paths.
+An existing but ignored local output does not count as a publishable link.
+Sealed `paper/evidence/` documents are excluded as immutable historical provenance.
+External URLs are inventoried, not network-availability or usage-permission checks.
+The public historical file inventory uses repository-relative paths; original
+execution paths inside the sealed numerical configuration remain unchanged.

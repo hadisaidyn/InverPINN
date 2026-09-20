@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: >-
+  If you use this software or its bundled research evidence, please cite it
+  using this metadata and identify the Git commit used.
+type: software
+title: >-
+  InverPINN: Diagnosing Source-Strength Bias in Physics-Informed Neural
+  Networks for Sparse Pollution Source Inversion
+# The sole name supported by the repository's Git authorship metadata.
+authors:
+  - given-names: Hadis
+# Existing package version; no release tag or publication date is implied.
+version: 0.0.0
+abstract: >-
+  Controlled synthetic research on sparse single-source inversion with
+  physics-informed neural networks and classical PDE-constrained inversion.
+  Final J1 confirmation failed: 23 of 30 recoveries, with 27 required;
+  classical inversion recovered 30 of 30 on identical observations.
+keywords:
+  - inverse problems
+  - physics-informed neural networks
+  - advection-diffusion
+  - source-strength bias

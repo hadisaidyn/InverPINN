@@ -3,7 +3,16 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 .venv/
+.venv-report/
 *.egg-info/
+
+# Local machine/configuration files; examples can remain public.
+.DS_Store
+.env
+.env.*
+!.env.example
+build/
+dist/
 
 # Generated outputs and legacy local scaffold directory
 results/

@@ -7,11 +7,10 @@ mean-PDE-RMSE non-regression gate. No model was changed after these results.
 
 The prospective definitions are in [the protocol](fresh_blind_benchmark_protocol.md).
 Exact values, all observations, reference fields, predictions, checkpoints,
-per-update logs and provenance are retained in
-[the artifact directory](../results/fresh_blind_benchmark/), particularly
-[summary.json](../results/fresh_blind_benchmark/summary.json),
-[summary.csv](../results/fresh_blind_benchmark/summary.csv) and
-[all_runs.csv](../results/fresh_blind_benchmark/all_runs.csv).
+per-update logs and provenance are retained in the local-only archive
+`results/fresh_blind_benchmark/`, particularly `summary.json`, `summary.csv`
+and `all_runs.csv`. These ignored files are not included in a clean checkout;
+see the [archive-access boundary](reproducibility.md#reference-and-full-archive-boundary).
 All numerical units below are synthetic, not metres, hours or real PM2.5 units.
 Q denotes Gaussian **peak source intensity**, in concentration/time, not
 area-integrated emissions. Relative errors are fractions unless marked %.
@@ -64,7 +63,7 @@ All estimates were finite with positive observed convergence order. None was
 silently dropped or regenerated. These are conditional three-grid estimates,
 **not certified bounds**, individual-sensor bounds or a spacetime supremum.
 Thus this is not a benchmark in which every sensor trajectory attained <1%.
-See [reference_quality.csv](../results/fresh_blind_benchmark/reference_quality.csv).
+See `results/fresh_blind_benchmark/reference_quality.csv` in the local-only archive.
 
 ## B. Frozen configurations and code
 
@@ -87,7 +86,7 @@ optimizer, source initialization, physical parameterization nor sampling changed
 
 Model-code bundle hashes are hashes of canonical filename-to-SHA-256 mappings;
 individual files are listed in
-[model_code_hashes.json](../results/fresh_blind_benchmark/model_code_hashes.json).
+`results/fresh_blind_benchmark/model_code_hashes.json` in the local-only archive.
 The complete frozen source inventory and environment/package versions are
 preserved in preregistration and execution snapshots. This paired comparison
 is of two frozen recipes, **not an equal-compute comparison**: revised uses

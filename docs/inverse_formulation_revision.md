@@ -301,7 +301,7 @@ fixtures. Dependencies were neither changed nor warnings suppressed. Full-suite
 fixture tests do not access actual Almaty observations. The earlier report-only
 constant-correlation test failure is documented above; no old test was weakened.
 
-The [artifact directory](../results/inverse_formulation_revision/) contains
+The local-only artifact directory `results/inverse_formulation_revision/` contains
 the immutable development manifest, protocol, J0/J1/J2/J3 raw CSVs,
 candidate_summary.csv, Q_bias_summary.csv, trajectory_summary.csv, summary.json,
 paired differences, observability and information-stratum summaries, all seed
@@ -311,6 +311,8 @@ The eight required figures are saved as300-dpi PNG and vector PDF. Fixed-index
 reconstruction panels are saved for001/009/017/024 for every method; cases were
 not selected for appearance. Large artifacts remain local and git-ignored;
 code, configurations and this quantitative report are version-controlled.
+See the [archive-access boundary](reproducibility.md#reference-and-full-archive-boundary)
+for what is available in a clean checkout.
 
 ## Files in Revision 7
 

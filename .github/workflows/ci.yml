@@ -1,0 +1,41 @@
+name: Report and documentation
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      MPLBACKEND: Agg
+      MPLCONFIGDIR: ${{ runner.temp }}/inverpinn-mpl
+    steps:
+      # Official v6 tags resolved to immutable commits for this workflow.
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.13'
+          cache: pip
+          cache-dependency-path: paper/requirements-report.txt
+      - name: Install report dependencies only
+        run: |
+          python -m pip install -r paper/requirements-report.txt
+          python -m pip install --no-deps -e .
+      - name: Import and verify evidence
+        run: |
+          python -c "import inverpinn; print('InverPINN import OK')"
+          python scripts/build_paper.py --verify-only
+      - name: Check public documentation
+        run: python scripts/check_docs.py
+      - name: Test reporting and repository metadata without training
+        run: python -m pytest tests/test_paper_reporting.py tests/test_repository_docs.py -q
+      - name: Rebuild figures and tables from saved evidence
+        run: python scripts/build_paper.py --output-dir paper/reproduced_ci
