@@ -866,3 +866,62 @@ gates (19.83% and 19.44%). **No B_revised_2 was created.** All128 run artifacts
 passed an independent audit; every prior result file is unchanged. Reporting
 requires that audit before reading aggregate results. Raw artifacts remain
 local and git-ignored; the report and reproducible configurations are tracked.
+
+## Final fixed-hypothesis confirmation (Revision 8)
+
+J1 **did not pass Revision 7's promotion rule**. Revision 8 evaluates it as a
+new fixed hypothesis on 30 untouched IID scenarios, not as a retroactive pass
+or another tuning cycle. Read the [frozen protocol](docs/J1_confirmatory_protocol.md),
+[exact J1 recipe](configs/J1_confirmatory.yaml), and
+[benchmark settings](configs/final_confirmatory.yaml).
+
+The J1 recipe retains the inherited `formulation.Q_parameterization` metadata
+for exact Revision-7 recipe comparison. J1's actual amplitude implementation is
+the separately specified analytical profile buffer, not a softplus/Adam Q
+parameter. The unchanged B_revised comparator still uses softplus Q.
+
+```bash
+python scripts/generate_final_confirmatory.py --stage freeze
+python scripts/generate_final_confirmatory.py --stage generate
+python scripts/run_final_confirmatory.py --stage bank
+python scripts/run_final_confirmatory.py --stage information
+python scripts/run_final_confirmatory.py --stage J1
+python scripts/run_final_confirmatory.py --stage B_revised
+python scripts/run_final_confirmatory.py --stage classical
+python scripts/audit_final_confirmatory.py
+python scripts/report_final_confirmatory.py
+```
+
+The bank can be generated concurrently with references: it uses only known
+physics and sensor geometry. No fitting starts before the complete manifest
+and information split are frozen. Classical inversion remains separate from
+the PINN. All failed cases remain in raw tables and denominators. The final
+decision requires every preregistered gate, including at least27/30 recoveries.
+Only a passing decision permits an identical `InverPINN_final.yaml` and the
+conditional, fixed-model robustness studies. A failed decision stops further
+pure-PINN model development. Existing results are never silently overwritten.
+No real Almaty work is part of this revision.
+
+Only after a verified passing final decision, the conditional runner permits:
+
+```bash
+python scripts/run_final_robustness.py --stage initialize
+python scripts/run_final_robustness.py --stage generate
+python scripts/run_final_robustness.py --stage train
+python scripts/run_final_robustness.py --stage report
+```
+
+Every entry point rechecks the sealed confirmation and byte-identical final
+model. Twenty new underlying cases support 200 distinct fixed-seed fits;
+the identical control is reused across sensor, noise and wind displays.
+
+The [completed Revision-8 report](docs/J1_confirmatory_results.md) records
+**23/30 J1 recoveries**, below the preregistered 27/30 requirement; B_revised
+recovered 21/30 and classical inversion 30/30. J1 passed the other gates but
+still underestimated Q in 28/30 cases. All seven recovery failures occurred
+in the predefined lower-signal half. **No InverPINN_final was created and no
+robustness study was triggered. Further small-tweak pure-PINN development
+stops.** All 90 runs passed the independent audit; final tests passed
+184 targeted and 451 full-suite tests. Frozen model code and all previous
+artifacts remain unchanged. The guarded robustness commands above describe
+the conditional implementation; they are forbidden for this failed result.
