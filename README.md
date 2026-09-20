@@ -731,6 +731,44 @@ are explicitly downsampled and are not used to calculate those metrics.
 See the [dimensional derivation](docs/nondimensionalization.md),
 [completed pre-intervention audit](docs/model_diagnosis_initial_audit.md),
 [predeclared selection rule](docs/model_diagnosis_selection.md), and
-[diagnosis report](docs/model_diagnosis.md). A nominated `B_revised` remains
-development-selected, not validated on unseen sources. A fresh held-out test
-must be a separate future milestone.
+[diagnosis report](docs/model_diagnosis.md). At the end of revision 4,
+`B_revised` was development-selected, not validated on unseen sources.
+The separate fresh held-out milestone is documented below.
+
+## Fresh blind confirmatory benchmark (P0 revision 5)
+
+This benchmark freezes B_revised and B0 before generating 30 new single-source
+cases. It does **not** tune either model or reopen consumed development/test
+outcomes. Read the [prospective protocol](docs/fresh_blind_benchmark_protocol.md)
+and [configuration](configs/fresh_blind_benchmark.yaml) before running it.
+
+```bash
+python scripts/generate_fresh_blind_benchmark.py --stage freeze
+python scripts/generate_fresh_blind_benchmark.py --stage generate
+python scripts/run_fresh_blind_benchmark.py
+python scripts/fresh_identifiability.py
+python scripts/report_fresh_blind_benchmark.py
+```
+
+Each stage refuses silent overwrite. Reference generation may continue only
+unstarted scenarios; training may continue only unstarted jobs and retains
+failed/interrupted attempts. Changes to frozen protocol, source code, model
+configs, sensor layout or manifests fail validation. Do not run `freeze` again
+against an existing benchmark or replace a difficult scenario.
+
+Results go to `results/fresh_blind_benchmark/`: 30-row primary tables for each
+model, immutable source/input manifests, paired differences and bootstrap
+intervals, all 30 rows of the ten-case three-seed substudy, fixed-Q and
+observation-profiled-Q compatibility maps, raw histories/checkpoints, physical
+diagnostics, reference-quality flags, PNG/PDF figures and code/environment
+provenance. Additional seeds never replace primary seed 42. Interpretation is
+preregistered; no fresh result authorizes tuning or a real-Almaty source claim.
+
+Completed results are in the [revision-5 report](docs/fresh_blind_benchmark.md).
+The frozen interpretation is **unreliable controlled recovery**: 18/30 joint
+recoveries versus B0's 12/30, Q underestimated in all 30 primary cases, and
+mean PDE residual RMSE above B0 despite improved source/concentration errors.
+Five reference sensor-trajectory accuracy-target misses were flagged and
+retained. All 80 fits completed without changing either frozen model. These
+now-observed cases must never be presented as untouched validation after any
+future development; this milestone ends without further experiments.
