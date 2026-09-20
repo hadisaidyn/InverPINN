@@ -1,0 +1,88 @@
+experiment: development_v3_inverse_formulation_revision_7
+output_dir: results/inverse_formulation_revision
+preserved_revision_6_commit: 199559f901bd21981f155d70550e3c82d06dde70
+frozen_model_commit: 9dc90c247b0a596b789cb0ee5f1c06f938db40c4
+models:
+  B_revised:
+    config: configs/B_revised.yaml
+    sha256: 3e400ef1195cf90f6481117ae5c395695cca23a12d47ab532ec6822e400c332e
+scenario_sampling:
+  seed: 2009202607
+  count: 24
+  method: independent_permutation_jitter_Latin_hypercube
+  position_range: [0.25, 0.75]
+  strength_range: [0.8, 1.4]
+domain: {x: [0.0, 1.0], y: [0.0, 1.0]}
+physics: {u: 0.35, v: -0.15, D: 0.005}
+source_family: {kind: gaussian_peak, K: 1, sigma: 0.08}
+noise_std: 0.0
+sensors_file: configs/single_source_sensors.json
+sensor_count: 20
+measurement_times: {start: 0.0, stop: 0.8, count: 81}
+evaluation_times: [0.1, 0.2, 0.4, 0.8]
+reference:
+  candidates:
+    - {nx: 161, ny: 161, dt: 0.0005, steps: 1600}
+    - {nx: 321, ny: 321, dt: 0.000125, steps: 6400}
+    - {nx: 641, ny: 641, dt: 0.00003125, steps: 25600}
+  selected_grid: 641
+  target_relative_L2: 0.01
+  inference_config: configs/reference_inference.yaml
+inference_solver: {nx: 201, ny: 201, dt: 0.00025, steps: 3200}
+scaling: {parameter_scales: [0.5, 0.5, 0.6], concentration_scale: 0.88}
+sensitivity:
+  normalized_steps: [0.001, 0.0005, 0.00025]
+  selected_step: 0.00025
+  relative_J_tolerance: 0.001
+  relative_smin_tolerance: 0.01
+information_split: median_sensor_RMS_before_fitting
+optimization:
+  primary_seed: 42
+  sensitivity_ids: [development_v3_001, development_v3_009, development_v3_017, development_v3_024]
+  additional_seeds: [142, 242]
+  sensitivity_candidates: [J0, J1, J2, J3]
+candidates:
+  J0: {algorithm: frozen_B_revised, total_updates: 12000}
+  J1: {algorithm: differentiable_variable_projection, total_updates: 12000}
+  J2: {algorithm: alternating, cycles: 60, field_updates: 150, source_updates: 50, total_updates: 12000}
+  J3: {algorithm: PINN-location_plus_forward-profiled-Q, location_candidate: J0, additional_optimizer_updates: 0}
+profiling:
+  objective: uniform_squared_physical_PDE_residual
+  frequency: every_J1_update_and_every_J2_source_update
+  positivity_floor: dtype_smallest_positive_normal
+  accumulation_dtype: float64
+  terminal_fitting_points: 8192
+  terminal_generator_seed_offset: 2
+gradient_interval: 100
+trajectory_ids: [development_v3_001, development_v3_009, development_v3_017, development_v3_024]
+optional_candidates:
+  J4: not_planned_J2_already_combines_field_location_blocks_and_analytic_Q
+  extra_location_optimizer: not_planned_J2_already_uses_location_only_Adam
+diagnostics:
+  seed: 2009202797
+  interior_count: 8192
+  initial_count: 4096
+  boundary_per_edge: 1024
+  prediction_batch: 8192
+  hybrid_PDE: independent_centered_FD_at_native_nodes_and_midtime_halfstep
+recovery: {secondary_localization_max: 0.08, secondary_relative_strength_max: 0.20, confidence_level: 0.95}
+selection:
+  promising_median_localization_max: 0.02
+  promising_median_Q_relative_max: 0.10
+  promising_median_L2_max: 0.15
+  universal_underestimation_allowed: false
+  exact_BC_IC_max: 0.0
+  negative_fraction_max: 0.0
+  Q_equality_tolerance: 0.000001
+  material_PDE_relative_tolerance: 0.10
+  material_PDE_absolute_tolerance: 0.0001
+  maximum_relative_noninferiority: 1.10
+  minimum_Q_median_improvement: 0.20
+  minimum_absolute_signed_bias_improvement: 0.20
+  maximum_failed_fits: 0
+  sensitivity_recovery_noninferiority: true
+  rule: all_advancement_gates_and_source_field_distribution_noninferiority_and_bias_improvement
+  tie_break: recovery_count_then_Q_median_then_localization_median_then_runtime
+  hybrid_eligibility: false_requires_common_continuous_PDE_validation_before_freezing
+runtime: {workers: 2, torch_threads: 1}
+plot_dpi: 300

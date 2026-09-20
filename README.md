@@ -816,3 +816,53 @@ failures were classical successes; the PINN still underestimated Q in all 30
 cases. Conditional-Q numerical bias was small and mixed in sign. This supports
 a PINN-specific recovery gap, with weak observation geometry as an interacting
 factor—not demonstrated intrinsic non-identifiability. No model was revised.
+
+## Inverse formulation development (P0 revision 7)
+
+Revision 6 is preserved at `199559f901bd21981f155d70550e3c82d06dde70`.
+The new `development_v3` set contains 24 predeclared Latin-hypercube cases,
+excluding all 100 prior revision scenarios and configured historical sources.
+This is **development only**, not a fresh confirmatory benchmark.
+
+Read the [prospective protocol](docs/inverse_formulation_protocol.md),
+[mathematical derivation](docs/source_field_coupling.md), and
+[configuration](configs/inverse_formulation_revision.yaml). The ordered commands
+are deliberately separate so generation, information strata, and the frozen
+J0 baseline complete before intervention fitting:
+
+```bash
+python scripts/generate_development_v3.py --stage freeze
+python scripts/generate_development_v3.py --stage generate
+python scripts/run_inverse_formulation_revision.py --stage information
+python scripts/run_inverse_formulation_revision.py --stage J0
+python scripts/run_inverse_formulation_revision.py --stage J1
+python scripts/run_inverse_formulation_revision.py --stage J2
+python scripts/run_inverse_formulation_revision.py --stage J3
+python scripts/run_inverse_formulation_revision.py --stage sensitivity
+python scripts/audit_inverse_formulation_revision.py
+python scripts/report_inverse_formulation_revision.py
+```
+
+J0 is unchanged B_revised. J1 analytically profiles Q in the PDE loss; J2
+alternates frozen-source field updates and frozen-field location/Q updates.
+J3 is explicitly **PINN-location + forward-profiled-Q**, a hybrid using J0
+locations and observation-only numerical amplitude inversion. It is not a pure
+PINN. Each neural fit has a predeclared 12,000-update budget. Three optimizer
+seeds on four index-selected scenarios measure sensitivity without replacing
+primary seed42 results. Every historical artifact is protected by an opaque
+checksum inventory; source truth is excluded from fitting interfaces.
+
+Results, reference-quality flags, checkpoints, configurations, source/package
+archives, CSV/JSON metrics, and PNG/PDF plots are retained under
+`results/inverse_formulation_revision/`. Candidate selection requires the
+complete preregistered source/field/physics/reliability criteria, not one
+improved median. A new B_revised_2 is permitted only if those criteria pass;
+no fresh blind, robustness or real-data experiment is part of this milestone.
+
+The [completed Revision-7 report](docs/inverse_formulation_revision.md) records
+19/24 J0, 21/24 J1, 16/24 J2 and 20/24 hybrid J3 recoveries. J1 improves typical
+performance but misses the preregistered 20% Q-error and signed-bias improvement
+gates (19.83% and 19.44%). **No B_revised_2 was created.** All128 run artifacts
+passed an independent audit; every prior result file is unchanged. Reporting
+requires that audit before reading aggregate results. Raw artifacts remain
+local and git-ignored; the report and reproducible configurations are tracked.
