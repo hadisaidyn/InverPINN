@@ -1,0 +1,158 @@
+domain:
+  x:
+  - 0.0
+  - 1.0
+  y:
+  - 0.0
+  - 1.0
+physics:
+  u: 0.35
+  v: -0.15
+  D: 0.005
+source_family:
+  kind: gaussian_peak
+  K: 1
+  sigma: 0.08
+noise_std: 0.0
+sensors_file: configs/single_source_sensors.json
+sensor_count: 20
+measurement_times:
+  start: 0.0
+  stop: 0.8
+  count: 81
+evaluation_times:
+- 0.1
+- 0.2
+- 0.4
+- 0.8
+reference:
+  candidates:
+  - nx: 161
+    ny: 161
+    dt: 0.0005
+    steps: 1600
+  - nx: 321
+    ny: 321
+    dt: 0.000125
+    steps: 6400
+  - nx: 641
+    ny: 641
+    dt: 3.125e-05
+    steps: 25600
+  selected_grid: 641
+  target_relative_L2: 0.01
+  inference_config: configs/reference_inference.yaml
+recovery:
+  secondary_localization_max: 0.08
+  secondary_relative_strength_max: 0.2
+  confidence_level: 0.95
+inference_solver:
+  nx: 201
+  ny: 201
+  dt: 0.00025
+  steps: 3200
+experiment: final_blind_v1_J1_confirmation_revision8
+output_dir: results/final_confirmatory
+scenario_sampling:
+  seed: 2009202608
+  count: 30
+  method: IID_uniform_no_replacement_of_cases
+optimization:
+  primary_seed: 42
+runtime:
+  workers: 2
+  torch_threads: 1
+plot_dpi: 300
+diagnostics:
+  seed: 2009202808
+  interior_count: 8192
+  initial_count: 4096
+  boundary_per_edge: 1024
+  prediction_batch: 8192
+  hybrid_PDE: independent_centered_FD_at_native_nodes_and_midtime_halfstep
+classical:
+  grid: 201
+  start_count: 3
+  start_min_separation: 0.08
+  bounds:
+  - 0.0
+  - 1.0
+  max_nfev: 60
+  ftol: 1.0e-10
+  xtol: 1.0e-08
+  gtol: 1.0e-10
+  selection: smallest_finite_sensor_MSE_only
+  profile_Q: nonnegative_analytic_no_upper_bound
+scaling:
+  parameter_scales:
+  - 0.5
+  - 0.5
+  - 0.6
+  concentration_scale: 0.88
+  information_noise: independent_unit_variance_in_normalized_concentration
+sensitivity:
+  normalized_steps:
+  - 0.001
+  - 0.0005
+  - 0.00025
+  selected_step: 0.00025
+  relative_J_tolerance: 0.001
+  relative_smin_tolerance: 0.01
+observability_map:
+  grid_count: 21
+  position_range:
+  - 0.25
+  - 0.75
+  representative_Q: 1.1
+  weak_smin_quantile: 0.25
+  weak_Q_information_quantile: 0.25
+analysis:
+  bootstrap_seed: 2009202818
+  bootstrap_samples: 10000
+  metric_tie_atol: 1.0e-08
+  metric_tie_rtol: 1.0e-06
+  Q_equality_atol: 1.0e-06
+  Q_equality_rtol: 0.0
+  worst_case_ranking: localization_descending_then_scenario_id
+  information_split: median_sensor_RMS_before_fitting
+advancement:
+  min_recovered: 27
+  median_localization_max: 0.02
+  median_relative_Q_max: 0.1
+  median_L2_max: 0.15
+  absolute_median_signed_relative_Q_max: 0.1
+  universal_underestimation_allowed: false
+  negative_fraction_max: 0.0
+  BC_max: 0.0
+  IC_max: 0.0
+  PDE_median_max_ratio: 1.1
+  require_all_runs_evaluable: true
+conditional_robustness:
+  scenario_seed: 2009202838
+  scenario_count: 20
+  fitting_seed: 42
+  noise_seed: 2009202848
+  sensor_counts:
+  - 5
+  - 10
+  - 20
+  sensor_selection: farthest_point_first_farthest_from_centroid_lowest_index_ties
+  noise_fractions:
+  - 0.0
+  - 0.05
+  - 0.1
+  - 0.2
+  noise_model: z_noisy=z+fraction*RMS(all_noiseless_observations)*Z;Z~N(0,1);same_Z_across_levels;no_clipping
+  wind_conditions:
+  - correct
+  - speed_minus10
+  - speed_plus10
+  - direction_minus10
+  - direction_plus10
+  wind_speed_factors:
+  - 0.9
+  - 1.1
+  wind_direction_degrees:
+  - -10.0
+  - 10.0
+  reuse_identical_control: true

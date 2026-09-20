@@ -1,0 +1,5 @@
+| Method | Joint recovery | Median localization | Median Q error | Median L2 | Median PDE RMS |
+| --- | --- | --- | --- | --- | --- |
+| B_revised | 21/30 | 0.009186 | 9.319% | 11.048% | 0.005562 |
+| J1 | 23/30 | 0.005574 | 5.975% | 7.423% | 0.005361 |
+| classical | 30/30 | 0.001111 | 1.218% | 1.507% | not evaluated (different representation) |

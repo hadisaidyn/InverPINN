@@ -1,0 +1,26 @@
+{
+  "passed": false,
+  "criteria": {
+    "all_runs_evaluable": true,
+    "joint_recovery": false,
+    "median_localization": true,
+    "median_Q_error": true,
+    "median_L2": true,
+    "signed_relative_Q_bias": true,
+    "nonuniversal_underestimation": true,
+    "positivity": true,
+    "BC_exact": true,
+    "IC_exact": true,
+    "paired_median_PDE": true
+  },
+  "summary_hash": "6334b8781f08b57907475daec017897c023b6679ec50dd6948774739e299dfc9",
+  "protocol_hash": "e1c3e2b575e9034d682504b21809ae29bf7daa69d6fd2363aa5612674ae01418",
+  "J1_hash": "a963da9f9a3e1f4f11bea9b1ce9162d65223ec199e162724fe8da56ee73d3e0a",
+  "B_revised_hash": "3e400ef1195cf90f6481117ae5c395695cca23a12d47ab532ec6822e400c332e",
+  "fitting_archive_hash": "a6dc5072aeb377ec4408b8001020d9a662e64a077b3585ee2fb34ab1082a10e1",
+  "result_hashes": {
+    "J1_raw.csv": "17917bd23df4808e0285227f334ff574d797934b3d1f3f6c2e8b648a32f1890f",
+    "B_revised_raw.csv": "f65eb96bfde8830049aff098873d4154e082f5c95e062ba1bf8c6b7234f2127a",
+    "classical_raw.csv": "00253a7905c4ce07fb6f969449eeebaa308096bf2c6438e9248a40662c5e3fd8"
+  }
+}

@@ -1,5 +1,13 @@
 # Reproducing the paper experiments
 
+> **Historical orchestration guide—not the final manuscript pipeline.** This
+> runner trains models and executes exploratory sweeps. The controlled research
+> is complete and J1 failed final confirmation. Do not run this workflow as part
+> of final reporting. Use the no-training [final reproduction guide](reproducibility.md)
+> and `python scripts/build_paper.py` instead. The documentation below is retained
+> solely to explain the older software; it is not evidence that every listed
+> experiment supports the final paper.
+
 From the repository root with the project installed in the active environment:
 
 ```bash

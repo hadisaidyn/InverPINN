@@ -1,0 +1,644 @@
+{
+  "audited_runs": 90,
+  "historical_files_unchanged": 11001,
+  "execution_code_unchanged": true,
+  "maximum_metric_difference": 1.4432899320127035e-14,
+  "failed_runs": 0,
+  "result_hashes": {
+    "J1_raw.csv": "17917bd23df4808e0285227f334ff574d797934b3d1f3f6c2e8b648a32f1890f",
+    "B_revised_raw.csv": "f65eb96bfde8830049aff098873d4154e082f5c95e062ba1bf8c6b7234f2127a",
+    "classical_raw.csv": "00253a7905c4ce07fb6f969449eeebaa308096bf2c6438e9248a40662c5e3fd8"
+  },
+  "runs": [
+    {
+      "method": "J1",
+      "scenario_id": "final_blind_v1_002",
+      "failed_retained": false,
+      "maximum_metric_difference": 1.2212453270876722e-15,
+      "checkpoint_hash": "f6f8ca7d5601f506387a1dce50596258984511a4a2c808ba706c735c2bf8eca2"
+    },
+    {
+      "method": "J1",
+      "scenario_id": "final_blind_v1_001",
+      "failed_retained": false,
+      "maximum_metric_difference": 2.463307335887066e-16,
+      "checkpoint_hash": "61f482dfc5553e3bd24ed8e1c59955440b97a5f30615c4ddc320488c0e5efc7f"
+    },
+    {
+      "method": "J1",
+      "scenario_id": "final_blind_v1_003",
+      "failed_retained": false,
+      "maximum_metric_difference": 3.885780586188048e-16,
+      "checkpoint_hash": "0a133516e6414ad00409952be726e66777d03644cbb809d19ac154b42eb2b030"
+    },
+    {
+      "method": "J1",
+      "scenario_id": "final_blind_v1_004",
+      "failed_retained": false,
+      "maximum_metric_difference": 2.942091015256665e-15,
+      "checkpoint_hash": "40475b854c26d3f163fed65ec77cbb1dffa5f196cdf6d5118e0e3577c13f07fe"
+    },
+    {
+      "method": "J1",
+      "scenario_id": "final_blind_v1_005",
+      "failed_retained": false,
+      "maximum_metric_difference": 1.6514567491299204e-15,
+      "checkpoint_hash": "f7b235576a19abd8af94b35aa1f1499f220ec4f7bdb82be7bfabdc1685ed1854"
+    },
+    {
+      "method": "J1",
+      "scenario_id": "final_blind_v1_006",
+      "failed_retained": false,
+      "maximum_metric_difference": 1.6653345369377348e-16,
+      "checkpoint_hash": "39bc4d857e013b5e22c669e7716a470ff9654b97c1e5b306e6dde9121697fb2a"
+    },
+    {
+      "method": "J1",
+      "scenario_id": "final_blind_v1_007",
+      "failed_retained": false,
+      "maximum_metric_difference": 1.7694179454963432e-16,
+      "checkpoint_hash": "0bb9826e98a38d981bd22af43b8c21c1cc38abf753372a3bcb8f2df3f115d058"
+    },
+    {
+      "method": "J1",
+      "scenario_id": "final_blind_v1_008",
+      "failed_retained": false,
+      "maximum_metric_difference": 8.326672684688674e-15,
+      "checkpoint_hash": "4edc39797a1d12b56c80cba3fe9690812ca5451a51b163951767697779a1eae7"
+    },
+    {
+      "method": "J1",
+      "scenario_id": "final_blind_v1_010",
+      "failed_retained": false,
+      "maximum_metric_difference": 4.579669976578771e-15,
+      "checkpoint_hash": "4fe7a44dfceee831ab32e6fb5d9d396e42ce852dbe5cbb7e9f1e089f8d0a08ea"
+    },
+    {
+      "method": "J1",
+      "scenario_id": "final_blind_v1_009",
+      "failed_retained": false,
+      "maximum_metric_difference": 3.0253577421035516e-15,
+      "checkpoint_hash": "40237afd8fdd7356bf2e9d9cdff7f63ee258cbb20bbd38b61cfc43d769d34f0c"
+    },
+    {
+      "method": "J1",
+      "scenario_id": "final_blind_v1_011",
+      "failed_retained": false,
+      "maximum_metric_difference": 2.949029909160572e-16,
+      "checkpoint_hash": "8424a2bd059a04f3b0fa11821c143f5b4cc5d4fd6906343aead5693ea63cbfc1"
+    },
+    {
+      "method": "J1",
+      "scenario_id": "final_blind_v1_012",
+      "failed_retained": false,
+      "maximum_metric_difference": 7.716050021144838e-15,
+      "checkpoint_hash": "c3cf7acbc13541d25311b72891abe99926f315e65773c985f9aafda310be567a"
+    },
+    {
+      "method": "J1",
+      "scenario_id": "final_blind_v1_013",
+      "failed_retained": false,
+      "maximum_metric_difference": 1.6653345369377348e-16,
+      "checkpoint_hash": "5e8792fc86e8bf4bc8658c6733595950b391c7c4c0fa448295a3cdcc07566de8"
+    },
+    {
+      "method": "J1",
+      "scenario_id": "final_blind_v1_014",
+      "failed_retained": false,
+      "maximum_metric_difference": 2.393918396847994e-16,
+      "checkpoint_hash": "79bdb63f3d851928417ce90df92aeae5ff9d2bd1507d634451177915f1179967"
+    },
+    {
+      "method": "J1",
+      "scenario_id": "final_blind_v1_015",
+      "failed_retained": false,
+      "maximum_metric_difference": 2.255140518769849e-16,
+      "checkpoint_hash": "92aeb35edf087756e8131f86c870177104cbc8e66faccb6d89ffe70296a64501"
+    },
+    {
+      "method": "J1",
+      "scenario_id": "final_blind_v1_016",
+      "failed_retained": false,
+      "maximum_metric_difference": 9.658940314238862e-15,
+      "checkpoint_hash": "618fc406d3ccf8c32adea41fbf331112bacd2d916be59739b92f48cbab14b655"
+    },
+    {
+      "method": "J1",
+      "scenario_id": "final_blind_v1_017",
+      "failed_retained": false,
+      "maximum_metric_difference": 9.159339953157541e-15,
+      "checkpoint_hash": "0cc479ecf97aad5b6c57d535384a3bfcb894085a113ae097a2cb951b235fb836"
+    },
+    {
+      "method": "J1",
+      "scenario_id": "final_blind_v1_018",
+      "failed_retained": false,
+      "maximum_metric_difference": 2.5500435096859064e-16,
+      "checkpoint_hash": "371bc741ca9b8bc627c0ec378be8efef644c4c7ef29558e95a8e756aeb8b47ff"
+    },
+    {
+      "method": "J1",
+      "scenario_id": "final_blind_v1_019",
+      "failed_retained": false,
+      "maximum_metric_difference": 7.73686670285656e-16,
+      "checkpoint_hash": "e595c9e669a1f47f16b9cc9c313f2c2de8fc1ecf636424150af1f22a3b727bbf"
+    },
+    {
+      "method": "J1",
+      "scenario_id": "final_blind_v1_020",
+      "failed_retained": false,
+      "maximum_metric_difference": 9.922618282587337e-16,
+      "checkpoint_hash": "895f64e7b1fdddbf30a8605907b9be47818483b7ec2741bc1c94649786643a6e"
+    },
+    {
+      "method": "J1",
+      "scenario_id": "final_blind_v1_021",
+      "failed_retained": false,
+      "maximum_metric_difference": 3.9968028886505635e-15,
+      "checkpoint_hash": "db647f3971d6dd6e2b205694ad536766e400933e6000b631ced8dba0f788dc6e"
+    },
+    {
+      "method": "J1",
+      "scenario_id": "final_blind_v1_022",
+      "failed_retained": false,
+      "maximum_metric_difference": 1.682681771697503e-16,
+      "checkpoint_hash": "e383ee959219ca44570e0cf20276f33055ab0eec95e0148bb4087bdd8d1641ff"
+    },
+    {
+      "method": "J1",
+      "scenario_id": "final_blind_v1_023",
+      "failed_retained": false,
+      "maximum_metric_difference": 5.273559366969494e-16,
+      "checkpoint_hash": "6d617f1f0f644ced81a43ee6ac6d138eff1baa0a9757c5fc90fa099c1cbf12a6"
+    },
+    {
+      "method": "J1",
+      "scenario_id": "final_blind_v1_024",
+      "failed_retained": false,
+      "maximum_metric_difference": 6.38378239159465e-15,
+      "checkpoint_hash": "6e4da6af090f23a9189421912c2c639405913fd91bce561312ebe67c4ee0090e"
+    },
+    {
+      "method": "J1",
+      "scenario_id": "final_blind_v1_025",
+      "failed_retained": false,
+      "maximum_metric_difference": 3.219646771412954e-15,
+      "checkpoint_hash": "a19cce4bf04776463fea1bdd64a183e6d54a07e6614df09f4d873f3c4b3a5f94"
+    },
+    {
+      "method": "J1",
+      "scenario_id": "final_blind_v1_026",
+      "failed_retained": false,
+      "maximum_metric_difference": 2.6922908347160046e-15,
+      "checkpoint_hash": "4f8b1638845e3977c17a9444c51b8b093e40b03478dcfc1dbe3da4ea28fb05a2"
+    },
+    {
+      "method": "J1",
+      "scenario_id": "final_blind_v1_027",
+      "failed_retained": false,
+      "maximum_metric_difference": 1.4099832412739488e-14,
+      "checkpoint_hash": "7da1d55730b647cdb61d84a25f21adc299733eea1eec73ed8a33b682e52a5dc4"
+    },
+    {
+      "method": "J1",
+      "scenario_id": "final_blind_v1_028",
+      "failed_retained": false,
+      "maximum_metric_difference": 6.696032617270475e-16,
+      "checkpoint_hash": "dc5e7a6c736f324ed4ea2a2ca1261281ffbec597cef3167935ada02645a5b6e1"
+    },
+    {
+      "method": "J1",
+      "scenario_id": "final_blind_v1_029",
+      "failed_retained": false,
+      "maximum_metric_difference": 5.9396931817445875e-15,
+      "checkpoint_hash": "c1a328481143ce491402ad4494c132bc155389fdedd9c67dfffbf0f9f3b8b8ae"
+    },
+    {
+      "method": "J1",
+      "scenario_id": "final_blind_v1_030",
+      "failed_retained": false,
+      "maximum_metric_difference": 1.3766765505351941e-14,
+      "checkpoint_hash": "e39ec468ecb17e8ccab2a9ee39b75b9b531a4938164337c50f01b90e959509a6"
+    },
+    {
+      "method": "B_revised",
+      "scenario_id": "final_blind_v1_001",
+      "failed_retained": false,
+      "maximum_metric_difference": 3.608224830031759e-16,
+      "checkpoint_hash": "04324a1e6fa035ab3099c785ac5e607579d3e909a237ac805b192a7213c7a92f"
+    },
+    {
+      "method": "B_revised",
+      "scenario_id": "final_blind_v1_002",
+      "failed_retained": false,
+      "maximum_metric_difference": 1.27675647831893e-15,
+      "checkpoint_hash": "c14b3748c721273aa216e27b2700d1bede9d756b9fa7739add2d4d697b63415d"
+    },
+    {
+      "method": "B_revised",
+      "scenario_id": "final_blind_v1_003",
+      "failed_retained": false,
+      "maximum_metric_difference": 3.5735303605122226e-16,
+      "checkpoint_hash": "3b7d6172dfda460336e347d394715cb98343692369004dc745eb03af93a5837b"
+    },
+    {
+      "method": "B_revised",
+      "scenario_id": "final_blind_v1_004",
+      "failed_retained": false,
+      "maximum_metric_difference": 3.802513859341161e-15,
+      "checkpoint_hash": "97d97ca1de06c4b3a80b55005ccf48c7266806c55059c422960692845cb26a76"
+    },
+    {
+      "method": "B_revised",
+      "scenario_id": "final_blind_v1_005",
+      "failed_retained": false,
+      "maximum_metric_difference": 4.475586568020162e-16,
+      "checkpoint_hash": "72eaca0859c9079ca3dba40a9c78a2d09d37ec720005d23b57fddd56ecd11467"
+    },
+    {
+      "method": "B_revised",
+      "scenario_id": "final_blind_v1_006",
+      "failed_retained": false,
+      "maximum_metric_difference": 1.6306400674181987e-16,
+      "checkpoint_hash": "e1ed0f7dbab582473ed15b93c9af7aab4fa96797a9b464ece315355869c7dd3b"
+    },
+    {
+      "method": "B_revised",
+      "scenario_id": "final_blind_v1_007",
+      "failed_retained": false,
+      "maximum_metric_difference": 2.5847379792054426e-16,
+      "checkpoint_hash": "d7a05cffb3b3d7e6d9aea506faf8fc5ae59aa564673df4fac52ededa087ae3fc"
+    },
+    {
+      "method": "B_revised",
+      "scenario_id": "final_blind_v1_008",
+      "failed_retained": false,
+      "maximum_metric_difference": 7.66053886991358e-15,
+      "checkpoint_hash": "a24a44900925f5fd77a59902222867b27b82fc5b7f5fa4fb157be33596de1dc3"
+    },
+    {
+      "method": "B_revised",
+      "scenario_id": "final_blind_v1_009",
+      "failed_retained": false,
+      "maximum_metric_difference": 4.801714581503802e-15,
+      "checkpoint_hash": "e030a218636f33745de4223863c8d9076fcc9bdea0be1856f63072b6defda4e0"
+    },
+    {
+      "method": "B_revised",
+      "scenario_id": "final_blind_v1_010",
+      "failed_retained": false,
+      "maximum_metric_difference": 6.106226635438361e-15,
+      "checkpoint_hash": "97630e3c9734b8ff19788e34d1862cbebd85963f955448defd932b5549c24827"
+    },
+    {
+      "method": "B_revised",
+      "scenario_id": "final_blind_v1_011",
+      "failed_retained": false,
+      "maximum_metric_difference": 4.787836793695988e-16,
+      "checkpoint_hash": "2f2264efbc51bd231ddfdba9890f5c5f2cb95a61af710d23ae9daf0b104d1a1c"
+    },
+    {
+      "method": "B_revised",
+      "scenario_id": "final_blind_v1_012",
+      "failed_retained": false,
+      "maximum_metric_difference": 1.1324274851176597e-14,
+      "checkpoint_hash": "ce287c71b84d9e4ad18c11dc933c7fc86f8c03072d67c33004953e779f9ca79e"
+    },
+    {
+      "method": "B_revised",
+      "scenario_id": "final_blind_v1_013",
+      "failed_retained": false,
+      "maximum_metric_difference": 2.1337098754514727e-16,
+      "checkpoint_hash": "875435feccbf60ed84426c6af25d781553f73ffce145d9ddcc80f7b261dab887"
+    },
+    {
+      "method": "B_revised",
+      "scenario_id": "final_blind_v1_014",
+      "failed_retained": false,
+      "maximum_metric_difference": 1.700029006457271e-16,
+      "checkpoint_hash": "4f06c06d94558f28f9dfb903d7e7ee7233fcd040ae9173f1df87f7a7efcd50f8"
+    },
+    {
+      "method": "B_revised",
+      "scenario_id": "final_blind_v1_015",
+      "failed_retained": false,
+      "maximum_metric_difference": 1.5959455978986625e-16,
+      "checkpoint_hash": "8d6df3d7055e7866deaae3fe68485ae1ec0ec17ea7e77e5384b0aa8948aa48c7"
+    },
+    {
+      "method": "B_revised",
+      "scenario_id": "final_blind_v1_016",
+      "failed_retained": false,
+      "maximum_metric_difference": 1.4432899320127035e-14,
+      "checkpoint_hash": "6adcd3911dbc12cb8a056d01bd4a747bfd566779310414d75c59524328a66557"
+    },
+    {
+      "method": "B_revised",
+      "scenario_id": "final_blind_v1_018",
+      "failed_retained": false,
+      "maximum_metric_difference": 3.191891195797325e-16,
+      "checkpoint_hash": "16bbc8c0f84c27d78f8354ec1811149a901971f12701739161521c3dddcd1bb9"
+    },
+    {
+      "method": "B_revised",
+      "scenario_id": "final_blind_v1_017",
+      "failed_retained": false,
+      "maximum_metric_difference": 1.0547118733938987e-14,
+      "checkpoint_hash": "b9f60d304fb858f3b5676579250af0a2b40c1002822726b6716dfeb57fd2b551"
+    },
+    {
+      "method": "B_revised",
+      "scenario_id": "final_blind_v1_019",
+      "failed_retained": false,
+      "maximum_metric_difference": 6.002143226879753e-16,
+      "checkpoint_hash": "fe26147bbf87fe59ecf5680e20f8a32794a689ccb8fd7d0f6a0b93f18cd12980"
+    },
+    {
+      "method": "B_revised",
+      "scenario_id": "final_blind_v1_020",
+      "failed_retained": false,
+      "maximum_metric_difference": 2.525757381022231e-15,
+      "checkpoint_hash": "f1b0449d9f535859f07a1d226ded10c1a5b31d3cf6cec3d396963e762bffaa41"
+    },
+    {
+      "method": "B_revised",
+      "scenario_id": "final_blind_v1_021",
+      "failed_retained": false,
+      "maximum_metric_difference": 4.3298697960381105e-15,
+      "checkpoint_hash": "c1f5dc0a6330d9881ae66383dd9be1478deb5055035c681b1e147d2a975adebe"
+    },
+    {
+      "method": "B_revised",
+      "scenario_id": "final_blind_v1_022",
+      "failed_retained": false,
+      "maximum_metric_difference": 4.510281037539698e-16,
+      "checkpoint_hash": "797ee0e2e6be39b9453fef46f873783d3fa1e47d7f63f96f6e72115219fc9911"
+    },
+    {
+      "method": "B_revised",
+      "scenario_id": "final_blind_v1_023",
+      "failed_retained": false,
+      "maximum_metric_difference": 6.349087922075114e-16,
+      "checkpoint_hash": "978ce78ca3f4d224dfdea17fa6907c4ef72a68950db9245bffd07aa666c7bfed"
+    },
+    {
+      "method": "B_revised",
+      "scenario_id": "final_blind_v1_024",
+      "failed_retained": false,
+      "maximum_metric_difference": 4.496403249731884e-15,
+      "checkpoint_hash": "7292cf594117d595840a96682d345e55ded55d0560d4e045e326304f3373f1c5"
+    },
+    {
+      "method": "B_revised",
+      "scenario_id": "final_blind_v1_025",
+      "failed_retained": false,
+      "maximum_metric_difference": 5.245803791353865e-15,
+      "checkpoint_hash": "73fc8ddbc27def00be67cd34f2c542d33234bcf8e4674a9abd9586796dbc2deb"
+    },
+    {
+      "method": "B_revised",
+      "scenario_id": "final_blind_v1_026",
+      "failed_retained": false,
+      "maximum_metric_difference": 3.858025010572419e-15,
+      "checkpoint_hash": "9f6502e48094981e1eb1a840c6e50fcb57fe94043675a60c952b5bdb6a760423"
+    },
+    {
+      "method": "B_revised",
+      "scenario_id": "final_blind_v1_027",
+      "failed_retained": false,
+      "maximum_metric_difference": 1.3100631690576847e-14,
+      "checkpoint_hash": "7090aaca65f2de362c8d7caebc72b2530add50cc88d9812c90c7d4ea8625507a"
+    },
+    {
+      "method": "B_revised",
+      "scenario_id": "final_blind_v1_028",
+      "failed_retained": false,
+      "maximum_metric_difference": 7.251144129583054e-16,
+      "checkpoint_hash": "6afce0896f58242d2325b68bbaa34bbd0302a2f8bd5e25182b272245fd918cb5"
+    },
+    {
+      "method": "B_revised",
+      "scenario_id": "final_blind_v1_029",
+      "failed_retained": false,
+      "maximum_metric_difference": 7.327471962526033e-15,
+      "checkpoint_hash": "1f7963d5d5bbf07e62f2802646c7588e8a325fa5e8cf407737c162f170d497a1"
+    },
+    {
+      "method": "B_revised",
+      "scenario_id": "final_blind_v1_030",
+      "failed_retained": false,
+      "maximum_metric_difference": 1.4210854715202004e-14,
+      "checkpoint_hash": "fd5c17287c8a2833d249292af66c7bdf8d25cb7bc53e1f4e1624ade04057c15f"
+    },
+    {
+      "method": "classical",
+      "scenario_id": "final_blind_v1_001",
+      "failed_retained": false,
+      "maximum_metric_difference": 7.112366251504909e-17,
+      "checkpoint_hash": "235bc7558a47c7f7893eb088b270eafc5c165d3c020b1cf4736a8e15433986b9"
+    },
+    {
+      "method": "classical",
+      "scenario_id": "final_blind_v1_002",
+      "failed_retained": false,
+      "maximum_metric_difference": 5.551115123125783e-17,
+      "checkpoint_hash": "c72ebcdc5905fa051f928df3172cf9b608113709f151fd7612277fd74b6f0bd6"
+    },
+    {
+      "method": "classical",
+      "scenario_id": "final_blind_v1_003",
+      "failed_retained": false,
+      "maximum_metric_difference": 2.949029909160572e-17,
+      "checkpoint_hash": "9c1a3c2a447af5dc53d12dd05ade33da88423c63cb925afddf94eb02b1c305e8"
+    },
+    {
+      "method": "classical",
+      "scenario_id": "final_blind_v1_004",
+      "failed_retained": false,
+      "maximum_metric_difference": 4.683753385137379e-17,
+      "checkpoint_hash": "6c45f30dd410b5a4b3f2b8e7e85e9a764d61ceb7b6ba05a520b7b42062d11f3e"
+    },
+    {
+      "method": "classical",
+      "scenario_id": "final_blind_v1_005",
+      "failed_retained": false,
+      "maximum_metric_difference": 4.163336342344337e-17,
+      "checkpoint_hash": "63c3610c87490d5dc910559eca09dcfefbea2c71e227e27bd0cdc2f47116cc1b"
+    },
+    {
+      "method": "classical",
+      "scenario_id": "final_blind_v1_006",
+      "failed_retained": false,
+      "maximum_metric_difference": 7.979727989493313e-17,
+      "checkpoint_hash": "0ecce9ecc58b24e1c5d3e37f57d9dbd24e5f29babb8c296c6c256be74b4475a6"
+    },
+    {
+      "method": "classical",
+      "scenario_id": "final_blind_v1_007",
+      "failed_retained": false,
+      "maximum_metric_difference": 7.632783294297951e-17,
+      "checkpoint_hash": "d8ec94cb1698db8451cbf082e4125b30cc146d44e7ea7b33350cb4093b825402"
+    },
+    {
+      "method": "classical",
+      "scenario_id": "final_blind_v1_008",
+      "failed_retained": false,
+      "maximum_metric_difference": 6.245004513516506e-17,
+      "checkpoint_hash": "03fc3449348c1c8482f35543adbb534ff5214f9c31464897731852aab264f60b"
+    },
+    {
+      "method": "classical",
+      "scenario_id": "final_blind_v1_009",
+      "failed_retained": false,
+      "maximum_metric_difference": 1.0408340855860843e-16,
+      "checkpoint_hash": "463c326680f04583883c190c58b78f515723b06441e03020bacb97c3e63d9be9"
+    },
+    {
+      "method": "classical",
+      "scenario_id": "final_blind_v1_010",
+      "failed_retained": false,
+      "maximum_metric_difference": 3.9898639947466563e-17,
+      "checkpoint_hash": "9c98979b323700455c6ad6ddaeddffc108fdd17084ecda04b6500f70bc5bacf4"
+    },
+    {
+      "method": "classical",
+      "scenario_id": "final_blind_v1_011",
+      "failed_retained": false,
+      "maximum_metric_difference": 1.8041124150158794e-16,
+      "checkpoint_hash": "8cd854038c36dafe4ae41bec2c80d5c5dbc8019c960727a1217a2ab116bbdd81"
+    },
+    {
+      "method": "classical",
+      "scenario_id": "final_blind_v1_013",
+      "failed_retained": false,
+      "maximum_metric_difference": 8.673617379884035e-17,
+      "checkpoint_hash": "be58b3b94554998cda8d3fa22625b8d82fb8e140a78c944f93b460308086c8bf"
+    },
+    {
+      "method": "classical",
+      "scenario_id": "final_blind_v1_012",
+      "failed_retained": false,
+      "maximum_metric_difference": 9.71445146547012e-17,
+      "checkpoint_hash": "80cdb96bb59a88d176dfb49dd325869a65a8fa8620f060e37c3c2d0ab8b7f832"
+    },
+    {
+      "method": "classical",
+      "scenario_id": "final_blind_v1_014",
+      "failed_retained": false,
+      "maximum_metric_difference": 9.540979117872439e-17,
+      "checkpoint_hash": "5eb809133ddb9913168fc90049c9d152fc999803d9e8cf45de5602f15073309e"
+    },
+    {
+      "method": "classical",
+      "scenario_id": "final_blind_v1_015",
+      "failed_retained": false,
+      "maximum_metric_difference": 1.0061396160665481e-16,
+      "checkpoint_hash": "fb68c8c4c1eec44f65720f08cb98e95b24bd609177bdd5dde391a705d721c7d9"
+    },
+    {
+      "method": "classical",
+      "scenario_id": "final_blind_v1_016",
+      "failed_retained": false,
+      "maximum_metric_difference": 8.326672684688674e-17,
+      "checkpoint_hash": "509c6322ee6ca02a493bd2ffe89284dd16569ce86528ad92b9e917a479bf087d"
+    },
+    {
+      "method": "classical",
+      "scenario_id": "final_blind_v1_017",
+      "failed_retained": false,
+      "maximum_metric_difference": 1.5265566588595902e-16,
+      "checkpoint_hash": "37970557cf2e746209345f1e4edd50d4486c6b1601e1354e7f8620d04080bb73"
+    },
+    {
+      "method": "classical",
+      "scenario_id": "final_blind_v1_018",
+      "failed_retained": false,
+      "maximum_metric_difference": 4.85722573273506e-17,
+      "checkpoint_hash": "84b4bb87dbb52b77e9c8ac442e44417a8d0de55a6f4598fc7526e0b4861281da"
+    },
+    {
+      "method": "classical",
+      "scenario_id": "final_blind_v1_019",
+      "failed_retained": false,
+      "maximum_metric_difference": 2.7755575615628914e-17,
+      "checkpoint_hash": "bd163a2029bc51f04fecb7d2c6c1f4e7cb4321e9f31c52b65754323337e735af"
+    },
+    {
+      "method": "classical",
+      "scenario_id": "final_blind_v1_020",
+      "failed_retained": false,
+      "maximum_metric_difference": 6.591949208711867e-17,
+      "checkpoint_hash": "dd6cd2a80ff79841237e31a970cc0dccbe57f601c053cee4ebb718b830693072"
+    },
+    {
+      "method": "classical",
+      "scenario_id": "final_blind_v1_021",
+      "failed_retained": false,
+      "maximum_metric_difference": 3.8163916471489756e-17,
+      "checkpoint_hash": "47fde89bd79ab098b835ab5bd38df58623f887798b3ee54dd3cdca78c0ad8ef1"
+    },
+    {
+      "method": "classical",
+      "scenario_id": "final_blind_v1_022",
+      "failed_retained": false,
+      "maximum_metric_difference": 1.3877787807814457e-16,
+      "checkpoint_hash": "d7906ee2d4127cdef2edb3a2711d2030dc24e06a515ca097c7a47661a0b0de1d"
+    },
+    {
+      "method": "classical",
+      "scenario_id": "final_blind_v1_023",
+      "failed_retained": false,
+      "maximum_metric_difference": 4.5102810375396984e-17,
+      "checkpoint_hash": "e41c89d07e50db6beb35c00e756a5058e584971deeb0eba30502429ba0927f63"
+    },
+    {
+      "method": "classical",
+      "scenario_id": "final_blind_v1_024",
+      "failed_retained": false,
+      "maximum_metric_difference": 1.1102230246251565e-16,
+      "checkpoint_hash": "5ab989cbdb49e7edb67fc0e529c79f335701d8ba3c228a995bec0621b635aaa4"
+    },
+    {
+      "method": "classical",
+      "scenario_id": "final_blind_v1_025",
+      "failed_retained": false,
+      "maximum_metric_difference": 4.85722573273506e-17,
+      "checkpoint_hash": "131dc021a39f0c4d74ea93db51fa865bb205071ac2c055e6da8728dfb0352dbb"
+    },
+    {
+      "method": "classical",
+      "scenario_id": "final_blind_v1_026",
+      "failed_retained": false,
+      "maximum_metric_difference": 1.214306433183765e-17,
+      "checkpoint_hash": "ac61071097e2aab9a60565ac042ef6b335d37fd52c25a3742c81fa772b2d40b3"
+    },
+    {
+      "method": "classical",
+      "scenario_id": "final_blind_v1_027",
+      "failed_retained": false,
+      "maximum_metric_difference": 2.7755575615628914e-16,
+      "checkpoint_hash": "493e34652e95c260ea96afc001c9065f687a2f9c0d728cb05918f2935542b115"
+    },
+    {
+      "method": "classical",
+      "scenario_id": "final_blind_v1_028",
+      "failed_retained": false,
+      "maximum_metric_difference": 3.8163916471489756e-17,
+      "checkpoint_hash": "b211d1dc0034c332f0d4bb5d69ebaae551412f5024929b1180993e8deba03901"
+    },
+    {
+      "method": "classical",
+      "scenario_id": "final_blind_v1_030",
+      "failed_retained": false,
+      "maximum_metric_difference": 1.0408340855860843e-16,
+      "checkpoint_hash": "7fdf1f73c26c0acde435e9ce8ea08805d3afccf095e1f224cbe156204a09eafd"
+    },
+    {
+      "method": "classical",
+      "scenario_id": "final_blind_v1_029",
+      "failed_retained": false,
+      "maximum_metric_difference": 1.1796119636642288e-16,
+      "checkpoint_hash": "f105f3f1d9717b3b87a6ab72d0c280667c2b7a779765064869d96830963c3018"
+    }
+  ]
+}

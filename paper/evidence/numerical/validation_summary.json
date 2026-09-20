@@ -1,0 +1,113 @@
+{
+  "scope": "Numerical verification only; no dataset regeneration or neural training",
+  "units": {
+    "length": "synthetic domain unit",
+    "time": "synthetic time unit",
+    "concentration": "synthetic concentration unit",
+    "runtime": "seconds"
+  },
+  "norm": "L2 uses trapezoidal spatial integral; relative L2 is dimensionless; final time only",
+  "spatial_orders": [
+    0.9791177182024037,
+    0.9916096400876249,
+    0.9963163512503078
+  ],
+  "diffusion_orders": [
+    1.989460120354735,
+    1.997377892076459,
+    1.9993460146162318
+  ],
+  "temporal_orders": [
+    0.9996573579464844,
+    0.9998287660144501,
+    0.9999144049770236
+  ],
+  "spatial_time_checks": [
+    {
+      "grid_size": 41,
+      "relative_change_in_L2_error": 0.003874392456704936
+    },
+    {
+      "grid_size": 81,
+      "relative_change_in_L2_error": 0.0009761953558900163
+    },
+    {
+      "grid_size": 161,
+      "relative_change_in_L2_error": 0.0002455249810557667
+    },
+    {
+      "grid_size": 321,
+      "relative_change_in_L2_error": 6.160051780751971e-05
+    }
+  ],
+  "gaussian_time_checks": [
+    {
+      "grid_size": 81,
+      "dt": 0.001,
+      "reference_dt": 0.002,
+      "L2_error": 7.407679759049717e-05,
+      "Linf_error": 0.00031416384823229615,
+      "relative_L2_error": 0.000985315828809276
+    },
+    {
+      "grid_size": 641,
+      "dt": 1.5625e-05,
+      "reference_dt": 3.125e-05,
+      "L2_error": 1.3266102063086149e-06,
+      "Linf_error": 5.897273851196427e-06,
+      "relative_L2_error": 1.7136565627281032e-05
+    }
+  ],
+  "gaussian_difference_orders": [
+    0.7890629297020775,
+    0.8840996153522916,
+    0.9388742044004574
+  ],
+  "current_configuration": {
+    "nx": 81,
+    "ny": 81,
+    "dt": 0.002,
+    "steps": 400,
+    "u": 0.35,
+    "v": -0.15,
+    "D": 0.005,
+    "sources": [
+      {
+        "x_s": 0.3,
+        "y_s": 0.7,
+        "Q": 1.0,
+        "sigma": 0.08
+      }
+    ]
+  },
+  "current_CFL": 0.33599999999999997,
+  "current_is_stable": true,
+  "current_error_Richardson_estimate": {
+    "L2_error": 0.0041986929158809696,
+    "Linf_error": 0.025568635288762576,
+    "relative_L2_error": 0.05396985652419045
+  },
+  "finest_error_Richardson_estimate": {
+    "L2_error": 0.000607053413653648,
+    "Linf_error": 0.0037374905349332743,
+    "relative_L2_error": 0.0078030440172196245
+  },
+  "provisional_relative_L2_target": 0.01,
+  "target_is_project_requirement": false,
+  "current_meets_provisional_target": false,
+  "finest_meets_provisional_target": true,
+  "finest_tested_configuration": {
+    "nx": 641,
+    "ny": 641,
+    "dx": 0.0015625,
+    "dt": 3.125e-05,
+    "steps": 25600
+  },
+  "regenerate_recommendation": "Regenerate accuracy-sensitive synthetic benchmarks after selecting and verifying a tolerance; do not treat current fields as exact truth.",
+  "caveats": [
+    "Richardson errors assume an asymptotic power law; these are estimates, not exact errors or confidence intervals.",
+    "Accuracy is assessed at final time; not a full space-time or sensor-weighted bound.",
+    "Validation is for the stated zero Dirichlet domain, not physical open-air boundary adequacy.",
+    "A one-percent target is provisional; no project-wide scientific tolerance was specified."
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "git_commit": "33892895805d692c8c3960d8646c43d6a4f7536d",
+  "branch": "scientific-revision",
+  "working_tree_status": "?? configs/J1_confirmatory.yaml\n?? configs/final_confirmatory.yaml\n?? docs/J1_confirmatory_protocol.md\n?? scripts/generate_final_confirmatory.py\n?? src/inverpinn/data/final_confirmatory.py\n?? src/inverpinn/data/final_robustness.py\n?? src/inverpinn/evaluation/final_confirmatory.py\n?? tests/test_final_confirmatory.py",
+  "generated_at_utc": "2026-09-20T13:53:37.830986+00:00",
+  "solver_type": "forward Euler; first-order upwind advection; centered diffusion; CPU float64",
+  "source_hashes": {
+    "src/inverpinn/physics/finite_difference.py": "171d63443cc789534402b08ad497b17f18fbb113e9530d38c6ffedd9ae77b8b8",
+    "src/inverpinn/physics/sources.py": "1cca73c70547709ac5b330fbea194e668ab73f08128303a54729a8061449b0cd",
+    "src/inverpinn/physics/manufactured.py": "9e26a69c785cefa241686451de61cb5cbc31a7fe17d28a24bdb7b6041dd2c74f",
+    "src/inverpinn/data/sensors.py": "9eec5460b6de5b93658156dd0e500c3720b388260c7ca9088a8160121157ae37",
+    "src/inverpinn/data/synthetic_reference.py": "d245ac843b366856ca83a477b4eeab9af8281b2e2fc9d0f0589bf079cb23ba56",
+    "src/inverpinn/evaluation/reference.py": "66f4c7f761562aadc29e5a7d96a2366951d835047c3a32234bad3618e391a517",
+    "scripts/benchmark_reference.py": "00e87021d2f97c40c8a1c6b46ec0aab0609ccc51aa17123e8974b7b555fb484f",
+    "scripts/generate_reference_pilot.py": "ad76a47dfbfb367af90847d442de5e1b319f03192c8243bed4fc0fd8dcce3752"
+  },
+  "source_archive_sha256": "11bde00d8707a10e054ef02468d92d5c502151da6484e153382ca07284c6105f"
+}

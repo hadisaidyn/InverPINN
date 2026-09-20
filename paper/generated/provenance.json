@@ -1,0 +1,20 @@
+{
+  "evidence_manifest_sha256": "906755e6d63f3ce0010d09b256551a28ed576c626edd01b9cd924713442c712f",
+  "figure_policy": "300 dpi PNG + vector PDF; archived stride-4 previews only for fields",
+  "forward_simulation_performed": false,
+  "frozen_scientific_commit": "eb18380f1488f5c679a0981da75e667fa3ba1b51",
+  "metric_policy": "Full-grid archived scores; original failures retained; no best-of-seed selection",
+  "packages": {
+    "PyYAML": "6.0.3",
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6"
+  },
+  "platform": "macOS-15.0.1-arm64-arm-64bit-Mach-O",
+  "python": "3.13.3",
+  "reporter_sha256": "f1f95605fc4393a0420511592239b392f321532c3745f09dd5700ba5159781af",
+  "reporting_commit": "eb18380f1488f5c679a0981da75e667fa3ba1b51",
+  "reporting_working_tree": " M README.md\n M docs/reproduce_paper.md\n?? docs/application_description.md\n?? docs/final_scientific_audit.md\n?? docs/project_summary.md\n?? docs/reproducibility.md\n?? paper/\n?? scripts/build_paper.py\n?? scripts/package_paper_evidence.py\n?? tests/test_paper_reporting.py\n",
+  "runtime_seconds": 3.7902014999999665,
+  "training_performed": false
+}

@@ -1,0 +1,2411 @@
+{
+  "B0": {
+    "total": 30,
+    "computational_successes": 30,
+    "evaluations": 30,
+    "recovered": 12,
+    "recovery_rate": 0.4,
+    "recovery_Wilson95": [
+      0.24590628116801858,
+      0.5767963974667751
+    ],
+    "reference_target_misses": 5,
+    "metrics": {
+      "localization_error": {
+        "count": 30,
+        "missing": 0,
+        "mean": 0.04775382042177994,
+        "median": 0.04234628774400179,
+        "std": 0.044077499693860725,
+        "q25": 0.0053450167155168855,
+        "q75": 0.08502238716180895,
+        "q90": 0.10230589585375405,
+        "max": 0.14679825842943073
+      },
+      "relative_strength_error": {
+        "count": 30,
+        "missing": 0,
+        "mean": 0.34912097803642733,
+        "median": 0.30573921418297534,
+        "std": 0.2998939197077507,
+        "q25": 0.040362123463476174,
+        "q75": 0.6593042716599726,
+        "q90": 0.7361978567578275,
+        "max": 0.8284813579481787
+      },
+      "relative_l2": {
+        "count": 30,
+        "missing": 0,
+        "mean": 0.3810045219294389,
+        "median": 0.35526856688138553,
+        "std": 0.3042148965671277,
+        "q25": 0.062181464269860716,
+        "q75": 0.7012759773400066,
+        "q90": 0.7874385621915869,
+        "max": 0.8467149237956534
+      },
+      "rmse": {
+        "count": 30,
+        "missing": 0,
+        "mean": 0.020477748591765824,
+        "median": 0.01902102294149384,
+        "std": 0.01690709143461435,
+        "q25": 0.0029249546317466216,
+        "q75": 0.03636106446945578,
+        "q90": 0.04530448970875798,
+        "max": 0.04948897420223903
+      },
+      "mae": {
+        "count": 30,
+        "missing": 0,
+        "mean": 0.00686838892628932,
+        "median": 0.005948493406789454,
+        "std": 0.004716703333946254,
+        "q25": 0.002167411418580675,
+        "q75": 0.010978325475228642,
+        "q90": 0.01327000977591903,
+        "max": 0.015485557682256419
+      },
+      "pde_rmse": {
+        "count": 30,
+        "missing": 0,
+        "mean": 0.007981622963165746,
+        "median": 0.007831736222031292,
+        "std": 0.0017597102593581689,
+        "q25": 0.006763553938033326,
+        "q75": 0.008697514993169819,
+        "q90": 0.010625908132967666,
+        "max": 0.011934064281152259
+      },
+      "pde_mae": {
+        "count": 30,
+        "missing": 0,
+        "mean": 0.0047304996766846215,
+        "median": 0.004770539982614643,
+        "std": 0.0008504103563409372,
+        "q25": 0.0041579034291371105,
+        "q75": 0.00528177574420677,
+        "q90": 0.005834584480777144,
+        "max": 0.006370652816462444
+      },
+      "bc_rmse": {
+        "count": 30,
+        "missing": 0,
+        "mean": 0.003528060915421259,
+        "median": 0.0028297102533364916,
+        "std": 0.00238269745396172,
+        "q25": 0.0017721965339389458,
+        "q75": 0.004414994337583034,
+        "q90": 0.006004963862440702,
+        "max": 0.011589732408187198
+      },
+      "bc_maxabs": {
+        "count": 30,
+        "missing": 0,
+        "mean": 0.02985864654183388,
+        "median": 0.024671074002981186,
+        "std": 0.026531958372383837,
+        "q25": 0.009823370724916458,
+        "q75": 0.03965233080089092,
+        "q90": 0.0568603739142418,
+        "max": 0.1222124770283699
+      },
+      "ic_rmse": {
+        "count": 30,
+        "missing": 0,
+        "mean": 0.003315355603790342,
+        "median": 0.0028795211407490863,
+        "std": 0.0012782275083437994,
+        "q25": 0.0024470229837823426,
+        "q75": 0.004124237639838503,
+        "q90": 0.004772150940844424,
+        "max": 0.007637639928175065
+      },
+      "ic_maxabs": {
+        "count": 30,
+        "missing": 0,
+        "mean": 0.015775976019601026,
+        "median": 0.01294427365064621,
+        "std": 0.008672358889618354,
+        "q25": 0.011155040934681892,
+        "q75": 0.01660783914849162,
+        "q90": 0.028398652747273444,
+        "max": 0.04948759824037552
+      },
+      "negative_fraction": {
+        "count": 30,
+        "missing": 0,
+        "mean": 0.3271435444001222,
+        "median": 0.31877234527758647,
+        "std": 0.09799396750321981,
+        "q25": 0.2503688720091705,
+        "q75": 0.37337909273001185,
+        "q90": 0.4625381193094838,
+        "max": 0.5750752651010876
+      },
+      "minimum_concentration": {
+        "count": 30,
+        "missing": 0,
+        "mean": -0.006916662119328976,
+        "median": -0.006096376106142998,
+        "std": 0.0029008584749816027,
+        "q25": -0.008073028177022934,
+        "q75": -0.004429708234965801,
+        "q90": -0.004105816036462783,
+        "max": -0.0037815645337104797
+      },
+      "training_seconds": {
+        "count": 30,
+        "missing": 0,
+        "mean": 37.22599039439616,
+        "median": 37.25140106247272,
+        "std": 1.2421193337078544,
+        "q25": 36.152409009999246,
+        "q75": 37.80120427046495,
+        "q90": 38.87489334138809,
+        "max": 39.79423908301396
+      }
+    },
+    "Q_bias": {
+      "under": 30,
+      "over": 0,
+      "approximately_equal": 0,
+      "missing": 0,
+      "signed_error": {
+        "count": 30,
+        "missing": 0,
+        "mean": -0.4013858233638365,
+        "median": -0.3592027200610749,
+        "std": 0.35603087155556773,
+        "q25": -0.7364630279824178,
+        "q75": -0.040534951945692455,
+        "q90": -0.01788460436749791,
+        "max": -0.014009576651932809
+      },
+      "signed_relative_error": {
+        "count": 30,
+        "missing": 0,
+        "mean": -0.34912097803642733,
+        "median": -0.30573921418297534,
+        "std": 0.2998939197077507,
+        "q25": -0.6593042716599726,
+        "q75": -0.040362123463476174,
+        "q90": -0.0208902662834251,
+        "max": -0.012891821639942328
+      }
+    }
+  },
+  "B_revised": {
+    "total": 30,
+    "computational_successes": 30,
+    "evaluations": 30,
+    "recovered": 18,
+    "recovery_rate": 0.6,
+    "recovery_Wilson95": [
+      0.42320360253322487,
+      0.7540937188319814
+    ],
+    "reference_target_misses": 5,
+    "metrics": {
+      "localization_error": {
+        "count": 30,
+        "missing": 0,
+        "mean": 0.029294153021691183,
+        "median": 0.018111372381562102,
+        "std": 0.03534106611568838,
+        "q25": 0.0015825446347973757,
+        "q75": 0.04371042613895364,
+        "q90": 0.08822511215375509,
+        "max": 0.12405926675272673
+      },
+      "relative_strength_error": {
+        "count": 30,
+        "missing": 0,
+        "mean": 0.21084829743733552,
+        "median": 0.15181851913732186,
+        "std": 0.2246179293766524,
+        "q25": 0.013831709647401904,
+        "q75": 0.3291090550571271,
+        "q90": 0.5350756443965288,
+        "max": 0.7911526073595799
+      },
+      "relative_l2": {
+        "count": 30,
+        "missing": 0,
+        "mean": 0.25538078701953826,
+        "median": 0.19133235499599963,
+        "std": 0.2530509958403184,
+        "q25": 0.032224106750625724,
+        "q75": 0.4176199336696506,
+        "q90": 0.6820310241168454,
+        "max": 0.8429318842796192
+      },
+      "rmse": {
+        "count": 30,
+        "missing": 0,
+        "mean": 0.013609788312401477,
+        "median": 0.010452250173993975,
+        "std": 0.01338878116181604,
+        "q25": 0.0015061943756748096,
+        "q75": 0.021400096241330012,
+        "q90": 0.03725649675329967,
+        "max": 0.04435846156682906
+      },
+      "mae": {
+        "count": 30,
+        "missing": 0,
+        "mean": 0.004118830561129287,
+        "median": 0.0030371171454570134,
+        "std": 0.0038048795086989074,
+        "q25": 0.0006844812521357205,
+        "q75": 0.006362029110444021,
+        "q90": 0.010440894049808096,
+        "max": 0.013132950865135561
+      },
+      "pde_rmse": {
+        "count": 30,
+        "missing": 0,
+        "mean": 0.008600455471560353,
+        "median": 0.00739131885846649,
+        "std": 0.004159073699852731,
+        "q25": 0.005814694681104041,
+        "q75": 0.009597657398319307,
+        "q90": 0.015561716009605969,
+        "max": 0.017461546167988996
+      },
+      "pde_mae": {
+        "count": 30,
+        "missing": 0,
+        "mean": 0.00332069203947583,
+        "median": 0.0030729268155050716,
+        "std": 0.0010888581794438663,
+        "q25": 0.002549958797441413,
+        "q75": 0.00395819748336483,
+        "q90": 0.00513670223442446,
+        "max": 0.005538124566367819
+      },
+      "bc_rmse": {
+        "count": 30,
+        "missing": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "std": 0.0,
+        "q25": 0.0,
+        "q75": 0.0,
+        "q90": 0.0,
+        "max": 0.0
+      },
+      "bc_maxabs": {
+        "count": 30,
+        "missing": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "std": 0.0,
+        "q25": 0.0,
+        "q75": 0.0,
+        "q90": 0.0,
+        "max": 0.0
+      },
+      "ic_rmse": {
+        "count": 30,
+        "missing": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "std": 0.0,
+        "q25": 0.0,
+        "q75": 0.0,
+        "q90": 0.0,
+        "max": 0.0
+      },
+      "ic_maxabs": {
+        "count": 30,
+        "missing": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "std": 0.0,
+        "q25": 0.0,
+        "q75": 0.0,
+        "q90": 0.0,
+        "max": 0.0
+      },
+      "negative_fraction": {
+        "count": 30,
+        "missing": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "std": 0.0,
+        "q25": 0.0,
+        "q75": 0.0,
+        "q90": 0.0,
+        "max": 0.0
+      },
+      "minimum_concentration": {
+        "count": 30,
+        "missing": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "std": 0.0,
+        "q25": 0.0,
+        "q75": 0.0,
+        "q90": 0.0,
+        "max": 0.0
+      },
+      "training_seconds": {
+        "count": 30,
+        "missing": 0,
+        "mean": 92.64885256943526,
+        "median": 92.29640974997892,
+        "std": 2.1753444329307627,
+        "q25": 91.45365822872554,
+        "q75": 93.9479092292313,
+        "q90": 94.94912782885368,
+        "max": 98.50950258399826
+      }
+    },
+    "Q_bias": {
+      "under": 30,
+      "over": 0,
+      "approximately_equal": 0,
+      "missing": 0,
+      "signed_error": {
+        "count": 30,
+        "missing": 0,
+        "mean": -0.2400336588171879,
+        "median": -0.1713978041542542,
+        "std": 0.25489963594584575,
+        "q25": -0.4024799465866972,
+        "q75": -0.015150668797670241,
+        "q90": -0.009362618879250328,
+        "max": -0.0036670028612701966
+      },
+      "signed_relative_error": {
+        "count": 30,
+        "missing": 0,
+        "mean": -0.21084829743733552,
+        "median": -0.15181851913732186,
+        "std": 0.2246179293766524,
+        "q25": -0.3291090550571271,
+        "q75": -0.013831709647401904,
+        "q90": -0.009193944611393732,
+        "max": -0.003787445999086572
+      }
+    }
+  },
+  "paired": {
+    "localization_error": {
+      "complete_pairs": 30,
+      "mean": -0.018459667400088763,
+      "median": -0.005075245291870008,
+      "mean_CI95": [
+        -0.029246300429736822,
+        -0.008993414399664258
+      ],
+      "median_CI95": [
+        -0.019608164235217475,
+        0.0004595444612347026
+      ],
+      "B_revised_better": 19,
+      "B0_better": 11,
+      "tied": 0,
+      "missing": 0
+    },
+    "relative_strength_error": {
+      "complete_pairs": 30,
+      "mean": -0.1382726805990919,
+      "median": -0.048311878319769574,
+      "mean_CI95": [
+        -0.19625782239877673,
+        -0.08339373438814085
+      ],
+      "median_CI95": [
+        -0.16218759339572134,
+        -0.023649760558293934
+      ],
+      "B_revised_better": 25,
+      "B0_better": 5,
+      "tied": 0,
+      "missing": 0
+    },
+    "relative_l2": {
+      "complete_pairs": 30,
+      "mean": -0.1256237349099007,
+      "median": -0.0317266295176577,
+      "mean_CI95": [
+        -0.18785854887573447,
+        -0.06820117711686763
+      ],
+      "median_CI95": [
+        -0.17533256691519666,
+        -0.013014822008390175
+      ],
+      "B_revised_better": 26,
+      "B0_better": 4,
+      "tied": 0,
+      "missing": 0
+    },
+    "rmse": {
+      "complete_pairs": 30,
+      "mean": -0.006867960279364348,
+      "median": -0.0016030742489389954,
+      "mean_CI95": [
+        -0.010322708234259403,
+        -0.0036748022194168757
+      ],
+      "median_CI95": [
+        -0.009784407371761984,
+        -0.0007058503866971654
+      ],
+      "B_revised_better": 26,
+      "B0_better": 4,
+      "tied": 0,
+      "missing": 0
+    },
+    "mae": {
+      "complete_pairs": 30,
+      "mean": -0.002749558365160032,
+      "median": -0.0015428091328205267,
+      "mean_CI95": [
+        -0.0037610221657375952,
+        -0.0018079842140718693
+      ],
+      "median_CI95": [
+        -0.0031327024649264504,
+        -0.000935384865066021
+      ],
+      "B_revised_better": 27,
+      "B0_better": 3,
+      "tied": 0,
+      "missing": 0
+    },
+    "pde_rmse": {
+      "complete_pairs": 30,
+      "mean": 0.0006188325083946072,
+      "median": -0.000487586320953793,
+      "mean_CI95": [
+        -0.0007625323371810951,
+        0.0021246419915344644
+      ],
+      "median_CI95": [
+        -0.002029540059583116,
+        0.0007547365449456873
+      ],
+      "B_revised_better": 16,
+      "B0_better": 14,
+      "tied": 0,
+      "missing": 0
+    }
+  },
+  "seed_sensitivity": [
+    {
+      "scenario_id": "fresh_001",
+      "seeds": [
+        42,
+        314,
+        2718
+      ],
+      "recovered": 3,
+      "completed": 3,
+      "localization_error_range": 0.000647397641995011,
+      "localization_error_std": 0.0003264726106998476,
+      "localization_error_count": 3,
+      "Q_pred_range": 0.004294276237487793,
+      "Q_pred_std": 0.0023922017536860893,
+      "Q_pred_count": 3,
+      "relative_l2_range": 0.0136430387572107,
+      "relative_l2_std": 0.00751273626234776,
+      "relative_l2_count": 3
+    },
+    {
+      "scenario_id": "fresh_004",
+      "seeds": [
+        42,
+        314,
+        2718
+      ],
+      "recovered": 0,
+      "completed": 3,
+      "localization_error_range": 0.003671056280726056,
+      "localization_error_std": 0.002106355148153927,
+      "localization_error_count": 3,
+      "Q_pred_range": 0.04500782489776611,
+      "Q_pred_std": 0.025110069494368198,
+      "Q_pred_count": 3,
+      "relative_l2_range": 0.05647341194085248,
+      "relative_l2_std": 0.02823675188397906,
+      "relative_l2_count": 3
+    },
+    {
+      "scenario_id": "fresh_007",
+      "seeds": [
+        42,
+        314,
+        2718
+      ],
+      "recovered": 3,
+      "completed": 3,
+      "localization_error_range": 0.0009941824212551932,
+      "localization_error_std": 0.0005105479179410202,
+      "localization_error_count": 3,
+      "Q_pred_range": 0.004394650459289551,
+      "Q_pred_std": 0.0022840236083337727,
+      "Q_pred_count": 3,
+      "relative_l2_range": 0.0053453232563280065,
+      "relative_l2_std": 0.0026729562831679767,
+      "relative_l2_count": 3
+    },
+    {
+      "scenario_id": "fresh_010",
+      "seeds": [
+        42,
+        314,
+        2718
+      ],
+      "recovered": 3,
+      "completed": 3,
+      "localization_error_range": 0.0010648995409913273,
+      "localization_error_std": 0.0005830829720391048,
+      "localization_error_count": 3,
+      "Q_pred_range": 0.009379386901855469,
+      "Q_pred_std": 0.0047782342008912135,
+      "Q_pred_count": 3,
+      "relative_l2_range": 0.007128005795447746,
+      "relative_l2_std": 0.0035722668648884215,
+      "relative_l2_count": 3
+    },
+    {
+      "scenario_id": "fresh_013",
+      "seeds": [
+        42,
+        314,
+        2718
+      ],
+      "recovered": 3,
+      "completed": 3,
+      "localization_error_range": 0.0005748186859606563,
+      "localization_error_std": 0.0003132355867284996,
+      "localization_error_count": 3,
+      "Q_pred_range": 0.001525282859802246,
+      "Q_pred_std": 0.0008426032387927341,
+      "Q_pred_count": 3,
+      "relative_l2_range": 0.005213745841759605,
+      "relative_l2_std": 0.00271353781882627,
+      "relative_l2_count": 3
+    },
+    {
+      "scenario_id": "fresh_016",
+      "seeds": [
+        42,
+        314,
+        2718
+      ],
+      "recovered": 3,
+      "completed": 3,
+      "localization_error_range": 0.000375622625280448,
+      "localization_error_std": 0.00019983154622327216,
+      "localization_error_count": 3,
+      "Q_pred_range": 0.012000441551208496,
+      "Q_pred_std": 0.006709433245541392,
+      "Q_pred_count": 3,
+      "relative_l2_range": 0.010107205179416157,
+      "relative_l2_std": 0.005695302091337126,
+      "relative_l2_count": 3
+    },
+    {
+      "scenario_id": "fresh_019",
+      "seeds": [
+        42,
+        314,
+        2718
+      ],
+      "recovered": 0,
+      "completed": 3,
+      "localization_error_range": 0.005110391939259884,
+      "localization_error_std": 0.0025552039099729904,
+      "localization_error_count": 3,
+      "Q_pred_range": 0.011390984058380127,
+      "Q_pred_std": 0.00580255977023289,
+      "Q_pred_count": 3,
+      "relative_l2_range": 0.015880309214507116,
+      "relative_l2_std": 0.007979356583058128,
+      "relative_l2_count": 3
+    },
+    {
+      "scenario_id": "fresh_022",
+      "seeds": [
+        42,
+        314,
+        2718
+      ],
+      "recovered": 0,
+      "completed": 3,
+      "localization_error_range": 0.004445151770322859,
+      "localization_error_std": 0.00224063698040915,
+      "localization_error_count": 3,
+      "Q_pred_range": 0.028616726398468018,
+      "Q_pred_std": 0.014512746418461137,
+      "Q_pred_count": 3,
+      "relative_l2_range": 0.042776663533007575,
+      "relative_l2_std": 0.02255954751218388,
+      "relative_l2_count": 3
+    },
+    {
+      "scenario_id": "fresh_025",
+      "seeds": [
+        42,
+        314,
+        2718
+      ],
+      "recovered": 3,
+      "completed": 3,
+      "localization_error_range": 0.004080481031008479,
+      "localization_error_std": 0.0021748924017364964,
+      "localization_error_count": 3,
+      "Q_pred_range": 0.04663902521133423,
+      "Q_pred_std": 0.023751250687988452,
+      "Q_pred_count": 3,
+      "relative_l2_range": 0.011432790551021033,
+      "relative_l2_std": 0.005753189629075336,
+      "relative_l2_count": 3
+    },
+    {
+      "scenario_id": "fresh_028",
+      "seeds": [
+        42,
+        314,
+        2718
+      ],
+      "recovered": 0,
+      "completed": 3,
+      "localization_error_range": 0.0021910411973260005,
+      "localization_error_std": 0.0010955277334787957,
+      "localization_error_count": 3,
+      "Q_pred_range": 0.013585269451141357,
+      "Q_pred_std": 0.007625924316864108,
+      "Q_pred_count": 3,
+      "relative_l2_range": 0.026017078099405566,
+      "relative_l2_std": 0.013029356681280984,
+      "relative_l2_count": 3
+    }
+  ],
+  "classification": "unreliable controlled recovery",
+  "bootstrap": {
+    "method": "Paired percentile resampling of scenario indices; conditional on fixed setup",
+    "seed": 2009202617,
+    "replicates": 10000
+  },
+  "exploratory_correlations": [
+    {
+      "outcome": "localization_error",
+      "feature": "x_true",
+      "method": "pearson",
+      "count": 30,
+      "correlation": 0.6766718030618707,
+      "exploratory": true
+    },
+    {
+      "outcome": "localization_error",
+      "feature": "x_true",
+      "method": "spearman",
+      "count": 30,
+      "correlation": 0.7205784204671858,
+      "exploratory": true
+    },
+    {
+      "outcome": "localization_error",
+      "feature": "y_true",
+      "method": "pearson",
+      "count": 30,
+      "correlation": -0.12364243742778736,
+      "exploratory": true
+    },
+    {
+      "outcome": "localization_error",
+      "feature": "y_true",
+      "method": "spearman",
+      "count": 30,
+      "correlation": -0.21601779755283645,
+      "exploratory": true
+    },
+    {
+      "outcome": "localization_error",
+      "feature": "Q_true",
+      "method": "pearson",
+      "count": 30,
+      "correlation": 0.11670803261935399,
+      "exploratory": true
+    },
+    {
+      "outcome": "localization_error",
+      "feature": "Q_true",
+      "method": "spearman",
+      "count": 30,
+      "correlation": 0.24849833147942155,
+      "exploratory": true
+    },
+    {
+      "outcome": "localization_error",
+      "feature": "nearest_sensor_distance",
+      "method": "pearson",
+      "count": 30,
+      "correlation": 0.21437051848795896,
+      "exploratory": true
+    },
+    {
+      "outcome": "localization_error",
+      "feature": "nearest_sensor_distance",
+      "method": "spearman",
+      "count": 30,
+      "correlation": 0.3076751946607342,
+      "exploratory": true
+    },
+    {
+      "outcome": "localization_error",
+      "feature": "boundary_distance",
+      "method": "pearson",
+      "count": 30,
+      "correlation": -0.5082228533071097,
+      "exploratory": true
+    },
+    {
+      "outcome": "localization_error",
+      "feature": "boundary_distance",
+      "method": "spearman",
+      "count": 30,
+      "correlation": -0.49543937708565067,
+      "exploratory": true
+    },
+    {
+      "outcome": "localization_error",
+      "feature": "observed_sensor_rms",
+      "method": "pearson",
+      "count": 30,
+      "correlation": -0.6871199722331823,
+      "exploratory": true
+    },
+    {
+      "outcome": "localization_error",
+      "feature": "observed_sensor_rms",
+      "method": "spearman",
+      "count": 30,
+      "correlation": -0.8091212458286985,
+      "exploratory": true
+    },
+    {
+      "outcome": "relative_strength_error",
+      "feature": "x_true",
+      "method": "pearson",
+      "count": 30,
+      "correlation": 0.5815148037647015,
+      "exploratory": true
+    },
+    {
+      "outcome": "relative_strength_error",
+      "feature": "x_true",
+      "method": "spearman",
+      "count": 30,
+      "correlation": 0.6102335928809789,
+      "exploratory": true
+    },
+    {
+      "outcome": "relative_strength_error",
+      "feature": "y_true",
+      "method": "pearson",
+      "count": 30,
+      "correlation": -0.18497912507028624,
+      "exploratory": true
+    },
+    {
+      "outcome": "relative_strength_error",
+      "feature": "y_true",
+      "method": "spearman",
+      "count": 30,
+      "correlation": -0.22625139043381537,
+      "exploratory": true
+    },
+    {
+      "outcome": "relative_strength_error",
+      "feature": "Q_true",
+      "method": "pearson",
+      "count": 30,
+      "correlation": 0.0976896779988135,
+      "exploratory": true
+    },
+    {
+      "outcome": "relative_strength_error",
+      "feature": "Q_true",
+      "method": "spearman",
+      "count": 30,
+      "correlation": 0.1768631813125695,
+      "exploratory": true
+    },
+    {
+      "outcome": "relative_strength_error",
+      "feature": "nearest_sensor_distance",
+      "method": "pearson",
+      "count": 30,
+      "correlation": 0.3828671763453336,
+      "exploratory": true
+    },
+    {
+      "outcome": "relative_strength_error",
+      "feature": "nearest_sensor_distance",
+      "method": "spearman",
+      "count": 30,
+      "correlation": 0.4771968854282535,
+      "exploratory": true
+    },
+    {
+      "outcome": "relative_strength_error",
+      "feature": "boundary_distance",
+      "method": "pearson",
+      "count": 30,
+      "correlation": -0.5702065952347002,
+      "exploratory": true
+    },
+    {
+      "outcome": "relative_strength_error",
+      "feature": "boundary_distance",
+      "method": "spearman",
+      "count": 30,
+      "correlation": -0.49855394883203563,
+      "exploratory": true
+    },
+    {
+      "outcome": "relative_strength_error",
+      "feature": "observed_sensor_rms",
+      "method": "pearson",
+      "count": 30,
+      "correlation": -0.7899085451417605,
+      "exploratory": true
+    },
+    {
+      "outcome": "relative_strength_error",
+      "feature": "observed_sensor_rms",
+      "method": "spearman",
+      "count": 30,
+      "correlation": -0.8763070077864292,
+      "exploratory": true
+    },
+    {
+      "outcome": "relative_l2",
+      "feature": "x_true",
+      "method": "pearson",
+      "count": 30,
+      "correlation": 0.6469432219306289,
+      "exploratory": true
+    },
+    {
+      "outcome": "relative_l2",
+      "feature": "x_true",
+      "method": "spearman",
+      "count": 30,
+      "correlation": 0.6983314794215795,
+      "exploratory": true
+    },
+    {
+      "outcome": "relative_l2",
+      "feature": "y_true",
+      "method": "pearson",
+      "count": 30,
+      "correlation": -0.20012820125767536,
+      "exploratory": true
+    },
+    {
+      "outcome": "relative_l2",
+      "feature": "y_true",
+      "method": "spearman",
+      "count": 30,
+      "correlation": -0.2186874304783092,
+      "exploratory": true
+    },
+    {
+      "outcome": "relative_l2",
+      "feature": "Q_true",
+      "method": "pearson",
+      "count": 30,
+      "correlation": 0.11485946679360347,
+      "exploratory": true
+    },
+    {
+      "outcome": "relative_l2",
+      "feature": "Q_true",
+      "method": "spearman",
+      "count": 30,
+      "correlation": 0.1768631813125695,
+      "exploratory": true
+    },
+    {
+      "outcome": "relative_l2",
+      "feature": "nearest_sensor_distance",
+      "method": "pearson",
+      "count": 30,
+      "correlation": 0.3070826124496295,
+      "exploratory": true
+    },
+    {
+      "outcome": "relative_l2",
+      "feature": "nearest_sensor_distance",
+      "method": "spearman",
+      "count": 30,
+      "correlation": 0.32947719688542826,
+      "exploratory": true
+    },
+    {
+      "outcome": "relative_l2",
+      "feature": "boundary_distance",
+      "method": "pearson",
+      "count": 30,
+      "correlation": -0.5482094958410119,
+      "exploratory": true
+    },
+    {
+      "outcome": "relative_l2",
+      "feature": "boundary_distance",
+      "method": "spearman",
+      "count": 30,
+      "correlation": -0.4896551724137932,
+      "exploratory": true
+    },
+    {
+      "outcome": "relative_l2",
+      "feature": "observed_sensor_rms",
+      "method": "pearson",
+      "count": 30,
+      "correlation": -0.7784325014373688,
+      "exploratory": true
+    },
+    {
+      "outcome": "relative_l2",
+      "feature": "observed_sensor_rms",
+      "method": "spearman",
+      "count": 30,
+      "correlation": -0.8375973303670745,
+      "exploratory": true
+    }
+  ],
+  "reference_quality": {
+    "certified_bound": false,
+    "target": 0.01,
+    "flagged_scenarios": [
+      "fresh_006",
+      "fresh_011",
+      "fresh_019",
+      "fresh_022",
+      "fresh_027"
+    ],
+    "all_assessed_components": [
+      {
+        "scenario_id": "fresh_001",
+        "scope": "selected_field",
+        "time": 0.1,
+        "Richardson_estimate": 0.0020758298332868,
+        "order": 0.9406667860494912,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_001",
+        "scope": "selected_field",
+        "time": 0.2,
+        "Richardson_estimate": 0.003702583382183,
+        "order": 0.9425260758197296,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_001",
+        "scope": "selected_field",
+        "time": 0.4,
+        "Richardson_estimate": 0.0059040032903127,
+        "order": 0.940229252982256,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_001",
+        "scope": "selected_field",
+        "time": 0.8,
+        "Richardson_estimate": 0.0076359120120205,
+        "order": 0.9398359531469505,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_001",
+        "scope": "sensor_trajectory",
+        "time": null,
+        "Richardson_estimate": 0.0054070870323605,
+        "order": 0.9704479930452063,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_002",
+        "scope": "selected_field",
+        "time": 0.1,
+        "Richardson_estimate": 0.0020758295795123,
+        "order": 0.9406667121415327,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_002",
+        "scope": "selected_field",
+        "time": 0.2,
+        "Richardson_estimate": 0.0037025677846613,
+        "order": 0.9425226318418688,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_002",
+        "scope": "selected_field",
+        "time": 0.4,
+        "Richardson_estimate": 0.005899790847092,
+        "order": 0.9400258414855266,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_002",
+        "scope": "selected_field",
+        "time": 0.8,
+        "Richardson_estimate": 0.0076004023416657,
+        "order": 0.9421124229726776,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_002",
+        "scope": "sensor_trajectory",
+        "time": null,
+        "Richardson_estimate": 0.0039630176097093,
+        "order": 0.9327215427327292,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_003",
+        "scope": "selected_field",
+        "time": 0.1,
+        "Richardson_estimate": 0.0020757904357962,
+        "order": 0.9406621324195074,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_003",
+        "scope": "selected_field",
+        "time": 0.2,
+        "Richardson_estimate": 0.0037016651974282,
+        "order": 0.942450189111328,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_003",
+        "scope": "selected_field",
+        "time": 0.4,
+        "Richardson_estimate": 0.0058580405897209,
+        "order": 0.9395885735153876,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_003",
+        "scope": "selected_field",
+        "time": 0.8,
+        "Richardson_estimate": 0.0079578725485575,
+        "order": 0.9418174499085716,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_003",
+        "scope": "sensor_trajectory",
+        "time": null,
+        "Richardson_estimate": 0.0053107049037814,
+        "order": 0.953059376008996,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_004",
+        "scope": "selected_field",
+        "time": 0.1,
+        "Richardson_estimate": 0.0020758156564797,
+        "order": 0.9406656002698852,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_004",
+        "scope": "selected_field",
+        "time": 0.2,
+        "Richardson_estimate": 0.0037024672524548,
+        "order": 0.9425179585456928,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_004",
+        "scope": "selected_field",
+        "time": 0.4,
+        "Richardson_estimate": 0.0059026575079805,
+        "order": 0.940221571728646,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_004",
+        "scope": "selected_field",
+        "time": 0.8,
+        "Richardson_estimate": 0.007771911508904,
+        "order": 0.9383301722212272,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_004",
+        "scope": "sensor_trajectory",
+        "time": null,
+        "Richardson_estimate": 0.008396282763129,
+        "order": 0.9696636331706144,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_005",
+        "scope": "selected_field",
+        "time": 0.1,
+        "Richardson_estimate": 0.0020758285062305,
+        "order": 0.940666506862159,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_005",
+        "scope": "selected_field",
+        "time": 0.2,
+        "Richardson_estimate": 0.0037025343937305,
+        "order": 0.9425176979665184,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_005",
+        "scope": "selected_field",
+        "time": 0.4,
+        "Richardson_estimate": 0.0058958259902558,
+        "order": 0.9399011648406091,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_005",
+        "scope": "selected_field",
+        "time": 0.8,
+        "Richardson_estimate": 0.0076171630572394,
+        "order": 0.9425654838778036,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_005",
+        "scope": "sensor_trajectory",
+        "time": null,
+        "Richardson_estimate": 0.002927626939796,
+        "order": 0.9524579380326486,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_006",
+        "scope": "selected_field",
+        "time": 0.1,
+        "Richardson_estimate": 0.0020752670292569,
+        "order": 0.940663509660274,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_006",
+        "scope": "selected_field",
+        "time": 0.2,
+        "Richardson_estimate": 0.0037002145269169,
+        "order": 0.9424716880201396,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_006",
+        "scope": "selected_field",
+        "time": 0.4,
+        "Richardson_estimate": 0.0058922771227886,
+        "order": 0.9400994632021036,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_006",
+        "scope": "selected_field",
+        "time": 0.8,
+        "Richardson_estimate": 0.0076752971313035,
+        "order": 0.9402521350218824,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_006",
+        "scope": "sensor_trajectory",
+        "time": null,
+        "Richardson_estimate": 0.0106705413126519,
+        "order": 0.8918363283480922,
+        "target_met": false
+      },
+      {
+        "scenario_id": "fresh_007",
+        "scope": "selected_field",
+        "time": 0.1,
+        "Richardson_estimate": 0.0020748237660793,
+        "order": 0.9405551168123892,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_007",
+        "scope": "selected_field",
+        "time": 0.2,
+        "Richardson_estimate": 0.0037002584826518,
+        "order": 0.9423995205807638,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_007",
+        "scope": "selected_field",
+        "time": 0.4,
+        "Richardson_estimate": 0.0058982449927418,
+        "order": 0.9400812684348546,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_007",
+        "scope": "selected_field",
+        "time": 0.8,
+        "Richardson_estimate": 0.007779197132417,
+        "order": 0.9386528132830344,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_007",
+        "scope": "sensor_trajectory",
+        "time": null,
+        "Richardson_estimate": 0.0043313349959178,
+        "order": 0.9784076620734866,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_008",
+        "scope": "selected_field",
+        "time": 0.1,
+        "Richardson_estimate": 0.0020755247417135,
+        "order": 0.940645445776066,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_008",
+        "scope": "selected_field",
+        "time": 0.2,
+        "Richardson_estimate": 0.0036980781394568,
+        "order": 0.9423081231651308,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_008",
+        "scope": "selected_field",
+        "time": 0.4,
+        "Richardson_estimate": 0.0058030163339528,
+        "order": 0.9400391304991726,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_008",
+        "scope": "selected_field",
+        "time": 0.8,
+        "Richardson_estimate": 0.0083935184468372,
+        "order": 0.9375373656776383,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_008",
+        "scope": "sensor_trajectory",
+        "time": null,
+        "Richardson_estimate": 0.0065341648989226,
+        "order": 0.9989222012848342,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_009",
+        "scope": "selected_field",
+        "time": 0.1,
+        "Richardson_estimate": 0.0020758298464919,
+        "order": 0.9406667899184268,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_009",
+        "scope": "selected_field",
+        "time": 0.2,
+        "Richardson_estimate": 0.003702583866783,
+        "order": 0.9425263079331208,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_009",
+        "scope": "selected_field",
+        "time": 0.4,
+        "Richardson_estimate": 0.0059044860385365,
+        "order": 0.9402775277875324,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_009",
+        "scope": "selected_field",
+        "time": 0.8,
+        "Richardson_estimate": 0.0076954931137861,
+        "order": 0.9387271082207947,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_009",
+        "scope": "sensor_trajectory",
+        "time": null,
+        "Richardson_estimate": 0.0057937642395822,
+        "order": 0.944405042649394,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_010",
+        "scope": "selected_field",
+        "time": 0.1,
+        "Richardson_estimate": 0.0020757771902088,
+        "order": 0.9406597047620748,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_010",
+        "scope": "selected_field",
+        "time": 0.2,
+        "Richardson_estimate": 0.003702418209234,
+        "order": 0.9425142431559332,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_010",
+        "scope": "selected_field",
+        "time": 0.4,
+        "Richardson_estimate": 0.0059040198145354,
+        "order": 0.9402727367651476,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_010",
+        "scope": "selected_field",
+        "time": 0.8,
+        "Richardson_estimate": 0.0078042195527668,
+        "order": 0.9389084036968216,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_010",
+        "scope": "sensor_trajectory",
+        "time": null,
+        "Richardson_estimate": 0.0062407431950733,
+        "order": 0.9745176171484754,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_011",
+        "scope": "selected_field",
+        "time": 0.1,
+        "Richardson_estimate": 0.0020702106274268,
+        "order": 0.940618374169563,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_011",
+        "scope": "selected_field",
+        "time": 0.2,
+        "Richardson_estimate": 0.0036637993821373,
+        "order": 0.9422216880274707,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_011",
+        "scope": "selected_field",
+        "time": 0.4,
+        "Richardson_estimate": 0.0057224606689742,
+        "order": 0.944253257067158,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_011",
+        "scope": "selected_field",
+        "time": 0.8,
+        "Richardson_estimate": 0.0095133277333639,
+        "order": 0.9263938218535172,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_011",
+        "scope": "sensor_trajectory",
+        "time": null,
+        "Richardson_estimate": 0.0104451792988235,
+        "order": 0.9791949802982056,
+        "target_met": false
+      },
+      {
+        "scenario_id": "fresh_012",
+        "scope": "selected_field",
+        "time": 0.1,
+        "Richardson_estimate": 0.002075758331533,
+        "order": 0.9406594079081936,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_012",
+        "scope": "selected_field",
+        "time": 0.2,
+        "Richardson_estimate": 0.0037011178420037,
+        "order": 0.9424208948716996,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_012",
+        "scope": "selected_field",
+        "time": 0.4,
+        "Richardson_estimate": 0.005845394924962,
+        "order": 0.939622850112758,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_012",
+        "scope": "selected_field",
+        "time": 0.8,
+        "Richardson_estimate": 0.0080624999182666,
+        "order": 0.9409347159401892,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_012",
+        "scope": "sensor_trajectory",
+        "time": null,
+        "Richardson_estimate": 0.0038903820663992,
+        "order": 0.9745252127208976,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_013",
+        "scope": "selected_field",
+        "time": 0.1,
+        "Richardson_estimate": 0.0020758298455576,
+        "order": 0.9406667892831572,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_013",
+        "scope": "selected_field",
+        "time": 0.2,
+        "Richardson_estimate": 0.0037025837567689,
+        "order": 0.9425262287243442,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_013",
+        "scope": "selected_field",
+        "time": 0.4,
+        "Richardson_estimate": 0.0059042946480338,
+        "order": 0.940255100024545,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_013",
+        "scope": "selected_field",
+        "time": 0.8,
+        "Richardson_estimate": 0.0076597332792476,
+        "order": 0.9392963636187044,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_013",
+        "scope": "sensor_trajectory",
+        "time": null,
+        "Richardson_estimate": 0.0053269781433899,
+        "order": 0.9447726172536346,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_014",
+        "scope": "selected_field",
+        "time": 0.1,
+        "Richardson_estimate": 0.0020758298466023,
+        "order": 0.9406667900541829,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_014",
+        "scope": "selected_field",
+        "time": 0.2,
+        "Richardson_estimate": 0.0037025838780052,
+        "order": 0.942526336943143,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_014",
+        "scope": "selected_field",
+        "time": 0.4,
+        "Richardson_estimate": 0.0059045766532097,
+        "order": 0.940297126068195,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_014",
+        "scope": "selected_field",
+        "time": 0.8,
+        "Richardson_estimate": 0.0077923511316686,
+        "order": 0.9384887120741192,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_014",
+        "scope": "sensor_trajectory",
+        "time": null,
+        "Richardson_estimate": 0.007810921567208,
+        "order": 0.938496586886412,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_015",
+        "scope": "selected_field",
+        "time": 0.1,
+        "Richardson_estimate": 0.0020750917134565,
+        "order": 0.9405860845386848,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_015",
+        "scope": "selected_field",
+        "time": 0.2,
+        "Richardson_estimate": 0.003700796897634,
+        "order": 0.9424393417369328,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_015",
+        "scope": "selected_field",
+        "time": 0.4,
+        "Richardson_estimate": 0.0059005830250649,
+        "order": 0.9401862065371688,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_015",
+        "scope": "selected_field",
+        "time": 0.8,
+        "Richardson_estimate": 0.0077990226124373,
+        "order": 0.9388163433678,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_015",
+        "scope": "sensor_trajectory",
+        "time": null,
+        "Richardson_estimate": 0.0054699732392512,
+        "order": 0.9866912833681916,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_016",
+        "scope": "selected_field",
+        "time": 0.1,
+        "Richardson_estimate": 0.0020714264362772,
+        "order": 0.940604611928379,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_016",
+        "scope": "selected_field",
+        "time": 0.2,
+        "Richardson_estimate": 0.0036698719588937,
+        "order": 0.9421512350598412,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_016",
+        "scope": "selected_field",
+        "time": 0.4,
+        "Richardson_estimate": 0.0057185495165508,
+        "order": 0.9436101082362006,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_016",
+        "scope": "selected_field",
+        "time": 0.8,
+        "Richardson_estimate": 0.0093847418112161,
+        "order": 0.927289293422262,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_016",
+        "scope": "sensor_trajectory",
+        "time": null,
+        "Richardson_estimate": 0.0095747359909511,
+        "order": 0.9804781332565732,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_017",
+        "scope": "selected_field",
+        "time": 0.1,
+        "Richardson_estimate": 0.0020758298449573,
+        "order": 0.9406667889379028,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_017",
+        "scope": "selected_field",
+        "time": 0.2,
+        "Richardson_estimate": 0.0037025836908389,
+        "order": 0.9425261931114324,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_017",
+        "scope": "selected_field",
+        "time": 0.4,
+        "Richardson_estimate": 0.0059042187846505,
+        "order": 0.9402477563924008,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_017",
+        "scope": "selected_field",
+        "time": 0.8,
+        "Richardson_estimate": 0.0076517115034421,
+        "order": 0.9394612615548512,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_017",
+        "scope": "sensor_trajectory",
+        "time": null,
+        "Richardson_estimate": 0.00494939661693,
+        "order": 0.9474067403207832,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_018",
+        "scope": "selected_field",
+        "time": 0.1,
+        "Richardson_estimate": 0.002075829845192,
+        "order": 0.9406667895903534,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_018",
+        "scope": "selected_field",
+        "time": 0.2,
+        "Richardson_estimate": 0.0037025838636904,
+        "order": 0.942526332703399,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_018",
+        "scope": "selected_field",
+        "time": 0.4,
+        "Richardson_estimate": 0.0059045748751017,
+        "order": 0.9402970711882064,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_018",
+        "scope": "selected_field",
+        "time": 0.8,
+        "Richardson_estimate": 0.0078016357301229,
+        "order": 0.9387031701777598,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_018",
+        "scope": "sensor_trajectory",
+        "time": null,
+        "Richardson_estimate": 0.0068499424650891,
+        "order": 0.9503758653111328,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_019",
+        "scope": "selected_field",
+        "time": 0.1,
+        "Richardson_estimate": 0.0020691579549739,
+        "order": 0.9406342166504584,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_019",
+        "scope": "selected_field",
+        "time": 0.2,
+        "Richardson_estimate": 0.0036588870927725,
+        "order": 0.9422877385836422,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_019",
+        "scope": "selected_field",
+        "time": 0.4,
+        "Richardson_estimate": 0.0057268396663489,
+        "order": 0.9446582770907396,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_019",
+        "scope": "selected_field",
+        "time": 0.8,
+        "Richardson_estimate": 0.0096018009289532,
+        "order": 0.925552124111027,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_019",
+        "scope": "sensor_trajectory",
+        "time": null,
+        "Richardson_estimate": 0.0150381944165718,
+        "order": 0.98233367203784,
+        "target_met": false
+      },
+      {
+        "scenario_id": "fresh_020",
+        "scope": "selected_field",
+        "time": 0.1,
+        "Richardson_estimate": 0.002075829846531,
+        "order": 0.9406667899552454,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_020",
+        "scope": "selected_field",
+        "time": 0.2,
+        "Richardson_estimate": 0.0037025838718552,
+        "order": 0.9425263141427572,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_020",
+        "scope": "selected_field",
+        "time": 0.4,
+        "Richardson_estimate": 0.0059045035612371,
+        "order": 0.9402801334085268,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_020",
+        "scope": "selected_field",
+        "time": 0.8,
+        "Richardson_estimate": 0.0077015567180373,
+        "order": 0.93865499441592,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_020",
+        "scope": "sensor_trajectory",
+        "time": null,
+        "Richardson_estimate": 0.0054203696886382,
+        "order": 0.9502241299357084,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_021",
+        "scope": "selected_field",
+        "time": 0.1,
+        "Richardson_estimate": 0.0020758237219159,
+        "order": 0.9406661716974128,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_021",
+        "scope": "selected_field",
+        "time": 0.2,
+        "Richardson_estimate": 0.0037025263726333,
+        "order": 0.9425215204252756,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_021",
+        "scope": "selected_field",
+        "time": 0.4,
+        "Richardson_estimate": 0.0059033914323945,
+        "order": 0.9402421825442628,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_021",
+        "scope": "selected_field",
+        "time": 0.8,
+        "Richardson_estimate": 0.0077591875373495,
+        "order": 0.9381104762129562,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_021",
+        "scope": "sensor_trajectory",
+        "time": null,
+        "Richardson_estimate": 0.0051730349793165,
+        "order": 0.969455384640304,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_022",
+        "scope": "selected_field",
+        "time": 0.1,
+        "Richardson_estimate": 0.0020757057654666,
+        "order": 0.9406618055254248,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_022",
+        "scope": "selected_field",
+        "time": 0.2,
+        "Richardson_estimate": 0.003701879340135,
+        "order": 0.9424958359415766,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_022",
+        "scope": "selected_field",
+        "time": 0.4,
+        "Richardson_estimate": 0.0058984456322501,
+        "order": 0.9401523055834698,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_022",
+        "scope": "selected_field",
+        "time": 0.8,
+        "Richardson_estimate": 0.0077873908188374,
+        "order": 0.9389476227128218,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_022",
+        "scope": "sensor_trajectory",
+        "time": null,
+        "Richardson_estimate": 0.0101303192403788,
+        "order": 0.9688683791035452,
+        "target_met": false
+      },
+      {
+        "scenario_id": "fresh_023",
+        "scope": "selected_field",
+        "time": 0.1,
+        "Richardson_estimate": 0.0020758292358587,
+        "order": 0.9406666976021268,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_023",
+        "scope": "selected_field",
+        "time": 0.2,
+        "Richardson_estimate": 0.0037025757719831,
+        "order": 0.942525356729486,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_023",
+        "scope": "selected_field",
+        "time": 0.4,
+        "Richardson_estimate": 0.0059042767834053,
+        "order": 0.94027743805968,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_023",
+        "scope": "selected_field",
+        "time": 0.8,
+        "Richardson_estimate": 0.0077779547333925,
+        "order": 0.938225539063793,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_023",
+        "scope": "sensor_trajectory",
+        "time": null,
+        "Richardson_estimate": 0.004226772470535,
+        "order": 0.9830507864558706,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_024",
+        "scope": "selected_field",
+        "time": 0.1,
+        "Richardson_estimate": 0.0020758288390853,
+        "order": 0.9406666541922524,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_024",
+        "scope": "selected_field",
+        "time": 0.2,
+        "Richardson_estimate": 0.0037025792043276,
+        "order": 0.942525997386,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_024",
+        "scope": "selected_field",
+        "time": 0.4,
+        "Richardson_estimate": 0.0059045472575739,
+        "order": 0.9402942828368412,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_024",
+        "scope": "selected_field",
+        "time": 0.8,
+        "Richardson_estimate": 0.0077686685578533,
+        "order": 0.9382969242386922,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_024",
+        "scope": "sensor_trajectory",
+        "time": null,
+        "Richardson_estimate": 0.0088794671884272,
+        "order": 0.958860364796809,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_025",
+        "scope": "selected_field",
+        "time": 0.1,
+        "Richardson_estimate": 0.0020752345092683,
+        "order": 0.9406045656866544,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_025",
+        "scope": "selected_field",
+        "time": 0.2,
+        "Richardson_estimate": 0.0037011874965455,
+        "order": 0.942466672910449,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_025",
+        "scope": "selected_field",
+        "time": 0.4,
+        "Richardson_estimate": 0.0059015798305169,
+        "order": 0.940225228630765,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_025",
+        "scope": "selected_field",
+        "time": 0.8,
+        "Richardson_estimate": 0.0077497609032277,
+        "order": 0.938211028480254,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_025",
+        "scope": "sensor_trajectory",
+        "time": null,
+        "Richardson_estimate": 0.007532561935229,
+        "order": 0.9707536334947656,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_026",
+        "scope": "selected_field",
+        "time": 0.1,
+        "Richardson_estimate": 0.0020755011774148,
+        "order": 0.9406273774490532,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_026",
+        "scope": "selected_field",
+        "time": 0.2,
+        "Richardson_estimate": 0.0037017554800215,
+        "order": 0.9424746369924092,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_026",
+        "scope": "selected_field",
+        "time": 0.4,
+        "Richardson_estimate": 0.0059021185575371,
+        "order": 0.94019446197949,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_026",
+        "scope": "selected_field",
+        "time": 0.8,
+        "Richardson_estimate": 0.0077867039465624,
+        "order": 0.9386236620623484,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_026",
+        "scope": "sensor_trajectory",
+        "time": null,
+        "Richardson_estimate": 0.0044564948551983,
+        "order": 0.9827845068533972,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_027",
+        "scope": "selected_field",
+        "time": 0.1,
+        "Richardson_estimate": 0.0020746590421395,
+        "order": 0.9406185491792814,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_027",
+        "scope": "selected_field",
+        "time": 0.2,
+        "Richardson_estimate": 0.0036901406073556,
+        "order": 0.94216529448629,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_027",
+        "scope": "selected_field",
+        "time": 0.4,
+        "Richardson_estimate": 0.0057530562252909,
+        "order": 0.9412925012351974,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_027",
+        "scope": "selected_field",
+        "time": 0.8,
+        "Richardson_estimate": 0.0088337499368712,
+        "order": 0.9333281034873816,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_027",
+        "scope": "sensor_trajectory",
+        "time": null,
+        "Richardson_estimate": 0.0106284220784448,
+        "order": 0.9694945795127692,
+        "target_met": false
+      },
+      {
+        "scenario_id": "fresh_028",
+        "scope": "selected_field",
+        "time": 0.1,
+        "Richardson_estimate": 0.0020757751243682,
+        "order": 0.9406607791212234,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_028",
+        "scope": "selected_field",
+        "time": 0.2,
+        "Richardson_estimate": 0.0037013949451019,
+        "order": 0.9424350915547648,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_028",
+        "scope": "selected_field",
+        "time": 0.4,
+        "Richardson_estimate": 0.0058513895000279,
+        "order": 0.9396002264074944,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_028",
+        "scope": "selected_field",
+        "time": 0.8,
+        "Richardson_estimate": 0.0080130407778249,
+        "order": 0.9413482405809898,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_028",
+        "scope": "sensor_trajectory",
+        "time": null,
+        "Richardson_estimate": 0.0036539438451055,
+        "order": 0.9746135968188064,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_029",
+        "scope": "selected_field",
+        "time": 0.1,
+        "Richardson_estimate": 0.0020731567874199,
+        "order": 0.9406020782197558,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_029",
+        "scope": "selected_field",
+        "time": 0.2,
+        "Richardson_estimate": 0.003679748911676,
+        "order": 0.9421175887280632,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_029",
+        "scope": "selected_field",
+        "time": 0.4,
+        "Richardson_estimate": 0.0057267314870291,
+        "order": 0.942642168548602,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_029",
+        "scope": "selected_field",
+        "time": 0.8,
+        "Richardson_estimate": 0.0091644229708742,
+        "order": 0.9298574944618264,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_029",
+        "scope": "sensor_trajectory",
+        "time": null,
+        "Richardson_estimate": 0.0083508477643943,
+        "order": 0.9823266048405744,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_030",
+        "scope": "selected_field",
+        "time": 0.1,
+        "Richardson_estimate": 0.002074756431292,
+        "order": 0.9406802886611714,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_030",
+        "scope": "selected_field",
+        "time": 0.2,
+        "Richardson_estimate": 0.0036986951486825,
+        "order": 0.9424748467849312,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_030",
+        "scope": "selected_field",
+        "time": 0.4,
+        "Richardson_estimate": 0.0058880626597591,
+        "order": 0.9400575347699168,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_030",
+        "scope": "selected_field",
+        "time": 0.8,
+        "Richardson_estimate": 0.0076896587867947,
+        "order": 0.9419176535955314,
+        "target_met": true
+      },
+      {
+        "scenario_id": "fresh_030",
+        "scope": "sensor_trajectory",
+        "time": null,
+        "Richardson_estimate": 0.0091222288634009,
+        "order": 0.9255923720217808,
+        "target_met": true
+      }
+    ]
+  },
+  "mechanical_selections": {
+    "best_case": "fresh_026",
+    "median_case": "fresh_016",
+    "worst_case": "fresh_011"
+  },
+  "worst_three_localization_ranked": [
+    {
+      "scenario_id": "fresh_011",
+      "x_pred": 0.6243069767951965,
+      "y_pred": 0.37883928418159485,
+      "Q_pred": 0.443302720785141,
+      "localization_error": 0.12405926675272673,
+      "relative_strength_error": 0.6469311175091766,
+      "relative_l2": 0.7716634333131863,
+      "rmse": 0.04435846156682906,
+      "mae": 0.013132950865135561,
+      "negative_fraction": 0.0,
+      "minimum_concentration": 0.0,
+      "pde_rmse": 0.014352028066005912,
+      "pde_mae": 0.004841930264752589,
+      "pde_maxabs": 0.369832307100296,
+      "bc_rmse": 0.0,
+      "bc_mae": 0.0,
+      "bc_maxabs": 0.0,
+      "ic_rmse": 0.0,
+      "ic_mae": 0.0,
+      "ic_maxabs": 0.0,
+      "signed_Q_error": -0.8122673471793247,
+      "signed_relative_Q_error": -0.6469311175091766,
+      "model": "B_revised",
+      "optimization_seed": 42,
+      "primary": true,
+      "computational_success": true,
+      "evaluation_success": true,
+      "recovery_success": false,
+      "failure": "",
+      "completed_updates": 12000,
+      "training_seconds": 92.67644158302573,
+      "x_true": 0.7329157858119609,
+      "y_true": 0.43879617095187506,
+      "Q_true": 1.2555700679644657,
+      "observations_hash": "819fc22e996736a287bc27a9d416b419beea0d1efbed008982d59a1f50794eae",
+      "reference_data_hash": "a34fdc9e22a753372fd2d4b2ae34406fa1801bf1365248b3baf7af0349877d79",
+      "reference_target_met": false,
+      "reference_error_estimate": 0.010445179298823546
+    },
+    {
+      "scenario_id": "fresh_029",
+      "x_pred": 0.6227867007255554,
+      "y_pred": 0.36533457040786743,
+      "Q_pred": 0.569182276725769,
+      "localization_error": 0.10814662158672085,
+      "relative_strength_error": 0.5226472584951233,
+      "relative_l2": 0.6766375655671427,
+      "rmse": 0.037232343139666085,
+      "mae": 0.011414080187674985,
+      "negative_fraction": 0.0,
+      "minimum_concentration": 0.0,
+      "pde_rmse": 0.01687540536797021,
+      "pde_mae": 0.005151552951455859,
+      "pde_maxabs": 0.49549630284309387,
+      "bc_rmse": 0.0,
+      "bc_mae": 0.0,
+      "bc_maxabs": 0.0,
+      "ic_rmse": 0.0,
+      "ic_mae": 0.0,
+      "ic_maxabs": 0.0,
+      "signed_Q_error": -0.6231902127070881,
+      "signed_relative_Q_error": -0.5226472584951233,
+      "model": "B_revised",
+      "optimization_seed": 42,
+      "primary": true,
+      "computational_success": true,
+      "evaluation_success": true,
+      "recovery_success": false,
+      "failure": "",
+      "completed_updates": 12000,
+      "training_seconds": 91.61360579100437,
+      "x_true": 0.7195441083400061,
+      "y_true": 0.41364291163743594,
+      "Q_true": 1.1923724894328571,
+      "observations_hash": "d96a3ea46fbc2cd6be5b6d5314a8f51f97820205bbb6147f27211c80d3b6264f",
+      "reference_data_hash": "beeaa2d7f7cde540be44315ffcc1f1d720adff6684d939d493269563ec89653b",
+      "reference_target_met": true,
+      "reference_error_estimate": 0.009164422970874272
+    },
+    {
+      "scenario_id": "fresh_019",
+      "x_pred": 0.6283359527587891,
+      "y_pred": 0.5329992175102234,
+      "Q_pred": 0.20324097573757172,
+      "localization_error": 0.10796344174213268,
+      "relative_strength_error": 0.7911526073595799,
+      "relative_l2": 0.8429318842796192,
+      "rmse": 0.03747387927600196,
+      "mae": 0.010407976438964591,
+      "negative_fraction": 0.0,
+      "minimum_concentration": 0.0,
+      "pde_rmse": 0.004795417936181264,
+      "pde_mae": 0.0017797545308379957,
+      "pde_maxabs": 0.08048129081726074,
+      "bc_rmse": 0.0,
+      "bc_mae": 0.0,
+      "bc_maxabs": 0.0,
+      "ic_rmse": 0.0,
+      "ic_mae": 0.0,
+      "ic_maxabs": 0.0,
+      "signed_Q_error": -0.7699144616755201,
+      "signed_relative_Q_error": -0.7911526073595799,
+      "model": "B_revised",
+      "optimization_seed": 42,
+      "primary": true,
+      "computational_success": true,
+      "evaluation_success": true,
+      "recovery_success": false,
+      "failure": "",
+      "completed_updates": 12000,
+      "training_seconds": 90.56808500003535,
+      "x_true": 0.7362042409072598,
+      "y_true": 0.5375310123781945,
+      "Q_true": 0.9731554374130919,
+      "observations_hash": "ca1e2bf1d8a7775d1183c06575537ea45fed133df8264fc2165bc9904ac1b504",
+      "reference_data_hash": "72a523f5e20e8dadbe0bb084c895feb5694b0a7d3e013316513c2aee20136d74",
+      "reference_target_met": false,
+      "reference_error_estimate": 0.015038194416571856
+    }
+  ],
+  "identifiability": {
+    "scenario_id": "fresh_015",
+    "true_source": {
+      "x_s": 0.29649477311785566,
+      "y_s": 0.7474869367240062,
+      "Q": 1.1260011527137954,
+      "sigma": 0.08
+    },
+    "primary_PINN_source": {
+      "x_s": 0.2973478138446808,
+      "y_s": 0.7376769185066223,
+      "Q": 1.0065966844558716
+    },
+    "oracle_fixed_Q": true,
+    "profiled_Q_uses_truth": false,
+    "posterior_probability": false,
+    "reference_grid": 641,
+    "diagnostic_solver_grid": 201,
+    "extra_probes": [
+      {
+        "kind": "true_location_oracle_probe",
+        "x": 0.29649477311785566,
+        "y": 0.7474869367240062,
+        "fixed_true_Q": 1.1260011527137954,
+        "fixed_Q_mse": 2.2492518738899798e-07,
+        "profiled_Q": 1.137579738343049,
+        "profiled_Q_mse": 6.014027425704908e-08
+      },
+      {
+        "kind": "primary_PINN_location_probe",
+        "x": 0.2973478138446808,
+        "y": 0.7376769185066223,
+        "fixed_true_Q": 1.1260011527137954,
+        "fixed_Q_mse": 1.2802012085630401e-05,
+        "profiled_Q": 1.035923521965739,
+        "profiled_Q_mse": 7.807003371048244e-07
+      }
+    ],
+    "fixed_Q": {
+      "minimum_mse": 2.6384479662775707e-06,
+      "minimum_location": [
+        0.3,
+        0.75
+      ],
+      "minimum_localization_error": 0.004313015479273843,
+      "Q_at_grid_minimum": 1.1260011527137954,
+      "minimum_mse_outside_one_sigma": 0.00024907484255715464,
+      "minimum_mse_outside_two_sigma": 0.0013504730366839424
+    },
+    "profiled_Q": {
+      "minimum_mse": 5.232289941621609e-07,
+      "minimum_location": [
+        0.3,
+        0.75
+      ],
+      "minimum_localization_error": 0.004313015479273843,
+      "Q_at_grid_minimum": 1.1686227958545887,
+      "minimum_mse_outside_one_sigma": 5.547707185021162e-05,
+      "minimum_mse_outside_two_sigma": 0.000482062893709222
+    }
+  },
+  "provenance": {
+    "frozen_commit": "9dc90c247b0a596b789cb0ee5f1c06f938db40c4",
+    "model_config_hashes": {
+      "B_revised": "3e400ef1195cf90f6481117ae5c395695cca23a12d47ab532ec6822e400c332e",
+      "B0": "5f85e130900be9295bc48b3f152772a8f456b1a4b4b77f076258e1f6d8f30254"
+    },
+    "model_code_bundle_hashes": {
+      "B0": "197f0eda01e65fa1bd3504f9d5f5fbe471751c4f96d800ab6579b0bbb142f2f9",
+      "B_revised": "b055ec6659384ca0f499974ab3ec330bf4e2bf15e30b9678f3e472df7e80f476"
+    },
+    "solver_hash": "171d63443cc789534402b08ad497b17f18fbb113e9530d38c6ffedd9ae77b8b8",
+    "protocol_hash": "a6d354ed70fee6e7ba146c4516c6375c2930a8d6a4b3d35517ab870b0604d18b",
+    "manifest_sha256": "53032fd0d06cb1ce5ebba0ca45e3bb9284aa110675980f0186fa67316800c149",
+    "sensor_layout_hash": "c0533d4c030bc4ce020eaaebf6531a19453d36b5e322e6c63eb9d27baef2ebd2",
+    "old_data_or_outcomes_opened": false,
+    "models_changed": false
+  },
+  "limitations": [
+    "Thirty sources, one fixed layout/transport/noise setting; no real-world inference",
+    "Additional optimizer seeds never replace primary seed 42; physical source initialization unchanged",
+    "Richardson estimates are conditional and target misses retained",
+    "Discrete coarse-solver compatibility landscapes are not posterior probabilities",
+    "Exploratory correlations are associations, not causes; source-strength/geometry confounding remains"
+  ]
+}

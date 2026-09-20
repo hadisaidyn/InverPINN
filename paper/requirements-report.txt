@@ -1,0 +1,7 @@
+# Exact versions recorded for the final report-only build (Python 3.13.3).
+# No torch or scientific fitting dependency is imported by build_paper.py.
+numpy==2.5.3
+pandas==3.0.6
+matplotlib==3.11.2
+PyYAML==6.0.3
+pytest==9.1.1
