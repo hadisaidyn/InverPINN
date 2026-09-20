@@ -1,0 +1,81 @@
+experiment: diagnostic_v2_observability_revision_6
+output_dir: results/observability_diagnosis
+preserved_revision_5_commit: 590c3faf0c6ec71677ca89b3093ea5a7c43116a7
+frozen_model_commit: 9dc90c247b0a596b789cb0ee5f1c06f938db40c4
+models:
+  B_revised:
+    config: configs/B_revised.yaml
+    sha256: 3e400ef1195cf90f6481117ae5c395695cca23a12d47ab532ec6822e400c332e
+scenario_sampling:
+  seed: 2009202606
+  count: 30
+  method: independent_permutation_jitter_Latin_hypercube
+  position_range: [0.25, 0.75]
+  strength_range: [0.8, 1.4]
+domain: {x: [0.0, 1.0], y: [0.0, 1.0]}
+physics: {u: 0.35, v: -0.15, D: 0.005}
+source_family: {kind: gaussian_peak, K: 1, sigma: 0.08}
+noise_std: 0.0
+sensors_file: configs/single_source_sensors.json
+sensor_count: 20
+measurement_times: {start: 0.0, stop: 0.8, count: 81}
+evaluation_times: [0.1, 0.2, 0.4, 0.8]
+reference:
+  candidates:
+    - {nx: 161, ny: 161, dt: 0.0005, steps: 1600}
+    - {nx: 321, ny: 321, dt: 0.000125, steps: 6400}
+    - {nx: 641, ny: 641, dt: 0.00003125, steps: 25600}
+  selected_grid: 641
+  target_relative_L2: 0.01
+  inference_config: configs/reference_inference.yaml
+inference_grids:
+  - {nx: 101, ny: 101, dt: 0.001, steps: 800}
+  - {nx: 201, ny: 201, dt: 0.00025, steps: 3200}
+  - {nx: 321, ny: 321, dt: 0.000125, steps: 6400}
+classical:
+  grid: 201
+  start_count: 3
+  start_min_separation: 0.08
+  bounds: [0.0, 1.0]
+  max_nfev: 60
+  ftol: 1.0e-10
+  xtol: 1.0e-8
+  gtol: 1.0e-10
+  selection: smallest_finite_sensor_MSE_only
+  profile_Q: nonnegative_analytic_no_upper_bound
+scaling:
+  parameter_scales: [0.5, 0.5, 0.6]
+  concentration_scale: 0.88
+  information_noise: independent_unit_variance_in_normalized_concentration
+sensitivity:
+  normalized_steps: [0.001, 0.0005, 0.00025]
+  selected_step: 0.00025
+  relative_J_tolerance: 0.001
+  relative_smin_tolerance: 0.01
+observability_map:
+  grid_count: 21
+  position_range: [0.25, 0.75]
+  representative_Q: 1.1
+  weak_smin_quantile: 0.25
+  weak_Q_information_quantile: 0.25
+geometry:
+  plume_horizon: 0.8
+  crosswind_width_rule: sqrt_sigma_squared_plus_2D_travel_time
+envelope:
+  active_fraction_of_snapshot_max: 0.01
+  latent_map_scenario: diagnostic_v2_015
+  network_probe_grid: 81
+  probe_times: [0.1, 0.2, 0.4, 0.8]
+optimization: {primary_seed: 42}
+diagnostics:
+  seed: 2009202696
+  interior_count: 8192
+  initial_count: 4096
+  boundary_per_edge: 1024
+  prediction_batch: 8192
+recovery:
+  secondary_localization_max: 0.08
+  secondary_relative_strength_max: 0.20
+  confidence_level: 0.95
+runtime: {workers: 2, torch_threads: 1}
+plot_dpi: 300

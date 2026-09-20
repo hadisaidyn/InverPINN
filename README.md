@@ -772,3 +772,47 @@ Five reference sensor-trajectory accuracy-target misses were flagged and
 retained. All 80 fits completed without changing either frozen model. These
 now-observed cases must never be presented as untouched validation after any
 future development; this milestone ends without further experiments.
+
+## Observability diagnosis (P0 revision 6)
+
+Revision 5 is preserved at `590c3faf0c6ec71677ca89b3093ea5a7c43116a7`.
+The new `diagnostic_v2` set is diagnostic development, **not** another blind
+validation. It uses 30 prospectively specified Latin-hypercube cases and the
+same physics, sensors, observation schedule and frozen B_revised. All 70 prior
+cases are excluded from fitting and individual-outcome analysis.
+
+Read the [frozen diagnostic protocol](docs/observability_diagnosis_protocol.md)
+and [configuration](configs/observability_diagnosis.yaml). Execute in order:
+
+```bash
+python scripts/generate_diagnostic_v2.py --stage freeze
+python scripts/generate_diagnostic_v2.py --stage generate
+python scripts/run_observability_diagnosis.py
+python scripts/run_diagnostic_pinn.py
+python scripts/report_observability_diagnosis.py
+```
+
+The first two commands freeze the sampling plan and generated manifest.
+The information stage performs oracle-location Q profiling, independent
+101²/201²/321² resolution comparisons, scaled Jacobian/information maps,
+geometry and hard-envelope diagnostics, and observation-only classical
+joint inversion. Its outputs are hash-locked **before** any diagnostic PINN
+fit. The PINN stage uses exactly one unchanged seed-42, 12,000-update fit per
+case. All failed cases and reference-accuracy flags remain in the tables.
+
+Outputs in `results/observability_diagnosis/` include separate input/truth
+data, immutable manifests, code/environment archives, checkpoints, all
+classical starts, raw CSV/JSON metrics, and PNG/PDF figures. Scripts refuse
+silent replacement and partial attempts require review. A new output path
+alone does not authorize reclassifying these consumed cases as blind data.
+Local information proxies are not posterior uncertainties; weak signal and
+poor condition number are distinct. Finite-difference amplitude bias is not
+automatically a cause of PINN bias. This milestone ends with diagnosis:
+no model tuning, sensor redesign, noise sweep or real-data analysis.
+
+The [completed revision-6 diagnosis](docs/observability_diagnosis.md) reports
+30/30 classical recoveries versus 21/30 frozen PINN recoveries. All nine PINN
+failures were classical successes; the PINN still underestimated Q in all 30
+cases. Conditional-Q numerical bias was small and mixed in sign. This supports
+a PINN-specific recovery gap, with weak observation geometry as an interacting
+factor—not demonstrated intrinsic non-identifiability. No model was revised.
