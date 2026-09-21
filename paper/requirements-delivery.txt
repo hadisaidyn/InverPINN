@@ -1,0 +1,4 @@
+# Additional presentation-only dependencies. Scientific requirements are unchanged.
+reportlab==4.4.9
+pypdf==6.10.0
+Pillow==12.3.0

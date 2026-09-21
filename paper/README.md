@@ -1,6 +1,6 @@
 # Final scientific report
 
-Start with the [manuscript](manuscript.md). Its conclusion is fixed: **J1 failed final confirmation (23/30; required 27/30)**. No reporting artifact changes that decision.
+Start with the [formal PDF](InverPINN_Paper.pdf) or [manuscript source](manuscript.md). Its conclusion is fixed: **J1 failed final confirmation (23/30; required 27/30)**. No reporting artifact changes that decision.
 
 - [Generated figures and tables](generated/README.md): eight main figures, one supplementary diagnostic and four main tables.
 - [Supplement](supplement.md): evidence index, distribution details and qualification of historical results.
@@ -8,4 +8,8 @@ Start with the [manuscript](manuscript.md). Its conclusion is fixed: **J1 failed
 - [Reproduction guide](../docs/reproducibility.md): no-training rebuild and limits of complete experiment reproduction.
 - [Scientific audit](../docs/final_scientific_audit.md): claim corrections and integrity checks.
 
-The package contains a complete Markdown manuscript, not a journal-formatted or peer-reviewed publication. PDF figures are provided for typesetting. Author information, target-journal style and submission are separate editorial tasks.
+The PDF typesets the preserved Markdown manuscript, with numbered equations,
+eight figures and four tables. Khadis Aidyn confirmed the public byline. It is
+an academic research manuscript, not a claim of peer-reviewed publication or
+journal submission. [Delivery-build dependencies](requirements-delivery.txt)
+and the reproduction guide document the local, no-training build.

@@ -1,0 +1,38 @@
+{
+  "author": "Khadis Aidyn",
+  "builder_sha256": "a3bd3eece17befdf346aa1e4c3571b3176768faf07dd914efa0a972d64325ac3",
+  "files": {
+    "paper/InverPINN_Paper.pdf": "fd379e2e83dcf947266fe6d701c47f674baacf21138c833fa89d2b89fe5464fa",
+    "presentation/InverPINN_Poster.pdf": "6d71b79e6eb126ce882e852b7dae400a426bdf4cadb8bf3f0a951c1190c0a571"
+  },
+  "fonts": {
+    "DejaVuSans-Bold.ttf": "b184b89e3c1075f22f6b71575b6fc20d4972b3cfd3b23322ca6fd596dcaef167",
+    "DejaVuSans.ttf": "3fdf69cabf06049ea70a00b5919340e2ce1e6d02b0cc3c4b44fb6801bd1e0d22",
+    "DejaVuSerif-Bold.ttf": "c3753f2ed6bc673f15846dc45addbeb3b9c872f32fb18fd53a21f1bef1ed7676",
+    "DejaVuSerif.ttf": "107244956e9962b9e96faccdc551825e0ae0898ae13737133e1b921a2fd35ffa"
+  },
+  "manuscript_sha256": "abfa524bbc6b1770bdb678ea0b30c47295db06b996df55020828f6af3c1d261c",
+  "metrics": {
+    "J1": {
+      "L2": "7.423%",
+      "Q": "5.975%",
+      "localization": "0.005574",
+      "recovered": 23
+    },
+    "classical": {
+      "L2": "1.507%",
+      "Q": "1.218%",
+      "localization": "0.001111",
+      "recovered": 30
+    }
+  },
+  "packages": {
+    "Pillow": "12.3.0",
+    "pypdf": "6.10.0",
+    "reportlab": "4.4.9"
+  },
+  "scientific_commit": "eb18380f1488f5c679a0981da75e667fa3ba1b51",
+  "simulation_performed": false,
+  "source_commit": "1abae14e6cd4958aacc65cb2508f9a21d36feb5c",
+  "training_performed": false
+}

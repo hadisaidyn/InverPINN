@@ -1,5 +1,15 @@
 # Changelog
 
+## Final public deliverables — 2026-09-21
+
+- Confirmed public author name: Khadis Aidyn; no affiliation, email or DOI invented.
+- Typeset the preserved manuscript and created an A1 poster, ten editable slides,
+  slide PDF and speaker notes from existing verified figures and numbers.
+- Prepared application, CV, interview and publishing materials with personal-role review explicitly required.
+- Added report-only PDF builders and delivery tests; no scientific experiment rerun.
+- Drafted research-release v1.0.0 notes; no tag, remote, license or publication created.
+- Preserved historical package version 0.0.0 and the failed 23/30 confirmation.
+
 ## Research freeze — 2026-09-20
 
 Existing package version: **0.0.0**. No v1.0.0 tag or published release is

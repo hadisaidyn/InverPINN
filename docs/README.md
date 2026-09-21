@@ -40,6 +40,9 @@ retain original execution paths: these are immutable provenance, not setup instr
 
 ## Communication
 
+- [Final paper, poster, slides and application inventory](FINAL_DELIVERABLES.md).
+- [Manual publishing checklist](PUBLISHING_CHECKLIST.md) and [draft research-release notes](release_notes_v1.0.0.md).
+- [Final delivery audit](final_delivery_audit.md): layout, metadata, tests and scientific preservation.
 - [Technical and plain-language project summary](project_summary.md).
 - [Short application descriptions](application_description.md).
 - [Final scientific claim audit](final_scientific_audit.md).

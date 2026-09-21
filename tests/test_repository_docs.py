@@ -90,7 +90,8 @@ def test_citation_is_yaml_with_supported_metadata():
     project = tomllib.loads((ROOT / "pyproject.toml").read_text())["project"]
     assert citation["cff-version"] == "1.2.0"
     assert citation["type"] == "software"
-    assert citation["authors"] == [{"given-names": "Hadis"}]
+    # Public name explicitly confirmed during final delivery, not inferred from Git.
+    assert citation["authors"] == [{"given-names": "Khadis", "family-names": "Aidyn"}]
     assert citation["version"] == project["version"]
     assert citation["title"].startswith("InverPINN: Diagnosing Source-Strength Bias")
     assert citation["message"]

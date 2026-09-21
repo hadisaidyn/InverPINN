@@ -6,9 +6,10 @@ type: software
 title: >-
   InverPINN: Diagnosing Source-Strength Bias in Physics-Informed Neural
   Networks for Sparse Pollution Source Inversion
-# The sole name supported by the repository's Git authorship metadata.
+# Public author name explicitly confirmed by the author on 2026-09-21.
 authors:
-  - given-names: Hadis
+  - given-names: Khadis
+    family-names: Aidyn
 # Existing package version; no release tag or publication date is implied.
 version: 0.0.0
 abstract: >-

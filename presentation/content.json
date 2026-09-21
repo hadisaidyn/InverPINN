@@ -1,0 +1,92 @@
+{
+  "author": "Khadis Aidyn",
+  "title": "InverPINN",
+  "subtitle": "Source-strength bias in physics-informed pollution inversion",
+  "talk_minutes": "5-7",
+  "slides": [
+    {
+      "title": "InverPINN",
+      "body": "How reliably can physics-informed neural networks recover a pollution source from sparse concentration measurements?",
+      "say": "InverPINN studies an inverse problem: using measured concentrations to estimate the location and strength of an unknown source. The experiments are synthetic, with known physics and known truth for evaluation. That lets us ask a precise question about the inverse method. The final answer was mixed: the PINN often localized sources well, but its source-strength bias persisted and it failed the required recovery rate. A classical inverse method performed better in this controlled setting.",
+      "key_number": "Final J1 recovery: 23/30.",
+      "transition": "First, what makes source inference different from predicting concentration?",
+      "sources": ["paper/manuscript.md", "paper/evidence/final/decision.json"]
+    },
+    {
+      "title": "Sparse measurements, unknown source",
+      "body": "Sensors observe concentration after transport.\nThe unknowns are source location x_s, y_s and peak intensity Q.\nAlmaty motivates the question; no real Almaty measurements enter this study.",
+      "say": "A monitor records pollution after wind and diffusion have moved it. It does not directly measure the source. Reconstructing the concentration field and recovering the source are therefore different tasks. Here the unknowns are two location coordinates and a Gaussian peak intensity. Twenty fixed virtual sensors provide observations. Almaty motivates the application, but these experiments do not identify real emitters or reproduce the city's sensor network. Synthetic truth makes the errors measurable.",
+      "key_number": "20 fixed sensors.",
+      "transition": "The forward relationship is the advection-diffusion equation.",
+      "sources": ["paper/manuscript.md"]
+    },
+    {
+      "title": "Known transport physics",
+      "body": "C_t + u C_x + v C_y = D(C_xx + C_yy) + QG\n\nWind carries concentration; diffusion spreads it; the source adds it.\nOne Gaussian, known width and transport. Zero initial and boundary concentration.",
+      "say": "The equation balances change in concentration with wind transport, diffusion and a source. The source is one stationary Gaussian. Wind, diffusion and source width are known, so inference concerns only location and strength. We prescribe zero concentration initially and on all four edges of a unit square. These absorbing boundaries simplify the problem. They are not a general atmospheric boundary model, and all units remain synthetic rather than representing real emissions.",
+      "key_number": "u=0.35, v=-0.15, D=0.005, sigma=0.08.",
+      "transition": "A PINN combines sensor fitting with this physical relationship.",
+      "sources": ["paper/manuscript.md", "paper/generated/tables/table1_physics.md"]
+    },
+    {
+      "title": "Neural field and source inference",
+      "body": "A PyTorch network represents C(x,y,t).\nSensor loss fits observations; PDE residual couples the field to the source.\nHard constraints enforce nonnegative concentration and exact zero IC/BC.",
+      "figure": "paper/generated/figures/01_schematic.png",
+      "say": "The PINN represents the concentration field with a neural network and uses automatic differentiation for the equation's derivatives. Its objective includes sensor error and the PDE residual. The revised field enforces positivity and the initial and boundary conditions by construction. However, source parameters do not directly enter the sensor loss when the field is held fixed. Observation information reaches source inference through coupling to the PDE residual. This distinction motivates the later bias diagnosis.",
+      "key_number": "Both final neural methods use 12,000 updates.",
+      "transition": "Before interpreting inverse errors, the numerical reference needed checking.",
+      "sources": ["paper/manuscript.md", "docs/source_field_coupling.md"]
+    },
+    {
+      "title": "Reference quality and blind evaluation",
+      "body": "641×641 numerical reference · 30 fresh final scenarios\nFrozen methods and thresholds; all failures retained",
+      "figure": "paper/generated/figures/02_numerical_convergence.png",
+      "say": "Manufactured solutions and refinement checks preceded inverse experiments. The coarse reference was rejected for accuracy, and the final reference used a 641 by 641 grid. Thirty new final scenarios followed a frozen protocol. Fitting used sparse observations, while source truth and dense fields supported evaluation only. Three numerical-reference estimates exceeded the one-percent target and remained in the report. These are Richardson estimates, not certified error bounds. The required joint recovery rate was fixed in advance.",
+      "key_number": "Final requirement: at least 27/30 joint recoveries.",
+      "transition": "Earlier tests had already exposed a gap between physical validity and recovery.",
+      "sources": ["paper/manuscript.md", "paper/evidence/final/protocol.md"]
+    },
+    {
+      "title": "Early failure and persistent Q bias",
+      "body": "Earlier B0 held-out test: 14/30 recovered\nMedian negative-prediction fraction: 35.424%\nHard constraints removed physical violations, but strength bias remained.",
+      "say": "On an earlier, separate held-out set, the initial PINN recovered fourteen of thirty cases and predicted negative concentrations at many evaluation points. Hard constraints later removed those violations. They did not ensure correct source estimates. The revised PINN continued to underestimate source strength, including every case in the observability diagnostic set. These historical experiments are separate from the final thirty scenarios and are not pooled to improve a headline number.",
+      "key_number": "Historical B0 median negativity: 35.424%.",
+      "transition": "Could weak sensor information alone explain the PINN's failures?",
+      "sources": ["paper/manuscript.md", "paper/evidence/historical/initial_summary.json"]
+    },
+    {
+      "title": "Classical inversion exposed the recovery gap",
+      "body": "Classical inversion recovered 30/30 final cases on identical observations.\nThe tested observations supported better recovery than the PINN achieved.",
+      "figure": "paper/generated/figures/06_observability.png",
+      "say": "Classical inversion searches source parameters through a numerical forward solver. It recovered all thirty final cases using the same observations as the PINNs. Separate conditional-strength diagnostics also recovered Q accurately when location was known. Together these findings weaken insufficient information as a complete explanation. The displayed historical observability map describes local sensitivity across source locations. It is not a posterior map or proof of global uniqueness. The comparison remains specific to the tested source family and known physics.",
+      "key_number": "Classical final recovery: 30/30.",
+      "transition": "J1 then tested an analytical intervention in the PINN's amplitude optimization.",
+      "sources": ["paper/manuscript.md", "docs/observability_diagnosis.md"]
+    },
+    {
+      "title": "J1 profiles source amplitude analytically",
+      "body": "Residual: R0 - QG\nQ* = sum(w_i G_i R0_i) / sum(w_i G_i²)\n\nQ leaves Adam's parameter list. The field and location remain trainable.\nThis minimizes the sampled PDE objective, not observation mismatch through a solver.",
+      "say": "For a fixed neural field and source location, the PDE residual is linear in source amplitude. Its least-squares optimum therefore has a closed form. J1 uses differentiable variable projection, subject to the positive amplitude domain, rather than optimizing Q as an independent Adam parameter. This uses no source truth. But the optimum is conditional on the learned field and sampled residual. An imperfect field can still produce a biased optimum. Profiling improved the development results without eliminating that possibility.",
+      "key_number": "Q is profiled each update, plus a fixed terminal profile.",
+      "transition": "The decisive question was how the frozen method performed on fresh cases.",
+      "sources": ["paper/manuscript.md", "docs/source_field_coupling.md"]
+    },
+    {
+      "title": "J1 failed final confirmation",
+      "body": "23/30 = 76.67%; required 27/30 = 90%\n28 Q underestimates / 2 overestimates",
+      "say": "J1 recovered twenty-three of thirty sources jointly, or 76.67 percent. The preregistered requirement was twenty-seven, so confirmation failed even though its median errors passed the other gates. Median localization was 0.005574, relative Q error 5.975 percent and concentration L2 7.423 percent. Classical inversion recovered all thirty with lower median errors. J1 still underestimated Q in twenty-eight cases. Exact nonnegativity and zero initial and boundary violations did not compensate for the failed recovery rate.",
+      "key_number": "J1: 23/30. Required: 27/30. Classical: 30/30.",
+      "transition": "The conclusion depends on the retained failures, not only the medians.",
+      "sources": ["paper/generated/tables/table3_final_benchmark.md", "paper/evidence/final/decision.json"]
+    },
+    {
+      "title": "Physical validity did not guarantee recovery",
+      "body": "All seven J1 joint failures missed the Q criterion.\nDevelopment stopped after failed confirmation.\nNoise, uncertain weather and real Almaty attribution remain unvalidated.",
+      "figure": "paper/generated/figures/08_failure.png",
+      "say": "This is the final case with the largest localization error, selected mechanically rather than for appearance. Its source-strength error was 62.183 percent and field L2 error was 69.724 percent. It remained in every aggregate. The evidence supports a formulation and optimization limitation in these PINNs, without uniquely isolating the cause. The project stopped after failed confirmation. Future noise, meteorology or real-data studies would require separate authorization and validation. The lesson is to distinguish physical consistency and attractive medians from dependable inverse recovery.",
+      "key_number": "Worst displayed case: Q error 62.183%; L2 69.724%.",
+      "transition": "Questions.",
+      "sources": ["paper/manuscript.md", "paper/evidence/manifest.json"]
+    }
+  ]
+}

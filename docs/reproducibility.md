@@ -18,6 +18,37 @@ On a host with an unwritable home font cache, set `MPLCONFIGDIR` to a writable t
 
 ## Inputs and outputs
 
+### Formal paper and poster
+
+After the report-only setup, install the additional pinned presentation dependencies:
+
+```bash
+python -m pip install -r paper/requirements-delivery.txt
+python scripts/build_final_pdf.py --output-root artifacts/pdf_reproduction
+python scripts/check_final_delivery.py
+python -m pytest tests/test_final_delivery.py -q
+```
+
+The basic command `python scripts/build_final_pdf.py` generates
+`paper/InverPINN_Paper.pdf` and `presentation/InverPINN_Poster.pdf` when those
+outputs do not exist. Since the final files are committed, use a fresh
+`--output-root` to reproduce without overwriting them. Existing outputs and
+destinations inside scientific directories are rejected. The build verifies
+both sealed evidence and canonical figure/table hashes before typesetting.
+It does not alter `paper/manuscript.md` or run the scientific pipeline.
+
+Fonts are embedded DejaVu Serif/Sans, taken from matplotlib's installed font
+directory by default; `--font-dir` can supply the four named DejaVu TTF files.
+`presentation/pdf_build_provenance.json` records font/package/input/output hashes
+and the pre-delivery Git commit. Timestamps, font installations and package
+versions may change PDF bytes, even when scientific content is identical.
+This is a content-reproducible typesetting path, not a cross-platform binary lock.
+
+The editable ten-slide deck and notes have committed sources. Their builder
+requires the authoring runtime used for delivery, which is not a public pip/npm
+dependency; see [presentation reproduction](../presentation/README.md).
+The final PPTX and slide PDF can be opened without that runtime.
+
 The committed [evidence manifest](../paper/evidence/manifest.json) contains 41 byte-identical copies from the existing archive, original relative paths, sizes and SHA-256 hashes. It includes all 90 final per-case records; final manifest/protocol/configs; failed decision; observation hashes; historical numerical/diagnostic/development summaries; observability grid; fixed sensors; two mechanically selected field-preview NPZ files; and prior test reports. No pickle or model checkpoint is used. Git attributes preserve the archive's original bytes, including CSV CRLF line endings, across checkout platforms.
 
 The reporter verifies every bundled file, source metric calculations, all 30 IDs per method, primary seed, paired observation/reference hashes and the frozen decision. It independently recomputes distributions, recovery intervals and paired mean effects. It refuses changed or incomplete evidence rather than omitting cases. The bundle supports **reproduction of reported analysis**, not independent reconstruction of original fitting trajectories.

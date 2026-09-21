@@ -1,0 +1,42 @@
+{
+  "application_counts": {
+    "100": 100,
+    "150": 150,
+    "250": 250,
+    "50": 50,
+    "common_app_characters": 132
+  },
+  "artifacts": {
+    "paper/InverPINN_Paper.pdf": {
+      "author": "Khadis Aidyn",
+      "bytes": 1293620,
+      "pages": 14,
+      "sha256": "fd379e2e83dcf947266fe6d701c47f674baacf21138c833fa89d2b89fe5464fa"
+    },
+    "presentation/InverPINN_Poster.pdf": {
+      "author": "Khadis Aidyn",
+      "bytes": 332393,
+      "pages": 1,
+      "sha256": "6d71b79e6eb126ce882e852b7dae400a426bdf4cadb8bf3f0a951c1190c0a571"
+    },
+    "presentation/InverPINN_Presentation.pdf": {
+      "author": "Khadis Aidyn",
+      "bytes": 649015,
+      "pages": 10,
+      "sha256": "9cd8002d5d972c613b2fe807f2ce71ad5abf89e4b7f78b5f1b8a3a074fae1e84"
+    },
+    "presentation/InverPINN_Presentation.pptx": {
+      "author": "Khadis Aidyn",
+      "bytes": 464089,
+      "native_table_slide": 9,
+      "notes": 10,
+      "sha256": "b1f0996a1d9e04000ce1d28625d873f30e221d17c0d67c1b06310a5efa4d33c8",
+      "slides": 10
+    }
+  },
+  "canonical_files_verified": 33,
+  "evidence_files_verified": 41,
+  "scope": "Structural/hash/headline checks; visual and scientific-claim review are separately documented.",
+  "simulation_performed": false,
+  "training_performed": false
+}

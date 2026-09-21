@@ -74,6 +74,7 @@ InverPINN/
 ├── configs/          Physical settings, protocols and frozen model recipes
 ├── docs/             Methodology, historical reports and reader guides
 ├── paper/            Manuscript, sealed evidence, figures and tables
+├── presentation/     A1 poster, editable slides, PDF slides and speaker notes
 ├── scripts/          Reporting and historical experiment entry points
 ├── src/inverpinn/     Physics, data, models, training, evaluation, visualization
 ├── tests/            Scientific tests and isolated report/document checks
@@ -115,6 +116,22 @@ The build reads the committed evidence, verifies hashes and pairing, and recreat
 
 The lightweight tests also render a report. Font rendering and execution provenance can vary by platform; recorded numerical results are checked. [Canonical outputs](paper/generated/README.md) · [Environment, hashes and limitations](docs/reproducibility.md).
 
+### Formal PDF, poster and delivery checks
+
+The final PDFs are already committed. To reproduce them in a **new** directory:
+
+```bash
+python -m pip install -r paper/requirements-delivery.txt
+python scripts/build_final_pdf.py --output-root artifacts/pdf_reproduction
+python scripts/check_final_delivery.py
+python -m pytest tests/test_final_delivery.py -q
+```
+
+Without `--output-root`, the PDF builder targets `paper/InverPINN_Paper.pdf` and
+`presentation/InverPINN_Poster.pdf`; it refuses to overwrite existing deliverables.
+It only typesets the preserved manuscript and figures. [Slide sources and authoring
+runtime limitations](presentation/README.md) · [Complete delivery inventory](docs/FINAL_DELIVERABLES.md).
+
 ### Full scientific experiments — archive-dependent, not a quick start
 
 The ignored research archive is approximately 11 GB, plus generated input data. A clean checkout does not contain every training history, checkpoint or full reference field. Complete experimental reruns require that archive, compatible scientific dependencies and attention to historical execution locks; no public archive DOI is claimed.
@@ -144,11 +161,11 @@ The tested setting is correctly specified, two-dimensional, single-source and ze
 
 ## Paper
 
-Read the [manuscript](paper/manuscript.md), [supplement](paper/supplement.md) and [scientific audit](docs/final_scientific_audit.md). The manuscript is Markdown, not a peer-reviewed publication or a journal-formatted PDF. For a less technical introduction, see the [project summary](docs/project_summary.md).
+Read the [formal paper PDF](paper/InverPINN_Paper.pdf), [source manuscript](paper/manuscript.md), [supplement](paper/supplement.md) and [scientific audit](docs/final_scientific_audit.md). This is a research manuscript, not a claim of peer-reviewed publication. For a less technical introduction, see the [project summary](docs/project_summary.md). The [final deliverables](docs/FINAL_DELIVERABLES.md) include a poster, slides and communication materials.
 
 ## Citation
 
-Hadis. *InverPINN: Diagnosing Source-Strength Bias in Physics-Informed Neural Networks for Sparse Pollution Source Inversion*. Software, version 0.0.0. See [CITATION.cff](CITATION.cff). No DOI, venue or affiliation is asserted.
+Khadis Aidyn. *InverPINN: Diagnosing Source-Strength Bias in Physics-Informed Neural Networks for Sparse Pollution Source Inversion*. Software, historical package version 0.0.0. See [CITATION.cff](CITATION.cff). No DOI, venue or affiliation is asserted.
 
 ## License
 

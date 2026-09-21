@@ -1,0 +1,5 @@
+# Preserve final document packages as binary, including ASCII-heavy PDFs.
+paper/InverPINN_Paper.pdf binary
+presentation/InverPINN_Poster.pdf binary
+presentation/InverPINN_Presentation.pdf binary
+presentation/InverPINN_Presentation.pptx binary
