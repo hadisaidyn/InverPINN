@@ -21,6 +21,17 @@ Joint recovery requires localization error ≤ 0.08 **and** relative source-stre
 
 *Existing study schematic. The controlled research is complete; this repository preserves the failed confirmation, not a deployed pollution detector.*
 
+## Interactive demo
+
+**InverPINN Explorer** shows all 30 frozen final scenarios, saved concentration fields, source estimates, sensors and retained failures. It is a result viewer: no training or live inference. From the repository root in a separate Python 3.13 environment:
+
+```bash
+pip install -r demo/requirements.txt
+streamlit run demo/app.py
+```
+
+[Setup and data provenance](demo/README.md) · [Actual app screenshot](demo/demo_preview.png) · [Optional deployment](demo/DEPLOYMENT.md). Synthetic controlled data only; the demo does not identify real pollution emitters in Almaty.
+
 ## Why this problem matters
 
 Estimating where pollution originates is harder than predicting concentration: sparse sensors may admit misleading source estimates even when a model fits observations and obeys physical constraints. Almaty motivates the question, but the experiments here isolate the inverse problem using known synthetic sources—not real emitter attribution.
@@ -73,6 +84,7 @@ Historical and final sets are not pooled. All final failures and three numerical
 InverPINN/
 ├── configs/          Physical settings, protocols and frozen model recipes
 ├── docs/             Methodology, historical reports and reader guides
+├── demo/             Read-only interactive viewer and compact frozen display data
 ├── paper/            Manuscript, sealed evidence, figures and tables
 ├── presentation/     A1 poster, editable slides, PDF slides and speaker notes
 ├── scripts/          Reporting and historical experiment entry points

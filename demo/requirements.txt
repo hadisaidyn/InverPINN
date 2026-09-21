@@ -1,0 +1,6 @@
+# Viewer only. No PyTorch, solver, optimizer or full research installation.
+streamlit==1.64.0
+numpy==2.5.3
+pandas==3.0.6
+plotly==7.1.0
+PyYAML==6.0.3

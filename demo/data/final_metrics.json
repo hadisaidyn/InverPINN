@@ -1,0 +1,1558 @@
+{
+  "criterion": {
+    "confidence_level": 0.95,
+    "secondary_localization_max": 0.08,
+    "secondary_relative_strength_max": 0.2
+  },
+  "default_scenario": "final_blind_v1_001",
+  "paper_cases": {
+    "failure": "final_blind_v1_030",
+    "success": "final_blind_v1_003"
+  },
+  "physics": {
+    "D": 0.005,
+    "u": 0.35,
+    "v": -0.15
+  },
+  "provenance": {
+    "canonical_summary_sha256": "7167b3c1895e64626b9b3596c9cdef44afbdf3b8d1fc3b231de6bcb679dafccf",
+    "input_hashes": {
+      "configs/final_confirmatory.yaml": "0fa10650e5030324086872f18cf7277f56cede64e1b362bf1ffcf90ea9319067",
+      "final/J1_raw.csv": "17917bd23df4808e0285227f334ff574d797934b3d1f3f6c2e8b648a32f1890f",
+      "final/classical_raw.csv": "00253a7905c4ce07fb6f969449eeebaa308096bf2c6438e9248a40662c5e3fd8",
+      "final/decision.json": "e250dec42830146a928f74051656e6cd66d598cf3dfb040703bba0c9a35a4392",
+      "final/manifest.csv": "8fa5480ef5aabd50300e548c27ec355af8315568f52a6dfd5c640d3044ee74b9",
+      "final/observability.csv": "7d056a8133f445ff8d37276480d497d1f8a55e9a116ec0ba2dcbe27ed4a1609b",
+      "final/sensor_geometry.json": "c0533d4c030bc4ce020eaaebf6531a19453d36b5e322e6c63eb9d27baef2ebd2"
+    },
+    "scientific_commit": "eb18380f1488f5c679a0981da75e667fa3ba1b51"
+  },
+  "required": 27,
+  "scenarios": [
+    {
+      "information_group": "higher",
+      "methods": {
+        "J1": {
+          "Q_pred": 1.1033005714416504,
+          "localization_error": 0.0004456662809696406,
+          "mae": 0.0004405538534328078,
+          "recovery_success": true,
+          "relative_l2": 0.015122922350782435,
+          "relative_strength_error": 0.007930337543770332,
+          "rmse": 0.0007991057072136797,
+          "x_pred": 0.47418448328971863,
+          "y_pred": 0.5641159415245056
+        },
+        "classical": {
+          "Q_pred": 1.12422982483913,
+          "localization_error": 0.0010412586059293334,
+          "mae": 0.0002174159449796082,
+          "recovery_success": true,
+          "relative_l2": 0.010005395031892548,
+          "relative_strength_error": 0.010888901647203495,
+          "rmse": 0.0005286920138487082,
+          "x_pred": 0.47554184418521395,
+          "y_pred": 0.5636679000010326
+        }
+      },
+      "observability": {
+        "jacobian_condition": 7.4935598929093565,
+        "sensor_rms": 0.07811659878120836,
+        "sigma_min": 1.7486615450275316
+      },
+      "observations_hash": "9931457ff42a49dfdf5fdb2b0a773ce34292b0b78df5611cc0c5ca4fcd192893",
+      "reference_data_hash": "79f51aaf60258456f521d4ad478a6453026b37a78faeec97be11b8bda36c2913",
+      "reference_error_estimate": 0.0077827592680276,
+      "reference_target_met": true,
+      "scenario_id": "final_blind_v1_001",
+      "truth": {
+        "Q_true": 1.1121200588979085,
+        "x_true": 0.474627350088808,
+        "y_true": 0.5641658156887355
+      }
+    },
+    {
+      "information_group": "lower",
+      "methods": {
+        "J1": {
+          "Q_pred": 1.2859355211257935,
+          "localization_error": 0.0071648980868067045,
+          "mae": 0.0016935490126257003,
+          "recovery_success": true,
+          "relative_l2": 0.07952927194867965,
+          "relative_strength_error": 0.06461439671432959,
+          "rmse": 0.00519396334246235,
+          "x_pred": 0.4970504343509674,
+          "y_pred": 0.7238608598709106
+        },
+        "classical": {
+          "Q_pred": 1.421549796580067,
+          "localization_error": 0.002682442367424054,
+          "mae": 0.0007029489425922228,
+          "recovery_success": true,
+          "relative_l2": 0.03239384359866017,
+          "relative_strength_error": 0.03403101650894802,
+          "rmse": 0.00211560387829874,
+          "x_pred": 0.5005412696992211,
+          "y_pred": 0.7329086611564549
+        }
+      },
+      "observability": {
+        "jacobian_condition": 44.02443504133927,
+        "sensor_rms": 0.04873605891530261,
+        "sigma_min": 0.23986992509161414
+      },
+      "observations_hash": "51e5758acd8ece8aae19b247a35b72462c98585e6c855385ccee7afedefa1200",
+      "reference_data_hash": "ec2970f79f6e5e04b65eee3e5c0df1aa0569029017496ac540e8760e9852c536",
+      "reference_error_estimate": 0.008335984519549552,
+      "reference_target_met": true,
+      "scenario_id": "final_blind_v1_002",
+      "truth": {
+        "Q_true": 1.3747651413585673,
+        "x_true": 0.498907988567038,
+        "y_true": 0.7307807772785597
+      }
+    },
+    {
+      "information_group": "higher",
+      "methods": {
+        "J1": {
+          "Q_pred": 1.0387860536575317,
+          "localization_error": 0.0017936726132816497,
+          "mae": 0.0006639498893229017,
+          "recovery_success": true,
+          "relative_l2": 0.029416369459496636,
+          "relative_strength_error": 0.004080985735492378,
+          "rmse": 0.0014456702456677997,
+          "x_pred": 0.5338432192802429,
+          "y_pred": 0.6140490770339966
+        },
+        "classical": {
+          "Q_pred": 1.0475466642398,
+          "localization_error": 0.0013391949148395985,
+          "mae": 0.00022278563559199142,
+          "recovery_success": true,
+          "relative_l2": 0.011664918352465269,
+          "relative_strength_error": 0.012548910846844149,
+          "rmse": 0.000573273510299191,
+          "x_pred": 0.5366315404011932,
+          "y_pred": 0.6135939070191285
+        }
+      },
+      "observability": {
+        "jacobian_condition": 5.968437242985537,
+        "sensor_rms": 0.06735553656314425,
+        "sigma_min": 1.7196576850718535
+      },
+      "observations_hash": "c7a5c1a2c259723892d25a78f5fb83b5b70d4f4d7eb0651ce51d7d976a2d7755",
+      "reference_data_hash": "71d0fc65a6d63c8734d4118b522846d09b80fbc3882dc382d535916b5d4ee465",
+      "reference_error_estimate": 0.007696833807344052,
+      "reference_target_met": true,
+      "scenario_id": "final_blind_v1_003",
+      "truth": {
+        "Q_true": 1.0345640126793336,
+        "x_true": 0.5353784315055168,
+        "y_true": 0.6131215077012746
+      }
+    },
+    {
+      "information_group": "lower",
+      "methods": {
+        "J1": {
+          "Q_pred": 0.7768574953079224,
+          "localization_error": 0.018163896357629855,
+          "mae": 0.0016191783137754659,
+          "recovery_success": true,
+          "relative_l2": 0.13013056757378175,
+          "relative_strength_error": 0.05488348761794044,
+          "rmse": 0.0049418257886187835,
+          "x_pred": 0.7032745480537415,
+          "y_pred": 0.3207237124443054
+        },
+        "classical": {
+          "Q_pred": 0.8287882199806521,
+          "localization_error": 0.0012267472402782277,
+          "mae": 0.00011341457472179114,
+          "recovery_success": true,
+          "relative_l2": 0.009974713019698505,
+          "relative_strength_error": 0.008294876090463092,
+          "rmse": 0.000378798732333739,
+          "x_pred": 0.7180436680165329,
+          "y_pred": 0.3325424093663334
+        }
+      },
+      "observability": {
+        "jacobian_condition": 18.769215715021197,
+        "sensor_rms": 0.014649850075314825,
+        "sigma_min": 0.23186258639233864
+      },
+      "observations_hash": "43bf1a48e0fdb9b763388bfffc7f11041177dadfcb102cca01e5e12a8f080ad8",
+      "reference_data_hash": "1794295950a63bc6965c328adbc5870d2cd304477afab759055daf646fd8af0a",
+      "reference_error_estimate": 0.009090095232668021,
+      "reference_target_met": true,
+      "scenario_id": "final_blind_v1_004",
+      "truth": {
+        "Q_true": 0.8219700800168444,
+        "x_true": 0.7168439344813469,
+        "y_true": 0.3327984332638125
+      }
+    },
+    {
+      "information_group": "higher",
+      "methods": {
+        "J1": {
+          "Q_pred": 0.8019977807998657,
+          "localization_error": 0.00318127317279142,
+          "mae": 0.001121314436997614,
+          "recovery_success": true,
+          "relative_l2": 0.06892644599044802,
+          "relative_strength_error": 0.06961832576673635,
+          "rmse": 0.0028222361669353597,
+          "x_pred": 0.2567887306213379,
+          "y_pred": 0.4316774308681488
+        },
+        "classical": {
+          "Q_pred": 0.8701709103013784,
+          "localization_error": 0.0010244522550173058,
+          "mae": 0.00016873104888518164,
+          "recovery_success": true,
+          "relative_l2": 0.01011630271683414,
+          "relative_strength_error": 0.009467965843796581,
+          "rmse": 0.00041421830173969687,
+          "x_pred": 0.25800197569685873,
+          "y_pred": 0.4285499456323499
+        }
+      },
+      "observability": {
+        "jacobian_condition": 6.844681383890422,
+        "sensor_rms": 0.06271731473913321,
+        "sigma_min": 1.7070526329135127
+      },
+      "observations_hash": "4f65d3ee0a3e3498bf757e0ff29d8030a5360d49664ee751d7cef1d9c501c887",
+      "reference_data_hash": "957414c97756778a915c26c32ac6838fdce6dc96c6a72fcea6ac4f027f6a4e38",
+      "reference_error_estimate": 0.007800437724809932,
+      "reference_target_met": true,
+      "scenario_id": "final_blind_v1_005",
+      "truth": {
+        "Q_true": 0.8620094344192664,
+        "x_true": 0.2569786538992116,
+        "y_true": 0.4285018320036125
+      }
+    },
+    {
+      "information_group": "higher",
+      "methods": {
+        "J1": {
+          "Q_pred": 1.2357102632522583,
+          "localization_error": 0.0014414526778115913,
+          "mae": 0.0005708900719173616,
+          "recovery_success": true,
+          "relative_l2": 0.01719065573059106,
+          "relative_strength_error": 0.008636339839299807,
+          "rmse": 0.0010177114156573776,
+          "x_pred": 0.2517724633216858,
+          "y_pred": 0.6174378991127014
+        },
+        "classical": {
+          "Q_pred": 1.2634341476272557,
+          "localization_error": 0.0010543175487613171,
+          "mae": 0.0003460812927821247,
+          "recovery_success": true,
+          "relative_l2": 0.01523350475435632,
+          "relative_strength_error": 0.01360548521079997,
+          "rmse": 0.0009018452775708276,
+          "x_pred": 0.2502249207913993,
+          "y_pred": 0.6177563855646692
+        }
+      },
+      "observability": {
+        "jacobian_condition": 10.389207966285124,
+        "sensor_rms": 0.06804797180379933,
+        "sigma_min": 1.0338064385747647
+      },
+      "observations_hash": "bfea2f836606009b11f39e2ff9c88fb7cf65a7071c4488db7445e5dfe7b2c645",
+      "reference_data_hash": "a96acb8dbbc4588043a0d1de77c8a8f85560c9ef6658f026ba9680f628b9588b",
+      "reference_error_estimate": 0.007906314699349187,
+      "reference_target_met": true,
+      "scenario_id": "final_blind_v1_006",
+      "truth": {
+        "Q_true": 1.2464752470873801,
+        "x_true": 0.2505104186940489,
+        "y_true": 0.6167414587489781
+      }
+    },
+    {
+      "information_group": "higher",
+      "methods": {
+        "J1": {
+          "Q_pred": 0.9926608800888062,
+          "localization_error": 0.0003608448986312153,
+          "mae": 0.00030909117197659144,
+          "recovery_success": true,
+          "relative_l2": 0.009349345407340667,
+          "relative_strength_error": 0.005158477945451461,
+          "rmse": 0.00044325616176891093,
+          "x_pred": 0.39384278655052185,
+          "y_pred": 0.4911879599094391
+        },
+        "classical": {
+          "Q_pred": 1.006901304753469,
+          "localization_error": 0.0011771181802283665,
+          "mae": 0.00019451574439857862,
+          "recovery_success": true,
+          "relative_l2": 0.010070652502871438,
+          "relative_strength_error": 0.009113229575478403,
+          "rmse": 0.0004774536163169769,
+          "x_pred": 0.3952684312404783,
+          "y_pred": 0.4913477920981445
+        }
+      },
+      "observability": {
+        "jacobian_condition": 7.880577153288688,
+        "sensor_rms": 0.060857829280730635,
+        "sigma_min": 1.3761878736025837
+      },
+      "observations_hash": "cbbe0687b1c77ea5f30fc68b8027b4a66a3e590404ce85bd0bc032d2be492258",
+      "reference_data_hash": "64716539e64afced992c09278187b1f989f8b1a388a130c56d228fca1a58f63b",
+      "reference_error_estimate": 0.00856850791070347,
+      "reference_target_met": true,
+      "scenario_id": "final_blind_v1_007",
+      "truth": {
+        "Q_true": 0.997808050913236,
+        "x_true": 0.39409538737052974,
+        "y_true": 0.4914456455058536
+      }
+    },
+    {
+      "information_group": "lower",
+      "methods": {
+        "J1": {
+          "Q_pred": 0.6346828937530518,
+          "localization_error": 0.08085635145856981,
+          "mae": 0.007429657618309199,
+          "recovery_success": false,
+          "relative_l2": 0.5067979408605576,
+          "relative_strength_error": 0.34434478699824256,
+          "rmse": 0.023114947534598487,
+          "x_pred": 0.5821012258529663,
+          "y_pred": 0.757986843585968
+        },
+        "classical": {
+          "Q_pred": 0.9631201370801485,
+          "localization_error": 0.002739089749359943,
+          "mae": 0.0002885032943707378,
+          "recovery_success": true,
+          "relative_l2": 0.02007956297420768,
+          "relative_strength_error": 0.005054737036497781,
+          "rmse": 0.0009158246457717765,
+          "x_pred": 0.6606990611340947,
+          "y_pred": 0.7296900640005657
+        }
+      },
+      "observability": {
+        "jacobian_condition": 40.76893676703759,
+        "sensor_rms": 0.015605757682437072,
+        "sigma_min": 0.16181919223141988
+      },
+      "observations_hash": "73262090b4e3431c28ff9aca95e609bd29b9f64c703e74a61faa428727f23baa",
+      "reference_data_hash": "cf77b4526e3e2e46f29e30b3701cf2e4598d99bfafe58e92f2d38b16b932ab2e",
+      "reference_error_estimate": 0.008735053789980527,
+      "reference_target_met": true,
+      "scenario_id": "final_blind_v1_008",
+      "truth": {
+        "Q_true": 0.9680131891994131,
+        "x_true": 0.6583641952984207,
+        "y_true": 0.7311222002316733
+      }
+    },
+    {
+      "information_group": "lower",
+      "methods": {
+        "J1": {
+          "Q_pred": 0.8622673749923706,
+          "localization_error": 0.011115725047530995,
+          "mae": 0.002411184811355972,
+          "recovery_success": true,
+          "relative_l2": 0.15996833058973856,
+          "relative_strength_error": 0.1459077872751491,
+          "rmse": 0.00766628055563392,
+          "x_pred": 0.5711942315101624,
+          "y_pred": 0.3755946159362793
+        },
+        "classical": {
+          "Q_pred": 0.9952822285438339,
+          "localization_error": 0.002727259419597603,
+          "mae": 0.000425123304813578,
+          "recovery_success": true,
+          "relative_l2": 0.030008063194469782,
+          "relative_strength_error": 0.014154048365513988,
+          "rmse": 0.0014380985944649205,
+          "x_pred": 0.5758377250424065,
+          "y_pred": 0.3664873435353348
+        }
+      },
+      "observability": {
+        "jacobian_condition": 57.23574827715871,
+        "sensor_rms": 0.03420735546045947,
+        "sigma_min": 0.17328568759456273
+      },
+      "observations_hash": "6f391ca04130baa098349b3d32cfe4eb3ac4c4d5c24beee8c619c75852222528",
+      "reference_data_hash": "2dc3d6facc963eca946ce8743b5dc4f978021d8c1c96b453ed8728cfca6b0369",
+      "reference_error_estimate": 0.00760795915641157,
+      "reference_target_met": true,
+      "scenario_id": "final_blind_v1_009",
+      "truth": {
+        "Q_true": 1.0095717560068111,
+        "x_true": 0.573719459743427,
+        "y_true": 0.3647695262968245
+      }
+    },
+    {
+      "information_group": "lower",
+      "methods": {
+        "J1": {
+          "Q_pred": 0.7627133727073669,
+          "localization_error": 0.030163675431873396,
+          "mae": 0.0027244008669935317,
+          "recovery_success": true,
+          "relative_l2": 0.22113860049589687,
+          "relative_strength_error": 0.10771787880421343,
+          "rmse": 0.008652175459360761,
+          "x_pred": 0.7100585103034973,
+          "y_pred": 0.32398369908332825
+        },
+        "classical": {
+          "Q_pred": 0.8634721743284237,
+          "localization_error": 0.0014754427124262772,
+          "mae": 0.00012036668018941423,
+          "recovery_success": true,
+          "relative_l2": 0.010386399696989575,
+          "relative_strength_error": 0.010157696027324595,
+          "rmse": 0.00040637388663891297,
+          "x_pred": 0.7345149634397158,
+          "y_pred": 0.34348287437216996
+        }
+      },
+      "observability": {
+        "jacobian_condition": 32.3562976940672,
+        "sensor_rms": 0.014358480252700565,
+        "sigma_min": 0.13256726560218096
+      },
+      "observations_hash": "2bec3e23d15772c67759a075907c4e2488e0d11af918117a2d4fd0d2371c1ed4",
+      "reference_data_hash": "af188b9fcd1cdf37f22c97c20ff42bc23959db3b07e8925d664da4a1506b26e1",
+      "reference_error_estimate": 0.009510879380712168,
+      "reference_target_met": true,
+      "scenario_id": "final_blind_v1_010",
+      "truth": {
+        "Q_true": 0.8547894825968508,
+        "x_true": 0.7330400080830475,
+        "y_true": 0.34352079393819174
+      }
+    },
+    {
+      "information_group": "higher",
+      "methods": {
+        "J1": {
+          "Q_pred": 0.9630481004714966,
+          "localization_error": 0.0006560281415822965,
+          "mae": 0.0003864404262709232,
+          "recovery_success": true,
+          "relative_l2": 0.013817589641246934,
+          "relative_strength_error": 0.0036480969583442273,
+          "rmse": 0.0006345230164272222,
+          "x_pred": 0.27675652503967285,
+          "y_pred": 0.4698529541492462
+        },
+        "classical": {
+          "Q_pred": 0.9731275421506658,
+          "localization_error": 0.0003425950088570712,
+          "mae": 0.00020221331416327623,
+          "recovery_success": true,
+          "relative_l2": 0.011773773873837195,
+          "relative_strength_error": 0.00677990855220175,
+          "rmse": 0.000540668141631471,
+          "x_pred": 0.27649416978463354,
+          "y_pred": 0.4707650435379812
+        }
+      },
+      "observability": {
+        "jacobian_condition": 7.213673424235975,
+        "sensor_rms": 0.062150169891189024,
+        "sigma_min": 1.5824010063877219
+      },
+      "observations_hash": "5273c27f5d895fe43c32a859d8651aa3996446983e166a42606eb7a2134dc9cc",
+      "reference_data_hash": "9d76bd03eed6816497bb259c9f9803ac3fb21a6302e0e5aa8a00f7adae7717dd",
+      "reference_error_estimate": 0.00780283735395246,
+      "reference_target_met": true,
+      "scenario_id": "final_blind_v1_011",
+      "truth": {
+        "Q_true": 0.9665742570787594,
+        "x_true": 0.27643886124679024,
+        "y_true": 0.4704269425090928
+      }
+    },
+    {
+      "information_group": "lower",
+      "methods": {
+        "J1": {
+          "Q_pred": 0.6508665084838867,
+          "localization_error": 0.0251110825046905,
+          "mae": 0.0045363802258842996,
+          "recovery_success": false,
+          "relative_l2": 0.3440653090555355,
+          "relative_strength_error": 0.3173117437289852,
+          "rmse": 0.015578262610232032,
+          "x_pred": 0.5254805684089661,
+          "y_pred": 0.35567507147789
+        },
+        "classical": {
+          "Q_pred": 0.9267090962576006,
+          "localization_error": 0.0020239474851192984,
+          "mae": 0.0004935646488743595,
+          "recovery_success": true,
+          "relative_l2": 0.040081061312590295,
+          "relative_strength_error": 0.02798283711313171,
+          "rmse": 0.0018147522647323194,
+          "x_pred": 0.5173648313698975,
+          "y_pred": 0.3338810013426652
+        }
+      },
+      "observability": {
+        "jacobian_condition": 68.02318353645217,
+        "sensor_rms": 0.019724578997242895,
+        "sigma_min": 0.11193217975209588
+      },
+      "observations_hash": "d5aafbfae7c3d90eee9adf5ba51c448a7d7727a80c3b8a9a0b04d93be0c687c6",
+      "reference_data_hash": "d2372ed19609f33b53d5769487cb2de2191314c0ce10e4c373b928c31c7a71f5",
+      "reference_error_estimate": 0.0077143151291645595,
+      "reference_target_met": true,
+      "scenario_id": "final_blind_v1_012",
+      "truth": {
+        "Q_true": 0.9533875857760538,
+        "x_true": 0.5159341510255893,
+        "y_true": 0.3324493878560946
+      }
+    },
+    {
+      "information_group": "higher",
+      "methods": {
+        "J1": {
+          "Q_pred": 0.8847387433052063,
+          "localization_error": 0.00037909463979929835,
+          "mae": 0.00032361125858802704,
+          "recovery_success": true,
+          "relative_l2": 0.011465471486887546,
+          "relative_strength_error": 0.005924489124959575,
+          "rmse": 0.0004848556855549664,
+          "x_pred": 0.437638521194458,
+          "y_pred": 0.5579630732536316
+        },
+        "classical": {
+          "Q_pred": 0.9002079146153965,
+          "localization_error": 0.001049845423149657,
+          "mae": 0.00018792017910013994,
+          "recovery_success": true,
+          "relative_l2": 0.010854168772832361,
+          "relative_strength_error": 0.011456375553288276,
+          "rmse": 0.000459004712322529,
+          "x_pred": 0.43862085282380653,
+          "y_pred": 0.5569298952098432
+        }
+      },
+      "observability": {
+        "jacobian_condition": 5.4056987106693155,
+        "sensor_rms": 0.06109152371981238,
+        "sigma_min": 1.73304415446669
+      },
+      "observations_hash": "567eb6acd44ff460da2d1b6780f9a64a6b8cee6beb41d11f586110e933efa1a5",
+      "reference_data_hash": "13b8746085b3d76dcc949163d97e8b360e513254232d406f3d4806888861e2c1",
+      "reference_error_estimate": 0.008020994347221208,
+      "reference_target_met": true,
+      "scenario_id": "final_blind_v1_013",
+      "truth": {
+        "Q_true": 0.8900116073943016,
+        "x_true": 0.4379291231360904,
+        "y_true": 0.55771963279388
+      }
+    },
+    {
+      "information_group": "higher",
+      "methods": {
+        "J1": {
+          "Q_pred": 0.7906173467636108,
+          "localization_error": 0.0010527094405123573,
+          "mae": 0.000522311261472429,
+          "recovery_success": true,
+          "relative_l2": 0.0295253864794657,
+          "relative_strength_error": 0.0316653743302013,
+          "rmse": 0.0011454156707653962,
+          "x_pred": 0.37943318486213684,
+          "y_pred": 0.6278163194656372
+        },
+        "classical": {
+          "Q_pred": 0.8238712306739536,
+          "localization_error": 0.000675105430108206,
+          "mae": 0.00015820151910794523,
+          "recovery_success": true,
+          "relative_l2": 0.009999466167671075,
+          "relative_strength_error": 0.009063414837153722,
+          "rmse": 0.00038792194153680393,
+          "x_pred": 0.3805838852096274,
+          "y_pred": 0.6265818803129312
+        }
+      },
+      "observability": {
+        "jacobian_condition": 5.088367672792132,
+        "sensor_rms": 0.05040490145776269,
+        "sigma_min": 1.5174927303551529
+      },
+      "observations_hash": "40ac96a299462235403696bd9ee68f2023c85006292d7e1355764aa67a8f4a62",
+      "reference_data_hash": "ba8766f67ab1e98151f05ce083e929a422628fb687984dd9f177f347c22d02d6",
+      "reference_error_estimate": 0.007805268399894357,
+      "reference_target_met": true,
+      "scenario_id": "final_blind_v1_014",
+      "truth": {
+        "Q_true": 0.8164712133646357,
+        "x_true": 0.3800082102433277,
+        "y_true": 0.6269345354914518
+      }
+    },
+    {
+      "information_group": "higher",
+      "methods": {
+        "J1": {
+          "Q_pred": 1.1648814678192139,
+          "localization_error": 0.003086540253266337,
+          "mae": 0.0007001668467415597,
+          "recovery_success": true,
+          "relative_l2": 0.028931953814633853,
+          "relative_strength_error": 0.0025378558562483785,
+          "rmse": 0.001597242893995529,
+          "x_pred": 0.3035963177680969,
+          "y_pred": 0.6860359907150269
+        },
+        "classical": {
+          "Q_pred": 1.181277810921114,
+          "localization_error": 0.0009085618999755429,
+          "mae": 0.0003390044218691336,
+          "recovery_success": true,
+          "relative_l2": 0.01642742865348975,
+          "relative_strength_error": 0.016649123922033604,
+          "rmse": 0.0009069070776040553,
+          "x_pred": 0.303666219555473,
+          "y_pred": 0.6895410243250255
+        }
+      },
+      "observability": {
+        "jacobian_condition": 13.788069109714124,
+        "sensor_rms": 0.06428878162321644,
+        "sigma_min": 0.5987367992308786
+      },
+      "observations_hash": "87d3efd4296c5d8532fb5fc0424f613d84aa32b23548f30fb9e6d8da4e8f8f89",
+      "reference_data_hash": "f70abdf6bc0e9e4db468b2a01a8156eb8885a3e027303d435ae4ffbaeec37c89",
+      "reference_error_estimate": 0.007803767052533763,
+      "reference_target_met": true,
+      "scenario_id": "final_blind_v1_015",
+      "truth": {
+        "Q_true": 1.1619326502382405,
+        "x_true": 0.3044065185144325,
+        "y_true": 0.6890142965229772
+      }
+    },
+    {
+      "information_group": "lower",
+      "methods": {
+        "J1": {
+          "Q_pred": 0.8006649017333984,
+          "localization_error": 0.02267942889732085,
+          "mae": 0.004948475504484982,
+          "recovery_success": false,
+          "relative_l2": 0.3162088418849104,
+          "relative_strength_error": 0.29576754916182224,
+          "rmse": 0.017057423227544256,
+          "x_pred": 0.47137048840522766,
+          "y_pred": 0.31956130266189575
+        },
+        "classical": {
+          "Q_pred": 1.0982351769563752,
+          "localization_error": 0.0010784243454223835,
+          "mae": 0.0006363425531134228,
+          "recovery_success": true,
+          "relative_l2": 0.04474010289752389,
+          "relative_strength_error": 0.03403677544714547,
+          "rmse": 0.002413439377020102,
+          "x_pred": 0.47598833226296117,
+          "y_pred": 0.2982673527494721
+        }
+      },
+      "observability": {
+        "jacobian_condition": 45.823766365598054,
+        "sensor_rms": 0.011294458332323428,
+        "sigma_min": 0.11227716165913255
+      },
+      "observations_hash": "751f342bea069a9218eb48183fb4f64b2d05aa04e25ca7b28e670b4ea06c7462",
+      "reference_data_hash": "3911d323ea11c7e26aa08b66257f5f99dd7a3fbfdba3adadcc628a3e91361d0d",
+      "reference_error_estimate": 0.010631122069354104,
+      "reference_target_met": false,
+      "scenario_id": "final_blind_v1_016",
+      "truth": {
+        "Q_true": 1.1369326999635514,
+        "x_true": 0.4755688508537644,
+        "y_true": 0.29727385669203754
+      }
+    },
+    {
+      "information_group": "lower",
+      "methods": {
+        "J1": {
+          "Q_pred": 0.8773789405822754,
+          "localization_error": 0.02613208591227941,
+          "mae": 0.00620755808471449,
+          "recovery_success": false,
+          "relative_l2": 0.34376921916793446,
+          "relative_strength_error": 0.3169530048869187,
+          "rmse": 0.020956513773926592,
+          "x_pred": 0.41478583216667175,
+          "y_pred": 0.3238584101200104
+        },
+        "classical": {
+          "Q_pred": 1.251436489538002,
+          "localization_error": 0.0004991365452017854,
+          "mae": 0.000577078714535351,
+          "recovery_success": true,
+          "relative_l2": 0.036499932372798014,
+          "relative_strength_error": 0.025746009829559994,
+          "rmse": 0.0022250722079462503,
+          "x_pred": 0.42983797368638665,
+          "y_pred": 0.3029319572980902
+        }
+      },
+      "observability": {
+        "jacobian_condition": 62.16831361538849,
+        "sensor_rms": 0.016534519065054064,
+        "sigma_min": 0.10538106624177358
+      },
+      "observations_hash": "73fad1626c5e65399004aaf29bf355b9c63b97e52f6391f3f24d78ca3771d593",
+      "reference_data_hash": "79b5f1a9e5179763e023f383c1ee65f68a9ef7a45d539b94f651bef69de4e236",
+      "reference_error_estimate": 0.011838576692173872,
+      "reference_target_met": false,
+      "scenario_id": "final_blind_v1_017",
+      "truth": {
+        "Q_true": 1.2845074304689996,
+        "x_true": 0.42975639075865896,
+        "y_true": 0.30243953317534705
+      }
+    },
+    {
+      "information_group": "higher",
+      "methods": {
+        "J1": {
+          "Q_pred": 1.1948727369308472,
+          "localization_error": 0.0002447256069186232,
+          "mae": 0.0004882313443608351,
+          "recovery_success": true,
+          "relative_l2": 0.014914716156053628,
+          "relative_strength_error": 0.0047250338491253985,
+          "rmse": 0.0008507725098453427,
+          "x_pred": 0.46591824293136597,
+          "y_pred": 0.5407682061195374
+        },
+        "classical": {
+          "Q_pred": 1.2148908601360437,
+          "localization_error": 0.0010284421103841548,
+          "mae": 0.00025179509430251417,
+          "recovery_success": true,
+          "relative_l2": 0.010818447965635896,
+          "relative_strength_error": 0.011949157702547047,
+          "rmse": 0.0006171111828111893,
+          "x_pred": 0.4668140240229201,
+          "y_pred": 0.5398661080074141
+        }
+      },
+      "observability": {
+        "jacobian_condition": 6.533949144945683,
+        "sensor_rms": 0.08829891292575384,
+        "sigma_min": 1.8356099485873427
+      },
+      "observations_hash": "28c7393bbea48e59b06ef15c5032b9b7521d2a943a1d6dc66b0787c11ec28fe4",
+      "reference_data_hash": "90ceb024e58571abaf9a3e52af5c7c805ccb5f69a4e0a5195cebd4eeec47eab2",
+      "reference_error_estimate": 0.007788348132278083,
+      "reference_target_met": true,
+      "scenario_id": "final_blind_v1_018",
+      "truth": {
+        "Q_true": 1.2005453543676445,
+        "x_true": 0.4661088735019954,
+        "y_true": 0.5406147440453197
+      }
+    },
+    {
+      "information_group": "higher",
+      "methods": {
+        "J1": {
+          "Q_pred": 0.8426176309585571,
+          "localization_error": 0.0015225053407720644,
+          "mae": 0.0005076250176289057,
+          "recovery_success": true,
+          "relative_l2": 0.030917942941572213,
+          "relative_strength_error": 0.010077764517687257,
+          "rmse": 0.0012500093038815302,
+          "x_pred": 0.5452117919921875,
+          "y_pred": 0.4816586673259735
+        },
+        "classical": {
+          "Q_pred": 0.8623351657294918,
+          "localization_error": 0.0013988528994268014,
+          "mae": 0.00017528757442780664,
+          "recovery_success": true,
+          "relative_l2": 0.010930987383343168,
+          "relative_strength_error": 0.013086747333838248,
+          "rmse": 0.00044193871356876686,
+          "x_pred": 0.5477661564508864,
+          "y_pred": 0.48124208542588653
+        }
+      },
+      "observability": {
+        "jacobian_condition": 4.3328826078058915,
+        "sensor_rms": 0.061797605579655225,
+        "sigma_min": 1.734792258314809
+      },
+      "observations_hash": "5a610c0ffe8229368b3489de499cc0f1a797a4f83630ed8dd2f9a0fcf7223982",
+      "reference_data_hash": "1a900c69e47a7e9ec4343f13c0bc0831e8cd917bb0c9ee88a5232cc6c8ffe187",
+      "reference_error_estimate": 0.007672510515703709,
+      "reference_target_met": true,
+      "scenario_id": "final_blind_v1_019",
+      "truth": {
+        "Q_true": 0.8511957816040111,
+        "x_true": 0.5466667767579667,
+        "y_true": 0.482107044225501
+      }
+    },
+    {
+      "information_group": "lower",
+      "methods": {
+        "J1": {
+          "Q_pred": 0.979127824306488,
+          "localization_error": 0.003982532163113179,
+          "mae": 0.0009004802575922505,
+          "recovery_success": true,
+          "relative_l2": 0.05074490741467133,
+          "relative_strength_error": 0.047605878924487165,
+          "rmse": 0.002478693350456181,
+          "x_pred": 0.46945086121559143,
+          "y_pred": 0.3992834687232971
+        },
+        "classical": {
+          "Q_pred": 1.026981717983691,
+          "localization_error": 0.0011324884492646082,
+          "mae": 0.00022749218351535586,
+          "recovery_success": true,
+          "relative_l2": 0.014899590328404724,
+          "relative_strength_error": 0.0010585682696991065,
+          "rmse": 0.0007277876215192573,
+          "x_pred": 0.46952177424781016,
+          "y_pred": 0.3958578854246558
+        }
+      },
+      "observability": {
+        "jacobian_condition": 44.462274729401145,
+        "sensor_rms": 0.04403795520942425,
+        "sigma_min": 0.2576717702838144
+      },
+      "observations_hash": "a55507a43cef274e4bc51fbc296a628f58679fe24385178cda306933fe603222",
+      "reference_data_hash": "39e48b151fb0466d48ba2ab6117778b276c7ae88062b2a99cf87f194415f75d0",
+      "reference_error_estimate": 0.007782465781665025,
+      "reference_target_met": true,
+      "scenario_id": "final_blind_v1_020",
+      "truth": {
+        "Q_true": 1.0280700002650012,
+        "x_true": 0.46847654896047053,
+        "y_true": 0.3954219563175483
+      }
+    },
+    {
+      "information_group": "higher",
+      "methods": {
+        "J1": {
+          "Q_pred": 1.0476597547531128,
+          "localization_error": 0.03177148798639643,
+          "mae": 0.00513064597840701,
+          "recovery_success": true,
+          "relative_l2": 0.26226657585314,
+          "relative_strength_error": 0.18478692383192555,
+          "rmse": 0.015957296267633175,
+          "x_pred": 0.5927355289459229,
+          "y_pred": 0.6014436483383179
+        },
+        "classical": {
+          "Q_pred": 1.310964150026139,
+          "localization_error": 0.0025779064495647552,
+          "mae": 0.0003571404120510476,
+          "recovery_success": true,
+          "relative_l2": 0.01751141732042322,
+          "relative_strength_error": 0.02009751986771978,
+          "rmse": 0.0010654612519310693,
+          "x_pred": 0.6268142897435948,
+          "y_pred": 0.5981397228915746
+        }
+      },
+      "observability": {
+        "jacobian_condition": 36.83451019861024,
+        "sensor_rms": 0.059894399930908365,
+        "sigma_min": 0.3005954182483199
+      },
+      "observations_hash": "1df908fb1b6ea983e41b943d31b122f6b8d74b50e7795d9b5679469d2356cbff",
+      "reference_data_hash": "c53332b980321d7e3945c8bcb880f9c35f835ebb99ddd7fdb897c0c9a57662d7",
+      "reference_error_estimate": 0.007661181445989678,
+      "reference_target_met": true,
+      "scenario_id": "final_blind_v1_021",
+      "truth": {
+        "Q_true": 1.2851361016897063,
+        "x_true": 0.6242811087481225,
+        "y_true": 0.5976616060576463
+      }
+    },
+    {
+      "information_group": "higher",
+      "methods": {
+        "J1": {
+          "Q_pred": 0.9087944030761719,
+          "localization_error": 0.0005589388141664085,
+          "mae": 0.0003561061048213098,
+          "recovery_success": true,
+          "relative_l2": 0.014453543247659637,
+          "relative_strength_error": 0.0062343222603484325,
+          "rmse": 0.0006279175951795701,
+          "x_pred": 0.26597195863723755,
+          "y_pred": 0.6103200912475586
+        },
+        "classical": {
+          "Q_pred": 0.9258415525038393,
+          "localization_error": 0.0009645147909776268,
+          "mae": 0.0002439656928996442,
+          "recovery_success": true,
+          "relative_l2": 0.014512612518696351,
+          "relative_strength_error": 0.012406716842854616,
+          "rmse": 0.000630483791854175,
+          "x_pred": 0.26604017779970557,
+          "y_pred": 0.6117344521092941
+        }
+      },
+      "observability": {
+        "jacobian_condition": 6.971486483873799,
+        "sensor_rms": 0.05250863036853642,
+        "sigma_min": 1.1682410107018804
+      },
+      "observations_hash": "e1f955bb364b875a469ea593e35a3aae51580adbe6f0ca0976de7af9e2c065fa",
+      "reference_data_hash": "3daf0848db230f3a56d27dd083e77fde7ef55327fbb25e90b086244ef4a4a723",
+      "reference_error_estimate": 0.007802311942300145,
+      "reference_target_met": true,
+      "scenario_id": "final_blind_v1_022",
+      "truth": {
+        "Q_true": 0.9144956637496786,
+        "x_true": 0.266264469998352,
+        "y_true": 0.6107963786624676
+      }
+    },
+    {
+      "information_group": "lower",
+      "methods": {
+        "J1": {
+          "Q_pred": 1.1745401620864868,
+          "localization_error": 0.0017225307702915856,
+          "mae": 0.0005512633830258691,
+          "recovery_success": true,
+          "relative_l2": 0.02186486915166217,
+          "relative_strength_error": 0.020715234040787185,
+          "rmse": 0.0012459534664452981,
+          "x_pred": 0.40818873047828674,
+          "y_pred": 0.3751738965511322
+        },
+        "classical": {
+          "Q_pred": 1.188585991822906,
+          "localization_error": 0.0007491820336821265,
+          "mae": 0.0003242505340759952,
+          "recovery_success": true,
+          "relative_l2": 0.02090097373544769,
+          "relative_strength_error": 0.009004381121379388,
+          "rmse": 0.0011910265960033964,
+          "x_pred": 0.4099072872618789,
+          "y_pred": 0.37422363482092597
+        }
+      },
+      "observability": {
+        "jacobian_condition": 31.295119422761505,
+        "sensor_rms": 0.03485908669400701,
+        "sigma_min": 0.3673265490026168
+      },
+      "observations_hash": "e915a30417f54df52ace0532c2b2d6ecfa96003be7daec7e417d8b33ce67e014",
+      "reference_data_hash": "9547b32f508fb75ae05fa1a056d81f2c1c349cd86791a71c0b6e26f361f00872",
+      "reference_error_estimate": 0.007795408690265478,
+      "reference_target_met": true,
+      "scenario_id": "final_blind_v1_023",
+      "truth": {
+        "Q_true": 1.199385717938766,
+        "x_true": 0.40926866046302074,
+        "y_true": 0.3738319340022234
+      }
+    },
+    {
+      "information_group": "lower",
+      "methods": {
+        "J1": {
+          "Q_pred": 0.549206554889679,
+          "localization_error": 0.055224424410854824,
+          "mae": 0.005923381085341807,
+          "recovery_success": false,
+          "relative_l2": 0.47185396085640796,
+          "relative_strength_error": 0.3791860708255016,
+          "rmse": 0.01968877670139047,
+          "x_pred": 0.5981408357620239,
+          "y_pred": 0.6125547885894775
+        },
+        "classical": {
+          "Q_pred": 0.915944721282247,
+          "localization_error": 0.003641627457882636,
+          "mae": 0.0004150574219615606,
+          "recovery_success": true,
+          "relative_l2": 0.03160978374385888,
+          "relative_strength_error": 0.03536863546738901,
+          "rmse": 0.0013189631227901954,
+          "x_pred": 0.6567951844785566,
+          "y_pred": 0.6094312246958354
+        }
+      },
+      "observability": {
+        "jacobian_condition": 65.42551726637257,
+        "sensor_rms": 0.031361314312740404,
+        "sigma_min": 0.12130337395883976
+      },
+      "observations_hash": "13ba29c46c617a161ab4233cfe8524dbbcca033f225db7c231be327ad0dc8e8f",
+      "reference_data_hash": "21c0967e2e100fda5cee4eeb8669d7002eb271e040411e227612e74fc67d6b7e",
+      "reference_error_estimate": 0.007892320653178676,
+      "reference_target_met": true,
+      "scenario_id": "final_blind_v1_024",
+      "truth": {
+        "Q_true": 0.8846556578071043,
+        "x_true": 0.6532298414980128,
+        "y_true": 0.608689753204076
+      }
+    },
+    {
+      "information_group": "lower",
+      "methods": {
+        "J1": {
+          "Q_pred": 0.9984973073005676,
+          "localization_error": 0.016304109020125416,
+          "mae": 0.002305648727905722,
+          "recovery_success": true,
+          "relative_l2": 0.12855436783615432,
+          "relative_strength_error": 0.10211672245861533,
+          "rmse": 0.00677256262689701,
+          "x_pred": 0.597220242023468,
+          "y_pred": 0.34182801842689514
+        },
+        "classical": {
+          "Q_pred": 1.1042315315232807,
+          "localization_error": 0.0015635876342098426,
+          "mae": 0.00029347692067541116,
+          "recovery_success": true,
+          "relative_l2": 0.020067670469835215,
+          "relative_strength_error": 0.007036854842300026,
+          "rmse": 0.0010572146035995747,
+          "x_pred": 0.6145774315106624,
+          "y_pred": 0.33921368772765115
+        }
+      },
+      "observability": {
+        "jacobian_condition": 37.51887127806057,
+        "sensor_rms": 0.02425858419831252,
+        "sigma_min": 0.23396412562154684
+      },
+      "observations_hash": "638c55b434ca2fd79e500a1cbd029f1745ae7b4ca8b5154f9ad4f407fc483f37",
+      "reference_data_hash": "35755392d9fbaf1235a7685356fa5a72fec7536c7264f1f2c990951e95fc00c0",
+      "reference_error_estimate": 0.007607339995026379,
+      "reference_target_met": true,
+      "scenario_id": "final_blind_v1_025",
+      "truth": {
+        "Q_true": 1.1120569146077515,
+        "x_true": 0.6131825704565108,
+        "y_true": 0.3385071688464702
+      }
+    },
+    {
+      "information_group": "higher",
+      "methods": {
+        "J1": {
+          "Q_pred": 1.1922813653945923,
+          "localization_error": 0.008977130838709232,
+          "mae": 0.0022512289256305393,
+          "recovery_success": true,
+          "relative_l2": 0.10889347013675174,
+          "relative_strength_error": 0.09122199845640491,
+          "rmse": 0.006787384855233787,
+          "x_pred": 0.5094545483589172,
+          "y_pred": 0.4045519232749939
+        },
+        "classical": {
+          "Q_pred": 1.3283673294301037,
+          "localization_error": 0.0009929973302296598,
+          "mae": 0.00026253543925818424,
+          "recovery_success": true,
+          "relative_l2": 0.010451965439757573,
+          "relative_strength_error": 0.012505136785196137,
+          "rmse": 0.0006514762716639358,
+          "x_pred": 0.5072847072178376,
+          "y_pred": 0.39547610585979037
+        }
+      },
+      "observability": {
+        "jacobian_condition": 83.32754774820576,
+        "sensor_rms": 0.062165901442467364,
+        "sigma_min": 0.17448802028147337
+      },
+      "observations_hash": "d03253ae662142d2d900dfc058c2f001c53c63b889b9a69a1a0e6ef05ae4c065",
+      "reference_data_hash": "4799658a53693e133ffca800c63838f7b4a484dfa205b6f7a5bbbb49d9e48c24",
+      "reference_error_estimate": 0.007744222929216451,
+      "reference_target_met": true,
+      "scenario_id": "final_blind_v1_026",
+      "truth": {
+        "Q_true": 1.3119610767090044,
+        "x_true": 0.5064941343017603,
+        "y_true": 0.3960769703721459
+      }
+    },
+    {
+      "information_group": "lower",
+      "methods": {
+        "J1": {
+          "Q_pred": 0.43497729301452637,
+          "localization_error": 0.047871615675035104,
+          "mae": 0.007349823213318079,
+          "recovery_success": false,
+          "relative_l2": 0.5677548678194139,
+          "relative_strength_error": 0.535327821424395,
+          "rmse": 0.02511873485984808,
+          "x_pred": 0.3572193682193756,
+          "y_pred": 0.28301504254341125
+        },
+        "classical": {
+          "Q_pred": 0.9048462384653719,
+          "localization_error": 0.001089972737914556,
+          "mae": 0.0005120689488287129,
+          "recovery_success": true,
+          "relative_l2": 0.044711672951294835,
+          "relative_strength_error": 0.03338201865722586,
+          "rmse": 0.0019781435997499224,
+          "x_pred": 0.3969473206959001,
+          "y_pred": 0.2578709121397082
+        }
+      },
+      "observability": {
+        "jacobian_condition": 76.47967218379803,
+        "sensor_rms": 0.014024272792507913,
+        "sigma_min": 0.08036699235282711
+      },
+      "observations_hash": "d30e585aaf655bf48a6b3cdc15e828c3157c2f88416885006a17511e240072d4",
+      "reference_data_hash": "9fbda3e6317bccbd6151ef10c0f17f4806f7f1ec169359605eb65041f5a80c64",
+      "reference_error_estimate": 0.0112642222441428,
+      "reference_target_met": false,
+      "scenario_id": "final_blind_v1_027",
+      "truth": {
+        "Q_true": 0.936094978502684,
+        "x_true": 0.39730127606060717,
+        "y_true": 0.25684001148048247
+      }
+    },
+    {
+      "information_group": "higher",
+      "methods": {
+        "J1": {
+          "Q_pred": 0.8313455581665039,
+          "localization_error": 0.0013988588303281923,
+          "mae": 0.000451938677010565,
+          "recovery_success": true,
+          "relative_l2": 0.02772384652540344,
+          "relative_strength_error": 0.008866679551160302,
+          "rmse": 0.001104622818787909,
+          "x_pred": 0.5369760990142822,
+          "y_pred": 0.4650075435638428
+        },
+        "classical": {
+          "Q_pred": 0.8509249801130566,
+          "localization_error": 0.0014025584490942801,
+          "mae": 0.0001886159466602369,
+          "recovery_success": true,
+          "relative_l2": 0.01212725520649019,
+          "relative_strength_error": 0.014475981386554156,
+          "rmse": 0.00048319567842359054,
+          "x_pred": 0.539300578735271,
+          "y_pred": 0.463867450258357
+        }
+      },
+      "observability": {
+        "jacobian_condition": 4.580207582551826,
+        "sensor_rms": 0.06047460035360313,
+        "sigma_min": 1.6278527612162055
+      },
+      "observations_hash": "6ca31b06490532ce9f33cec960be600f13278103d53416d4623b312f0837645d",
+      "reference_data_hash": "a0fc16f1e32a96c2b393c7bfc5645cb10afaddbb232c3770f5637fe73fc7f41e",
+      "reference_error_estimate": 0.007690279289481774,
+      "reference_target_met": true,
+      "scenario_id": "final_blind_v1_028",
+      "truth": {
+        "Q_true": 0.8387827762566038,
+        "x_true": 0.538372134792067,
+        "y_true": 0.4649187171357262
+      }
+    },
+    {
+      "information_group": "lower",
+      "methods": {
+        "J1": {
+          "Q_pred": 1.0415657758712769,
+          "localization_error": 0.0407200798559954,
+          "mae": 0.005239312756157308,
+          "recovery_success": true,
+          "relative_l2": 0.2754932768700929,
+          "relative_strength_error": 0.13080083859570565,
+          "rmse": 0.015521059399205523,
+          "x_pred": 0.6328355073928833,
+          "y_pred": 0.3626873791217804
+        },
+        "classical": {
+          "Q_pred": 1.2071556228671445,
+          "localization_error": 0.002573120382774558,
+          "mae": 0.0003137491636048309,
+          "recovery_success": true,
+          "relative_l2": 0.016286911249617758,
+          "relative_strength_error": 0.007385879401508374,
+          "rmse": 0.000917590874836901,
+          "x_pred": 0.6712554080779823,
+          "y_pred": 0.3826425755501587
+        }
+      },
+      "observability": {
+        "jacobian_condition": 48.30398098570593,
+        "sensor_rms": 0.027981182407281525,
+        "sigma_min": 0.1971656805841301
+      },
+      "observations_hash": "2b08120be6288b907489b211bc7845920fd1e7e803a6d9933d1d821179110f69",
+      "reference_data_hash": "7786b8c77f31f2147568e9e2966b88ef64b3268fa6934185534cfc5a6bd85bbf",
+      "reference_error_estimate": 0.008100863015639942,
+      "reference_target_met": true,
+      "scenario_id": "final_blind_v1_029",
+      "truth": {
+        "Q_true": 1.198305086015619,
+        "x_true": 0.668977461408103,
+        "y_true": 0.3814459521869255
+      }
+    },
+    {
+      "information_group": "lower",
+      "methods": {
+        "J1": {
+          "Q_pred": 0.47993284463882446,
+          "localization_error": 0.08408104719257939,
+          "mae": 0.011559730951514847,
+          "recovery_success": false,
+          "relative_l2": 0.697244325245712,
+          "relative_strength_error": 0.6218276004632433,
+          "rmse": 0.040998070332712216,
+          "x_pred": 0.6309197545051575,
+          "y_pred": 0.4564516544342041
+        },
+        "classical": {
+          "Q_pred": 1.2658583757255593,
+          "localization_error": 0.0009726006459494747,
+          "mae": 0.00024055099435775411,
+          "recovery_success": true,
+          "relative_l2": 0.016395954005044698,
+          "relative_strength_error": 0.0025423248911137105,
+          "rmse": 0.0009640845412888217,
+          "x_pred": 0.7125876000764668,
+          "y_pred": 0.479567110490949
+        }
+      },
+      "observability": {
+        "jacobian_condition": 141.84822851106455,
+        "sensor_rms": 0.02185623792858311,
+        "sigma_min": 0.06093440574857167
+      },
+      "observations_hash": "049cc7046dcc492ab3259f0b2e1e2a6dba29e71611a5e9c6872af03937cf585b",
+      "reference_data_hash": "dd9abb53948a775ea278b1b2f9aeaf0106d24ac67c2d25c1e172cc648512c473",
+      "reference_error_estimate": 0.009246230192935549,
+      "reference_target_met": true,
+      "scenario_id": "final_blind_v1_030",
+      "truth": {
+        "Q_true": 1.2690848016056153,
+        "x_true": 0.7116689369976579,
+        "y_true": 0.479886500791576
+      }
+    }
+  ],
+  "sensors": [
+    [
+      0.05815448596142969,
+      0.06291016742457756
+    ],
+    [
+      0.12358607277440903,
+      0.05258016436107704
+    ],
+    [
+      0.5261718968547618,
+      0.47678475378747964
+    ],
+    [
+      0.9552357002491416,
+      0.9287525814574296
+    ],
+    [
+      0.08354336875286783,
+      0.13264067215369857
+    ],
+    [
+      0.15705349751070807,
+      0.3753670320505006
+    ],
+    [
+      0.8425197308314868,
+      0.8705010417836975
+    ],
+    [
+      0.3775329552705594,
+      0.6124365889937913
+    ],
+    [
+      0.088109784914571,
+      0.7011818919498007
+    ],
+    [
+      0.6234030833542006,
+      0.43727899779065216
+    ],
+    [
+      0.07473487847374805,
+      0.683430217106661
+    ],
+    [
+      0.31223868072296257,
+      0.30905877722327246
+    ],
+    [
+      0.03134016542741558,
+      0.04036646765995722
+    ],
+    [
+      0.9319087898549986,
+      0.15212582742256442
+    ],
+    [
+      0.26504491174836087,
+      0.13043349263210446
+    ],
+    [
+      0.2518552209413236,
+      0.2334081890579478
+    ],
+    [
+      0.22566509879348662,
+      0.3175677977570315
+    ],
+    [
+      0.6144082848015856,
+      0.5977713515360384
+    ],
+    [
+      0.8490028457480704,
+      0.0324956087559799
+    ],
+    [
+      0.30924379397653057,
+      0.43230375445533953
+    ]
+  ],
+  "sigma": 0.08,
+  "summary": {
+    "J1": {
+      "Q_equal": 0,
+      "Q_over": 2,
+      "Q_under": 28,
+      "max_negative_fraction": 0.0,
+      "metrics": {
+        "localization_error": {
+          "count": 30,
+          "mean": 0.017605480410687727,
+          "median": 0.0055737151249599,
+          "q25": 0.0014095072921989499,
+          "q75": 0.025876835060382176,
+          "q90": 0.04860689654861708,
+          "sample_sd": 0.023457286431840488,
+          "worst": 0.0840810471925793
+        },
+        "mae": {
+          "count": 30,
+          "mean": 0.0026541376692525865,
+          "median": 0.0013702463753865,
+          "q25": 0.000511296578589775,
+          "q75": 0.004845451684834725,
+          "q90": 0.006321784597574761,
+          "sample_sd": 0.002866914403851681,
+          "worst": 0.0115597309515148
+        },
+        "pde_rmse": {
+          "count": 30,
+          "mean": 0.006197455330203564,
+          "median": 0.0053607084537626,
+          "q25": 0.0042441995606394,
+          "q75": 0.00669211750932865,
+          "q90": 0.010084041631826132,
+          "sample_sd": 0.0032870363672372832,
+          "worst": 0.0160324491845486
+        },
+        "relative_l2": {
+          "count": 30,
+          "mean": 0.16660116306642073,
+          "median": 0.0742278589695638,
+          "q25": 0.023329613495097427,
+          "q75": 0.2721866016158547,
+          "q90": 0.4753483588568229,
+          "sample_sd": 0.19263478980216894,
+          "worst": 0.697244325245712
+        },
+        "relative_strength_error": {
+          "count": 30,
+          "mean": 0.131006460249583,
+          "median": 0.05974894216613495,
+          "q25": 0.008106838117652676,
+          "q75": 0.1750671396927314,
+          "q90": 0.34782891538096844,
+          "sample_sd": 0.16901847070158907,
+          "worst": 0.6218276004632433
+        },
+        "rmse": {
+          "count": 30,
+          "mean": 0.008398442111462593,
+          "median": 0.003882030977777,
+          "q25": 0.00111482103178225,
+          "q75": 0.015563961807475374,
+          "q90": 0.02117235714999369,
+          "sample_sd": 0.009984590377697654,
+          "worst": 0.0409980703327122
+        },
+        "runtime_seconds": {
+          "count": 30,
+          "mean": 93.40530025006349,
+          "median": 93.44785535449046,
+          "q25": 91.78480540595774,
+          "q75": 95.62145347923797,
+          "q90": 97.33671493388245,
+          "sample_sd": 3.9777055455842554,
+          "worst": 102.44510583300143
+        }
+      },
+      "n": 30,
+      "recovered": 23,
+      "recovery_rate": 0.7666666666666667,
+      "signed_Q_mean": -0.14063821269686674,
+      "signed_Q_median": -0.05447691478895689,
+      "wilson95": [
+        0.5907167384187785,
+        0.882076118555105
+      ]
+    },
+    "classical": {
+      "Q_equal": 0,
+      "Q_over": 20,
+      "Q_under": 10,
+      "max_negative_fraction": 0.0,
+      "metrics": {
+        "localization_error": {
+          "count": 30,
+          "mean": 0.0014384263501016534,
+          "median": 0.0011112305935895499,
+          "q25": 0.001000861061426525,
+          "q75": 0.0015415514037639,
+          "q90": 0.0026869240726413598,
+          "sample_sd": 0.0007884517263283567,
+          "worst": 0.0036416274578826
+        },
+        "mae": {
+          "count": 30,
+          "mean": 0.00030667327135688334,
+          "median": 0.0002571652667803,
+          "q25": 0.00019644013683967502,
+          "q75": 0.000354375632233775,
+          "q90": 0.0005185699253993601,
+          "sample_sd": 0.0001513387637106244,
+          "worst": 0.0007029489425922
+        },
+        "pde_rmse": {
+          "count": 0,
+          "mean": null,
+          "median": null,
+          "q25": null,
+          "q75": null,
+          "q90": null,
+          "sample_sd": null,
+          "worst": null
+        },
+        "relative_l2": {
+          "count": 30,
+          "mean": 0.019051151073701207,
+          "median": 0.015066547541380499,
+          "q25": 0.010827378167434926,
+          "q75": 0.0206956210451376,
+          "q90": 0.036858045266777224,
+          "sample_sd": 0.011009050053370245,
+          "worst": 0.0447401028975238
+        },
+        "relative_strength_error": {
+          "count": 30,
+          "mean": 0.014644374499223617,
+          "median": 0.0121779372727008,
+          "q25": 0.009019139550322899,
+          "q75": 0.016105838288163726,
+          "q90": 0.03344691844239802,
+          "sample_sd": 0.009636308026121292,
+          "worst": 0.035368635467389
+        },
+        "rmse": {
+          "count": 30,
+          "mean": 0.0009647475343372101,
+          "median": 0.000814816449545,
+          "q25": 0.0004945697622798,
+          "q75": 0.001159635259985225,
+          "q90": 0.00199188962760478,
+          "sample_sd": 0.0005986166019931303,
+          "worst": 0.0024134393770201
+        },
+        "runtime_seconds": {
+          "count": 30,
+          "mean": 64.9192758528341,
+          "median": 64.57203716647928,
+          "q25": 61.14384014623647,
+          "q75": 68.15474098949926,
+          "q90": 74.47198139127576,
+          "sample_sd": 6.055052865088047,
+          "worst": 76.23990054201568
+        }
+      },
+      "n": 30,
+      "recovered": 30,
+      "recovery_rate": 1.0,
+      "signed_Q_mean": 0.004153836613893247,
+      "signed_Q_median": 0.00876661429154918,
+      "wilson95": [
+        0.8864866068260314,
+        1.0
+      ]
+    }
+  },
+  "times": [
+    0.1,
+    0.2,
+    0.4,
+    0.8
+  ]
+}
