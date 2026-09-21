@@ -75,11 +75,11 @@ def main():
     st.caption("INVERPINN / FROZEN RESEARCH RESULTS")
     st.title("InverPINN Explorer")
     st.markdown(
-        "Explore frozen synthetic blind-test scenarios and compare PINN source inversion against classical PDE-constrained inversion."
+        "Interactive viewer for frozen synthetic pollution-source inversion experiments."
     )
     st.info(
-        "All scenarios shown here are synthetic controlled experiments from the frozen research benchmark. "
-        "This demo does not identify real pollution emitters in Almaty. It is a result viewer, not a live inference engine."
+        "This demo uses synthetic controlled experiments. It does not identify verified real-world pollution emitters in Almaty. "
+        "It is a result viewer, not a live inference engine."
     )
     st.subheader("Final blind benchmark")
     left, middle, right = st.columns(3)
@@ -242,6 +242,13 @@ def main():
             )
         st.dataframe(pd.DataFrame(table), hide_index=True, width="stretch")
     with explanation:
+        st.subheader("What am I looking at?")
+        st.markdown(
+            "Imagine someone releases pollution somewhere in a city, but you only have a few sensors measuring how much reaches different locations. "
+            "The inverse problem asks whether we can work backward to estimate where the pollution came from and how strong the source was. "
+            "Here we test that question in a synthetic square, not a real city.\n\n"
+            "The colored field shows simulated pollution concentration. The markers show the true source and the locations estimated by the PINN and classical inverse method."
+        )
         st.subheader("Reading an inverse problem")
         st.markdown(
             "**Forward physics.** Wind transports pollution and diffusion spreads it. The source adds concentration.\n\n"
@@ -283,7 +290,7 @@ def main():
                 mime="text/markdown",
             )
         st.caption(
-            "No GitHub remote is configured. No public repository URL or live deployment is claimed."
+            "Repository and deployment instructions are in the README. No explicit reuse license is currently granted."
         )
         with st.expander("Bundle provenance"):
             st.json(
