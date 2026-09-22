@@ -23,16 +23,16 @@ Joint recovery requires localization error ≤ 0.08 **and** relative source-stre
 
 ## Interactive Explorer
 
-Explore all 30 frozen blind-test scenarios and compare the PINN and classical inverse estimates in **InverPINN Explorer**. Saved concentration fields, sensors and all seven J1 failures remain visible. It is a result viewer: no training or live inference. From the repository root in a separate Python 3.13 environment:
+**[Open the live InverPINN Explorer](https://inverpinn.streamlit.app/)**
+
+Explore all 30 frozen blind-test scenarios and compare the PINN and classical inverse estimates. Saved concentration fields, sensors and all seven J1 failures remain visible. It is a result viewer: no training or live inference. To run it locally from the repository root in a separate Python 3.13 environment:
 
 ```bash
 pip install -r demo/requirements.txt
 streamlit run demo/app.py
 ```
 
-[Setup and data provenance](demo/README.md) · [Actual app screenshot](demo/demo_preview.png) · [Optional deployment](demo/DEPLOYMENT.md). Synthetic controlled data only; the demo does not identify real pollution emitters in Almaty.
-
-No live demo URL is claimed yet. [Deployment readiness audit](demo/DEPLOYMENT_AUDIT.md).
+[Setup and data provenance](demo/README.md) · [Actual app screenshot](demo/demo_preview.png) · [Public deployment record](demo/DEPLOYMENT.md). Synthetic controlled data only; the demo does not identify real pollution emitters in Almaty. [Deployment readiness audit](demo/DEPLOYMENT_AUDIT.md).
 
 ## Why this problem matters
 

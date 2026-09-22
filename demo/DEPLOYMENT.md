@@ -1,6 +1,8 @@
 # Public deployment guide
 
-**Streamlit app not yet deployed.** Running the app locally does not publish it. GitHub publication and Streamlit hosting are separate steps; a repository URL is not a live app URL.
+**Live deployment:** [https://inverpinn.streamlit.app/](https://inverpinn.streamlit.app/)
+
+The app was deployed from `hadisaidyn/InverPINN`, branch `main`, entry point `demo/app.py`, with Python 3.13 and no configured secrets. The production URL was verified on 2026-09-22 against the frozen headline results and representative, worst-case and additional scenarios.
 
 ## Preferred option: Streamlit Community Cloud
 
@@ -50,4 +52,4 @@ Confirm **`demo/requirements.txt`** is selected, not the root research requireme
 
 No credentials are needed by the app. User login to GitHub/Streamlit is a publication step, not an app secret. Never paste a GitHub token into committed code or into this app's configuration.
 
-The app caches a compact committed bundle, not checkpoints or full reference archives. Startup checks hashes and fails on altered evidence. Cold-start/network behavior and service availability are not guaranteed by the local QA. No hosted deployment was tested in this task.
+The app caches a compact committed bundle, not checkpoints or full reference archives. Startup checks hashes and fails on altered evidence. The hosted deployment was smoke-tested after publication; long-term service availability remains outside the repository's guarantees.
