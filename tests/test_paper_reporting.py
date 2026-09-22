@@ -20,6 +20,55 @@ SPEC.loader.exec_module(REPORT)
 EVIDENCE = ROOT / "paper/evidence"
 
 
+def assert_cross_platform_summary_equal(actual, expected):
+    """Compare every report value, allowing one binary64 ULP for floats only.
+
+    Linux/x86 and macOS/ARM reductions and normal-quantile/square-root routines
+    can round their final bit differently. Hosted CI observed four one-ULP
+    differences in Wilson endpoints and a sample SD. This is not a tolerance
+    on source recovery or benchmark decisions: types, keys, counts, strings,
+    booleans and missing values remain exact, as do sealed artifact hashes.
+    """
+    assert type(actual) is type(expected)
+    if isinstance(expected, dict):
+        assert actual.keys() == expected.keys()
+        for key in expected:
+            assert_cross_platform_summary_equal(actual[key], expected[key])
+    elif isinstance(expected, list):
+        assert len(actual) == len(expected)
+        for value, reference in zip(actual, expected):
+            assert_cross_platform_summary_equal(value, reference)
+    elif isinstance(expected, float):
+        assert np.isfinite(actual) and np.isfinite(expected)
+        np.testing.assert_array_max_ulp(actual, expected, maxulp=1)
+    else:
+        assert actual == expected
+
+
+def test_cross_platform_summary_accepts_only_last_bit_roundoff():
+    expected = {"interval": [0.5, 1.0], "recovered": 23, "passed": False,
+                "missing": None, "case": "final_blind_v1_030"}
+    actual = {**expected, "interval": [float(np.nextafter(0.5, 1.0)), 1.0]}
+    assert_cross_platform_summary_equal(actual, expected)
+    actual["interval"][0] = float(np.nextafter(actual["interval"][0], 1.0))
+    with pytest.raises(AssertionError):
+        assert_cross_platform_summary_equal(actual, expected)
+
+
+@pytest.mark.parametrize("actual", [
+    {"recovered": 24}, {"recovered": 23.0}, {"passed": True},
+    {"case": "different"}, {"missing": 0}, {"extra": None},
+    {"interval": [0.5]}, {"interval": [float("nan"), 1.0]},
+])
+def test_cross_platform_summary_rejects_non_roundoff_changes(actual):
+    expected = {"interval": [0.5, 1.0], "recovered": 23, "passed": False,
+                "missing": None, "case": "final_blind_v1_030"}
+    with pytest.raises(AssertionError):
+        assert_cross_platform_summary_equal({**expected, **actual}, expected)
+    with pytest.raises(AssertionError):
+        assert_cross_platform_summary_equal({}, expected)
+
+
 @pytest.fixture(scope="module")
 def evidence():
     return REPORT.verify_evidence(EVIDENCE)
@@ -164,7 +213,7 @@ def test_complete_rebuild_and_deterministic_summary(tmp_path,evidence):
     out=tmp_path/"report"
     actual=REPORT.build(EVIDENCE,out)
     assert actual==REPORT.analyze(EVIDENCE,evidence[1])
-    assert actual==REPORT.read_json(ROOT/"paper/generated/summary.json")
+    assert_cross_platform_summary_equal(actual, REPORT.read_json(ROOT/"paper/generated/summary.json"))
     for name in (*REPORT.FIGURES,"S1_physics_and_signal"):
         for extension in ("png","pdf"):
             assert (out/"figures"/f"{name}.{extension}").stat().st_size>1000
