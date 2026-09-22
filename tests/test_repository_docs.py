@@ -111,6 +111,7 @@ def test_ci_is_explicitly_report_only():
     assert actions[1]["with"]["python-version"] == "3.13"
     commands = [line for step in job["steps"] for line in step.get("run", "").splitlines()]
     assert commands == [
+        'echo "MPLCONFIGDIR=$RUNNER_TEMP/inverpinn-mpl" >> "$GITHUB_ENV"',
         "python -m pip install -r paper/requirements-report.txt",
         "python -m pip install --no-deps -e .",
         'python -c "import inverpinn; print(\'InverPINN import OK\')"',
@@ -119,6 +120,24 @@ def test_ci_is_explicitly_report_only():
         "python -m pytest tests/test_paper_reporting.py tests/test_repository_docs.py -q",
         "python scripts/build_paper.py --output-dir paper/reproduced_ci",
     ]
+
+
+def test_ci_temporary_cache_is_configured_after_runner_allocation():
+    """GitHub resolves job env before the runner context is available.
+
+    Set MPLCONFIGDIR through the runner-provided environment file in a step,
+    rather than using an invalid job-level runner.temp expression. This
+    prevents workflow validation from rejecting all jobs before tests start.
+    """
+    workflow = yaml.load((ROOT / ".github/workflows/ci.yml").read_text(), Loader=yaml.BaseLoader)
+    for job in workflow["jobs"].values():
+        assert all("runner." not in value for value in job.get("env", {}).values())
+    report = workflow["jobs"]["report"]
+    assert report["env"] == {"MPLBACKEND": "Agg"}
+    assert report["steps"][0] == {
+        "name": "Configure temporary Matplotlib cache",
+        "run": 'echo "MPLCONFIGDIR=$RUNNER_TEMP/inverpinn-mpl" >> "$GITHUB_ENV"',
+    }
 
 
 def test_readme_headlines_match_sealed_raw_results():
