@@ -58,13 +58,18 @@ def main():
     )
     st.html(
         """<style>
-    .stMainBlockContainer {max-width:1280px; padding-top:2rem; padding-bottom:3rem;}
-    h1 {font-family:Georgia,serif!important; font-weight:500!important; letter-spacing:-.03em;}
-    h2,h3,h4 {letter-spacing:-.015em;}
-    [data-testid="stMetricValue"] {font-size:1.7rem; font-variant-numeric:tabular-nums;}
-    [data-testid="stMetric"] {border-top:1px solid #d9e0e5; padding-top:.65rem;}
+    .stMainBlockContainer {max-width:1280px; padding-top:4rem; padding-bottom:3rem;}
+    h1 {font-size:clamp(2.6rem,5vw,4rem)!important; font-weight:400!important;
+        letter-spacing:-.045em; color:#343661;}
+    h2,h3,h4 {font-weight:400!important; letter-spacing:-.025em;}
+    [data-testid="stCaptionContainer"] {color:#5F6379; opacity:1;}
+    [data-testid="stMetricValue"] {font-family:Menlo,Consolas,monospace;
+        font-size:clamp(1.25rem,2.2vw,1.7rem); font-variant-numeric:tabular-nums;}
+    [data-testid="stMetric"] {border-top:2px solid #464880; padding-top:.8rem;}
+    [data-baseweb="tab"] {letter-spacing:.015em;}
     .stMarkdown table {width:100%; font-variant-numeric:tabular-nums;}
     .stMarkdown td,.stMarkdown th {padding:.28rem .5rem;}
+    .stMarkdown td:last-child {font-family:Menlo,Consolas,monospace; font-size:.9em;}
     </style>"""
     )
     try:

@@ -1,10 +1,20 @@
 [theme]
 base = "light"
-primaryColor = "#16688A"
-backgroundColor = "#FFFFFF"
-secondaryBackgroundColor = "#F1F5F8"
-textColor = "#1F3443"
-font = "sans serif"
+primaryColor = "#464880"
+backgroundColor = "#F8F8FC"
+secondaryBackgroundColor = "#ECECF5"
+textColor = "#22263D"
+font = "Trebuchet MS, Verdana, sans-serif"
+headingFont = "Palatino Linotype, Palatino, Book Antiqua, Georgia, serif"
+codeFont = "Menlo, Consolas, monospace"
+borderColor = "#DADCE8"
+baseRadius = "0.35rem"
+blueColor = "#464880"
+blueBackgroundColor = "#ECECF5"
+blueTextColor = "#343661"
+redColor = "#983E4D"
+redBackgroundColor = "#F5E5EA"
+redTextColor = "#8C3047"
 
 [browser]
 gatherUsageStats = false

@@ -3,9 +3,9 @@
 import numpy as np
 import plotly.graph_objects as go
 
-INK = "#1F3443"
-J1 = "#16688A"
-CLASSICAL = "#B87520"
+INK = "#22263D"
+J1 = "#464880"
+CLASSICAL = "#A36720"
 FIELD_MODES = (
     "Reference concentration",
     "J1 predicted concentration",
@@ -17,12 +17,12 @@ FIELD_MODES = (
 def layout(fig, square=False):
     fig.update_layout(
         template="plotly_white",
-        font=dict(family="Arial, sans-serif", size=13, color=INK),
+        font=dict(family="Trebuchet MS, Verdana, sans-serif", size=13, color=INK),
         margin=dict(l=35, r=30, t=58, b=42),
         height=530,
         legend=dict(orientation="h", yanchor="bottom", y=1.03, x=0, font=dict(size=12)),
-        paper_bgcolor="white",
-        plot_bgcolor="white",
+        paper_bgcolor="#F8F8FC",
+        plot_bgcolor="#F8F8FC",
         hovermode="closest",
     )
     fig.update_xaxes(title="x", range=[0, 1], showgrid=False, zeroline=False)
@@ -149,7 +149,7 @@ def q_plot(scenarios):
             y=[low, high],
             mode="lines",
             name="Identity: predicted = true",
-            line=dict(color="#637482", width=1, dash="dash"),
+            line=dict(color="#5F6379", width=1, dash="dash"),
             hoverinfo="skip",
         )
     )
