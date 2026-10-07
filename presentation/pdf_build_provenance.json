@@ -1,15 +1,20 @@
 {
   "author": "Khadis Aidyn",
-  "builder_sha256": "a3bd3eece17befdf346aa1e4c3571b3176768faf07dd914efa0a972d64325ac3",
+  "builder_sha256": "61150192866f8397b1b9a325bee9de804ea5da2ba65bca66944d66d15c6c8965",
   "files": {
-    "paper/InverPINN_Paper.pdf": "fd379e2e83dcf947266fe6d701c47f674baacf21138c833fa89d2b89fe5464fa",
-    "presentation/InverPINN_Poster.pdf": "6d71b79e6eb126ce882e852b7dae400a426bdf4cadb8bf3f0a951c1190c0a571"
+    "paper/InverPINN_Paper.pdf": "66094da7606ef2db8f08a8cc736b38681b2c7e64dd8e7ec6b59c6b57d3b0fb78",
+    "presentation/InverPINN_Poster.pdf": "2cc7f52b7c53566919b4f0f65267a191323c2240b73469306b65434169cdc3b0"
   },
   "fonts": {
-    "DejaVuSans-Bold.ttf": "b184b89e3c1075f22f6b71575b6fc20d4972b3cfd3b23322ca6fd596dcaef167",
-    "DejaVuSans.ttf": "3fdf69cabf06049ea70a00b5919340e2ce1e6d02b0cc3c4b44fb6801bd1e0d22",
-    "DejaVuSerif-Bold.ttf": "c3753f2ed6bc673f15846dc45addbeb3b9c872f32fb18fd53a21f1bef1ed7676",
-    "DejaVuSerif.ttf": "107244956e9962b9e96faccdc551825e0ae0898ae13737133e1b921a2fd35ffa"
+    "DejaVuSerif.ttf": "42d1edeb7952f31b1f96d767ed7030b08a39e0c372b0071641518864e2bffb51",
+    "LiberationSans-Bold.ttf": "788abee4c806d660e8aee46689dd8540cd4bb98da03dcc9d171ce3efd99a9173",
+    "LiberationSans-BoldItalic.ttf": "698da70fc191cc5f33ad4d6d3fe830fe4624b898ea2e3169955928b7c491f1ee",
+    "LiberationSans-Italic.ttf": "e5bae5c4cde31f22142753855f4f8fb86da6ff39955ed3c0a11248b0d16948b0",
+    "LiberationSans-Regular.ttf": "76d04c18ea243f426b7de1f3ad208e927008f961dc5945e5aad352d0dfde8ee8",
+    "LiberationSerif-Bold.ttf": "d754ba427cfe0bca54ae052384baa8f842da5bd6550ad4da024ac441e7a7d5ce",
+    "LiberationSerif-BoldItalic.ttf": "f17db8af71e24d2066b587546021d4f0b296be389512b658dec3c09affeb11a7",
+    "LiberationSerif-Italic.ttf": "0e3dea9f8d613e006ccfa62201f33e265d19167bd0907725c3e145368b04fc2e",
+    "LiberationSerif-Regular.ttf": "058ea80864aef09a23f45cbec2bb5400bc3dfbdea01c3f10538a21fcb497fb74"
   },
   "manuscript_sha256": "abfa524bbc6b1770bdb678ea0b30c47295db06b996df55020828f6af3c1d261c",
   "metrics": {
@@ -33,6 +38,6 @@
   },
   "scientific_commit": "eb18380f1488f5c679a0981da75e667fa3ba1b51",
   "simulation_performed": false,
-  "source_commit": "1abae14e6cd4958aacc65cb2508f9a21d36feb5c",
+  "source_commit": "421ea16e61c8b96388a5b5e4c91290c58fc9195e",
   "training_performed": false
 }

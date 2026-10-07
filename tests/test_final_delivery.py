@@ -60,6 +60,33 @@ def test_math_stars_are_not_markdown_emphasis():
     assert BUILD.rich('*Existing title*.')=='<i>Existing title</i>.'
 
 
+def test_math_glyph_fallback_preserves_characters():
+    """Typography must not hide negative exponents or inner-product brackets."""
+    text='10⁻⁸, 10⁻¹⁰, ⟨G,R⟩'
+    import re
+    styled=BUILD.symbol_fallback(text)
+    assert re.sub('<[^>]+>','',styled)==text
+    assert styled.count('<font name="Symbols">')==5
+
+
+def test_delivered_paper_embeds_new_fonts_and_preserves_math():
+    from pypdf import PdfReader
+    reader=PdfReader(ROOT/'paper/InverPINN_Paper.pdf')
+    font_names={str(font.get_object()['/BaseFont']) for page in reader.pages
+                for font in page['/Resources']['/Font'].get_object().values()}
+    assert any('LiberationSerif' in name for name in font_names)
+    assert any('LiberationSans' in name for name in font_names)
+    assert any('DejaVuSerif' in name for name in font_names)
+    text=''.join(page.extract_text() for page in reader.pages)
+    assert all(char in text for char in '⁻⁰⟨⟩')
+
+
+def test_pdf_provenance_matches_delivered_artifacts():
+    provenance=json.loads((ROOT/'presentation/pdf_build_provenance.json').read_text())
+    for name,digest in provenance['files'].items():
+        assert CHECK.sha(ROOT/name)==digest
+
+
 def test_pdfs_cannot_be_silently_overwritten():
     result=subprocess.run([sys.executable,str(ROOT/'scripts/build_final_pdf.py')],capture_output=True,text=True)
     assert result.returncode!=0

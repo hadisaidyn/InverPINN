@@ -24,12 +24,12 @@ After the report-only setup, install the additional pinned presentation dependen
 
 ```bash
 python -m pip install -r paper/requirements-delivery.txt
-python scripts/build_final_pdf.py --output-root artifacts/pdf_reproduction
+python scripts/build_final_pdf.py --output-root artifacts/pdf_reproduction --font-dir /path/to/fonts
 python scripts/check_final_delivery.py
 python -m pytest tests/test_final_delivery.py -q
 ```
 
-The basic command `python scripts/build_final_pdf.py` generates
+The command `python scripts/build_final_pdf.py --font-dir /path/to/fonts` generates
 `paper/InverPINN_Paper.pdf` and `presentation/InverPINN_Poster.pdf` when those
 outputs do not exist. Since the final files are committed, use a fresh
 `--output-root` to reproduce without overwriting them. Existing outputs and
@@ -37,8 +37,12 @@ destinations inside scientific directories are rejected. The build verifies
 both sealed evidence and canonical figure/table hashes before typesetting.
 It does not alter `paper/manuscript.md` or run the scientific pipeline.
 
-Fonts are embedded DejaVu Serif/Sans, taken from matplotlib's installed font
-directory by default; `--font-dir` can supply the four named DejaVu TTF files.
+Fonts are embedded Liberation Serif/Sans with charcoal text, burgundy accents
+and warm neutral table headers. Supply the eight `LiberationSerif-*.ttf` and
+`LiberationSans-*.ttf` faces (Regular, Bold, Italic, BoldItalic), plus
+`DejaVuSerif.ttf` in `--font-dir`. DejaVu is used only for mathematical glyphs
+missing from Liberation, preserving negative exponents and inner-product brackets.
+Scientific figure images retain their original styling and bytes.
 `presentation/pdf_build_provenance.json` records font/package/input/output hashes
 and the pre-delivery Git commit. Timestamps, font installations and package
 versions may change PDF bytes, even when scientific content is identical.

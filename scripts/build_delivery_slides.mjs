@@ -20,7 +20,7 @@ const {Presentation,PresentationFile}=await import(path.isAbsolute(moduleName)?p
 const {finalizePresentation}=await import(pathToFileURL(path.join(skill,'container_tools/artifact_tool_utils.mjs')).href);
 const content=JSON.parse(await fs.readFile(path.join(root,'presentation/content.json'),'utf8'));
 const summary=JSON.parse(await fs.readFile(path.join(root,'paper/generated/summary.json'),'utf8'));
-const font='DejaVu Sans', ink='#192D3D', blue='#16688A', red='#A63F26';
+const font='Liberation Sans', headingFont='Liberation Serif', ink='#262321', accent='#713E48', red='#8C302F';
 const deck=Presentation.create({slideSize:{width:1280,height:720}});
 await fs.mkdir(out,{recursive:true});
 const final=path.join(out,'final/InverPINN_Presentation.pptx');
@@ -29,7 +29,7 @@ await fs.mkdir(path.join(out,'previews'),{recursive:true});
 function text(slide,value,x,y,w,h,size=30,color=ink,bold=false){
   const shape=slide.shapes.add({geometry:'textbox',position:{left:x,top:y,width:w,height:h},fill:'none',line:{fill:'none',width:0}});
   shape.text=value;
-  shape.text.style={typeface:font,fontSize:size,color,bold,autoFit:'none'};
+  shape.text.style={typeface:bold?headingFont:font,fontSize:size,color,bold,autoFit:'none'};
   return shape;
 }
 async function image(slide,name,x,y,w,h){
@@ -41,7 +41,7 @@ for(let index=0;index<content.slides.length;index++){
   slide.background.fill='#FFFFFF';
   if(n===1){
     text(slide,'InverPINN',64,92,1130,100,76,ink,true);
-    text(slide,content.subtitle,68,218,1090,110,44,blue,true);
+    text(slide,content.subtitle,68,218,1090,110,44,accent,true);
     text(slide,d.body,68,386,1060,120,30);
     text(slide,content.author,68,590,1100,44,25);
   }else{
@@ -55,11 +55,11 @@ for(let index=0;index<content.slides.length;index++){
         rows.push([label,`${m.recovered}/30`,m.metrics.localization_error.median.toFixed(6),`${(100*m.metrics.relative_strength_error.median).toFixed(3)}%`,`${(100*m.metrics.relative_l2.median).toFixed(3)}%`]);
       }
       const t=slide.tables.add({rows:4,columns:5,left:68,top:296,width:1140,height:256,columnWidths:[220,175,260,220,265],values:rows});
-      t.borders.assign({fill:'#D7E2E7',width:0.6});
+      t.borders.assign({fill:'#D8CDC7',width:0.6});
       for(let r=0;r<4;r++){
         t.rows[r].height=64;
         for(let c=0;c<5;c++){
-          const cell=t.getCell(r,c);cell.fill=r===0?'#E8F0F3':'#FFFFFF';
+          const cell=t.getCell(r,c);cell.fill=r===0?'#F2ECE8':'#FFFFFF';
           cell.text.style={typeface:font,fontSize:25,color:ink,bold:r===0};
         }
       }
@@ -70,12 +70,12 @@ for(let index=0;index<content.slides.length;index++){
       await image(slide,d.figure,60,top,1160,650-top);
     }else if(n===3 || n===8){
       text(slide,d.body,68,184,1130,385,n===3?34:32);
-      text(slide,d.key_number,68,607,1120,56,23,blue);
+      text(slide,d.key_number,68,607,1120,56,23,accent);
     }else{
       text(slide,d.body,68,197,1080,330,36);
-      text(slide,d.key_number,68,591,1130,56,24,blue);
+      text(slide,d.key_number,68,591,1130,56,24,accent);
     }
-    text(slide,String(n),1170,671,50,27,17,'#61717B');
+    text(slide,String(n),1170,671,50,27,17,'#716A65');
   }
   const note=`What to say: ${d.say}\n\nKey number: ${d.key_number}\n\nTransition: ${d.transition}\n\nSources: ${d.sources.join('; ')}`;
   slide.speakerNotes.textFrame.setText(note);
@@ -108,7 +108,7 @@ await finalizePresentation({workspaceDir:root,candidatePath:draft,finalPath:fina
  layoutValidatorPath:path.join(skill,'container_tools/inspect_presentation_layout_geometry.py'),
  layoutArgs:['--expected-slide-size-emu','12192000,6858000','--validate-bullet-geometry','--validate-heading-fit','--require-native-table-slide','9'],
  explicitTotalSlideCount:10,requiredNativeTableOwnerSlides:[9],requiredNativeChartOwnerSlides:[],
- fontPolicy:{basis:'design',families:[font]},verifyArtifactToolImport:true,
+ fontPolicy:{basis:'design',families:[font,headingFont]},verifyArtifactToolImport:true,
  receiptPath:path.join(out,'validation.json')});
 for(let i=0;i<deck.slides.items.length;i++){
   const slide=deck.slides.items[i];

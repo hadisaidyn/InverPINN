@@ -29,7 +29,7 @@ from reportlab.platypus import (SimpleDocTemplate, Paragraph, Spacer, Image,
                                Table, TableStyle, PageBreak, KeepTogether)
 
 ROOT = Path(__file__).resolve().parents[1]
-INK, BLUE, RED = '#192D3D', '#16688A', '#A63F26'
+INK, ACCENT, RED = '#262321', '#713E48', '#8C302F'
 TITLE = 'InverPINN: Diagnosing Source-Strength Bias in Physics-Informed Neural Networks for Sparse Pollution Source Inversion'
 AUTHOR = 'Khadis Aidyn'
 EQUATIONS = [
@@ -72,20 +72,28 @@ def verified_inputs():
 
 
 def register_fonts(font_dir=None):
-    """Use DejaVu from an explicit directory or the pinned reporting install."""
+    """Embed Liberation Serif/Sans, including real italic faces, from TTF files."""
     if font_dir is None:
-        try:
-            import matplotlib
-            font_dir = Path(matplotlib.get_data_path())/'fonts/ttf'
-        except ImportError as exc:
-            raise RuntimeError('Install report requirements or pass --font-dir with DejaVu fonts') from exc
+        raise ValueError('Pass --font-dir containing Liberation Serif/Sans TTF files')
     folder = Path(font_dir)
-    for label, prefix in [('Body','DejaVuSerif'),('Sans','DejaVuSans')]:
-        for suffix, filename in [('',f'{prefix}.ttf'),('-Bold',f'{prefix}-Bold.ttf')]:
-            pdfmetrics.registerFont(TTFont(label+suffix,str(folder/filename)))
-        pdfmetrics.registerFontFamily(label,normal=label,bold=label+'-Bold',italic=label,boldItalic=label+'-Bold')
-    return {p.name:sha(p) for prefix in ('DejaVuSerif','DejaVuSans') for p in
-            (folder/f'{prefix}.ttf',folder/f'{prefix}-Bold.ttf')}
+    files = []
+    for label, prefix in [('Body','LiberationSerif'),('Sans','LiberationSans')]:
+        for suffix, face in [('', 'Regular'), ('-Bold', 'Bold'), ('-Italic', 'Italic'), ('-BoldItalic', 'BoldItalic')]:
+            path = folder/f'{prefix}-{face}.ttf'
+            pdfmetrics.registerFont(TTFont(label+suffix,str(path)))
+            files.append(path)
+        pdfmetrics.registerFontFamily(label,normal=label,bold=label+'-Bold',italic=label+'-Italic',boldItalic=label+'-BoldItalic')
+    # Liberation lacks these mathematical glyphs. Embed a symbol fallback so
+    # negative exponents and inner-product brackets remain visible and exact.
+    symbols = folder/'DejaVuSerif.ttf'
+    pdfmetrics.registerFont(TTFont('Symbols',str(symbols)))
+    files.append(symbols)
+    return {p.name:sha(p) for p in files}
+
+
+def symbol_fallback(text):
+    """Preserve mathematical characters unavailable in the text typeface."""
+    return re.sub('[⁰⁻⟨⟩]',r'<font name="Symbols">\g<0></font>',text)
 
 
 def rich(text):
@@ -97,17 +105,17 @@ def rich(text):
     # Asterisks attached to variables (C*, T*, Q*) are mathematical symbols,
     # not Markdown emphasis delimiters. Never consume them across prose.
     text=re.sub(r'(?<![\w*])\*([^*]+)\*(?![\w*])',r'<i>\1</i>',text)
-    return re.sub(r'`([^`]+)`',r'\1',text)
+    return symbol_fallback(re.sub(r'`([^`]+)`',r'\1',text))
 
 
 def styles():
     return {
-      'body':ParagraphStyle('body',fontName='Body',fontSize=10.1,leading=13.2,spaceAfter=4,alignment=TA_JUSTIFY,allowWidows=0,allowOrphans=0,textColor=colors.HexColor(INK)),
-      'h1':ParagraphStyle('h1',fontName='Sans-Bold',fontSize=14,leading=18,textColor=colors.HexColor(BLUE),spaceBefore=13,spaceAfter=8,keepWithNext=True),
-      'h2':ParagraphStyle('h2',fontName='Sans-Bold',fontSize=11,leading=15,textColor=colors.HexColor(INK),spaceBefore=10,spaceAfter=6,keepWithNext=True),
+      'body':ParagraphStyle('body',fontName='Body',fontSize=11.3,leading=14.2,spaceAfter=4,alignment=TA_JUSTIFY,allowWidows=0,allowOrphans=0,textColor=colors.HexColor(INK)),
+      'h1':ParagraphStyle('h1',fontName='Body-Bold',fontSize=16,leading=19,textColor=colors.HexColor(ACCENT),spaceBefore=13,spaceAfter=8,keepWithNext=True),
+      'h2':ParagraphStyle('h2',fontName='Body-Bold',fontSize=12.5,leading=16,textColor=colors.HexColor(INK),spaceBefore=10,spaceAfter=6,keepWithNext=True),
       'caption':ParagraphStyle('caption',fontName='Body',fontSize=9,leading=12,spaceAfter=12,textColor=colors.HexColor(INK)),
       'table':ParagraphStyle('table',fontName='Sans',fontSize=8.4,leading=11,textColor=colors.HexColor(INK)),
-      'equation':ParagraphStyle('equation',fontName='Body',fontSize=10,leading=17,spaceAfter=6),
+      'equation':ParagraphStyle('equation',fontName='Body',fontSize=11,leading=17,spaceAfter=6),
     }
 
 
@@ -115,8 +123,8 @@ def table_from_md(text,widths,style):
     rows=[line.strip().strip('|').split('|') for line in text.splitlines() if line.startswith('|')]
     rows=[r for r in rows if not all(re.fullmatch(r'[\s:-]+',c) for c in r)]
     t=Table([[Paragraph(rich(c.strip()),style) for c in row] for row in rows],colWidths=widths,repeatRows=1,hAlign='LEFT')
-    t.setStyle(TableStyle([('VALIGN',(0,0),(-1,-1),'TOP'),('BACKGROUND',(0,0),(-1,0),colors.HexColor('#E8F0F3')),
-       ('LINEBELOW',(0,0),(-1,0),0.8,colors.HexColor(BLUE)),('LINEBELOW',(0,-1),(-1,-1),0.5,colors.HexColor(BLUE)),
+    t.setStyle(TableStyle([('VALIGN',(0,0),(-1,-1),'TOP'),('BACKGROUND',(0,0),(-1,0),colors.HexColor('#F2ECE8')),
+       ('LINEBELOW',(0,0),(-1,0),0.8,colors.HexColor(ACCENT)),('LINEBELOW',(0,-1),(-1,-1),0.5,colors.HexColor(ACCENT)),
        ('TOPPADDING',(0,0),(-1,-1),7),('BOTTOMPADDING',(0,0),(-1,-1),7)]))
     return t
 
@@ -142,8 +150,8 @@ def build_paper(path):
     sty=styles();width=A4[0]-108
     captions={int(n):f'Figure {n}. {c}' for n,c in re.findall(r'\*\*Figure (\d+)\.\*\* (.+)',text)}
     abstract=text.split('## Abstract\n\n')[1].split('\n## 1.')[0]
-    story=[Spacer(1,14),Paragraph('InverPINN',ParagraphStyle('brand',fontName='Sans-Bold',fontSize=31,leading=36,textColor=colors.HexColor(INK))),
-      Spacer(1,10),Paragraph(TITLE.split(': ',1)[1],ParagraphStyle('title',fontName='Sans-Bold',fontSize=19,leading=25,textColor=colors.HexColor(INK))),
+    story=[Spacer(1,14),Paragraph('InverPINN',ParagraphStyle('brand',fontName='Body',fontSize=35,leading=36,textColor=colors.HexColor(INK))),
+      Spacer(1,10),Paragraph(TITLE.split(': ',1)[1],ParagraphStyle('title',fontName='Body',fontSize=22,leading=25,textColor=colors.HexColor(ACCENT))),
       Spacer(1,18),Paragraph(AUTHOR,ParagraphStyle('author',fontName='Sans',fontSize=12,leading=16)),
       Spacer(1,17),Paragraph('Abstract',sty['h1']),Paragraph(rich(abstract),sty['body']),Spacer(1,6),figure(1,captions[1],width,sty),PageBreak()]
     main='## 1. Introduction'+text.split('## 1. Introduction',1)[1].split('## Main figures',1)[0]
@@ -153,7 +161,7 @@ def build_paper(path):
         if not block:continue
         if block.startswith('\\['):
             eq+=1
-            equation=Table([[Paragraph(EQUATIONS[eq-1],sty['equation']),Paragraph(f'({eq})',sty['equation'])]],colWidths=[width-28,28])
+            equation=Table([[Paragraph(symbol_fallback(EQUATIONS[eq-1]),sty['equation']),Paragraph(f'({eq})',sty['equation'])]],colWidths=[width-28,28])
             equation.setStyle(TableStyle([('VALIGN',(0,0),(-1,-1),'MIDDLE'),('TOPPADDING',(0,0),(-1,-1),6),('BOTTOMPADDING',(0,0),(-1,-1),8)]))
             story.append(equation)
         elif block.startswith('### '):
@@ -179,7 +187,7 @@ def build_paper(path):
           table_from_md((ROOT/f'paper/generated/tables/{name}.md').read_text(),widths,sty['table']),Spacer(1,18)])
     story.append(KeepTogether([Paragraph('Table 4. Assumptions and limitations.',sty['caption']),table_from_md((ROOT/'paper/generated/tables/table4_limits.md').read_text(),[210,width-210],sty['table'])]))
     def footer(canvas,doc):
-        canvas.setFont('Sans',8);canvas.setFillColor(colors.HexColor('#61717B'))
+        canvas.setFont('Sans',8);canvas.setFillColor(colors.HexColor('#716A65'))
         canvas.drawString(54,28,'InverPINN | Controlled synthetic study');canvas.drawRightString(A4[0]-54,28,str(doc.page))
     doc=SimpleDocTemplate(str(path),pagesize=A4,rightMargin=54,leftMargin=54,topMargin=43,bottomMargin=47,title=TITLE,author=AUTHOR,subject='Final controlled research report; J1 failed confirmation')
     doc.build(story,onFirstPage=footer,onLaterPages=footer)
@@ -190,36 +198,36 @@ def build_poster(path,metrics):
     w,h=2383.94,1683.78
     c=Canvas(str(path),pagesize=(w,h),pageCompression=1);c.setTitle('InverPINN Research Poster');c.setAuthor(AUTHOR)
     def para(text,x,top,width,size=27,leading=None,bold=False,color=INK):
-        p=Paragraph(text,ParagraphStyle('poster',fontName='Sans-Bold' if bold else 'Sans',fontSize=size,leading=leading or size*1.3,textColor=colors.HexColor(color)))
+        p=Paragraph(text,ParagraphStyle('poster',fontName='Body-Bold' if bold else 'Sans',fontSize=size,leading=leading or size*1.3,textColor=colors.HexColor(color)))
         _,ph=p.wrap(width,h)
         if top+ph>h-42:raise ValueError('Poster text overflow')
         p.drawOn(c,x,h-top-ph)
     para('InverPINN',78,52,1300,78,bold=True)
     para('Source-strength bias in physics-informed pollution inversion',80,151,2220,42,bold=True)
-    para(AUTHOR+' / Controlled synthetic research',82,218,2200,26,color=BLUE)
+    para(AUTHOR+' / Controlled synthetic research',82,218,2200,26,color=ACCENT)
     para('Can sparse concentration sensors recover both the location and strength of a pollution source?',82,279,2200,34)
     left,right,col=82,1255,1045
-    para('METHOD AND CONTROLLED DESIGN',left,365,col,31,bold=True,color=BLUE)
+    para('METHOD AND CONTROLLED DESIGN',left,365,col,31,bold=True,color=ACCENT)
     para('A neural concentration field fits sparse observations and the transport equation. J1 analytically profiles source amplitude Q from the PDE residual.',left,420,col,29)
     para('C<sub>t</sub> + uC<sub>x</sub> + vC<sub>y</sub> = D(C<sub>xx</sub> + C<sub>yy</sub>) + QG',left,572,col,33,bold=True)
     para('One Gaussian (σ=0.08), known wind (0.35, -0.15), D=0.005. Unit-square domain. Zero initial and boundary concentration.',left,648,col,27)
     para('20 fixed sensors · 81 times · zero added noise<br/>641×641 reference · 30 untouched final scenarios',left,777,col,27)
-    para('SOURCE-STRENGTH DIAGNOSIS',left,887,col,31,bold=True,color=BLUE)
+    para('SOURCE-STRENGTH DIAGNOSIS',left,887,col,31,bold=True,color=ACCENT)
     c.drawImage(str(ROOT/'paper/generated/figures/04_source_strength.png'),left,h-967-500,width=col,height=500,preserveAspectRatio=True,anchor='n')
     para('J1 underestimated Q in 28/30 cases (2 overestimates). The identity line shows exact recovery. Q is peak intensity, not integrated emissions.',left,1468,col,24)
-    para('FINAL BLIND BENCHMARK',right,365,col,31,bold=True,color=BLUE)
+    para('FINAL BLIND BENCHMARK',right,365,col,31,bold=True,color=ACCENT)
     para('J1: 23/30',right,413,col,78,bold=True,color=RED)
     para('76.67% recovered; required 27/30 (90%)',right,521,col,31,bold=True,color=RED)
     para('FAILED preregistered confirmation',right,568,col,31,bold=True,color=RED)
-    para('Classical inverse: 30/30',right,630,col,47,bold=True,color=BLUE)
+    para('Classical inverse: 30/30',right,630,col,47,bold=True,color=ACCENT)
     data=[['Median error','J1','Classical'],['Localization',metrics['J1']['localization'],metrics['classical']['localization']],['Relative Q',metrics['J1']['Q'],metrics['classical']['Q']],['Concentration L2',metrics['J1']['L2'],metrics['classical']['L2']]]
     ps=ParagraphStyle('poster-table',fontName='Sans',fontSize=25,leading=33)
     t=Table([[Paragraph(v,ps) for v in row] for row in data],colWidths=[col*.45,col*.26,col*.29])
-    t.setStyle(TableStyle([('BACKGROUND',(0,0),(-1,0),colors.HexColor('#E8F0F3')),('VALIGN',(0,0),(-1,-1),'TOP'),('TOPPADDING',(0,0),(-1,-1),9),('BOTTOMPADDING',(0,0),(-1,-1),9)]))
+    t.setStyle(TableStyle([('BACKGROUND',(0,0),(-1,0),colors.HexColor('#F2ECE8')),('VALIGN',(0,0),(-1,-1),'TOP'),('TOPPADDING',(0,0),(-1,-1),9),('BOTTOMPADDING',(0,0),(-1,-1),9)]))
     _,th=t.wrap(col,300);t.drawOn(c,right,h-713-th)
-    para('PHYSICAL VALIDITY DID NOT ENSURE RECOVERY',right,955,col,29,bold=True,color=BLUE)
+    para('PHYSICAL VALIDITY DID NOT ENSURE RECOVERY',right,955,col,29,bold=True,color=ACCENT)
     para('J1 retained zero negativity and exact IC/BC. All seven joint failures missed the Q criterion despite identical observations for both methods.',right,1006,col,26)
-    para('WORST LOCALIZATION CASE (030)',right,1123,col,27,bold=True,color=BLUE)
+    para('WORST LOCALIZATION CASE (030)',right,1123,col,27,bold=True,color=ACCENT)
     c.drawImage(str(ROOT/'paper/generated/figures/08_failure.png'),right,h-1175-325,width=col,height=325,preserveAspectRatio=True,anchor='n')
     para('Mechanically selected and retained. Source-strength error: 62.183%. Concentration L2: 69.724%.',right,1510,col,22)
     para('LIMITS  Known transport, one source and zero noise. No validated real Almaty emitter attribution, noisy-sensor robustness or general PINN superiority.',82,1590,2220,25,bold=True)

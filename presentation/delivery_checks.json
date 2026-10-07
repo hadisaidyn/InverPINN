@@ -9,28 +9,28 @@
   "artifacts": {
     "paper/InverPINN_Paper.pdf": {
       "author": "Khadis Aidyn",
-      "bytes": 1293620,
+      "bytes": 1332576,
       "pages": 14,
-      "sha256": "fd379e2e83dcf947266fe6d701c47f674baacf21138c833fa89d2b89fe5464fa"
+      "sha256": "66094da7606ef2db8f08a8cc736b38681b2c7e64dd8e7ec6b59c6b57d3b0fb78"
     },
     "presentation/InverPINN_Poster.pdf": {
       "author": "Khadis Aidyn",
-      "bytes": 332393,
+      "bytes": 330523,
       "pages": 1,
-      "sha256": "6d71b79e6eb126ce882e852b7dae400a426bdf4cadb8bf3f0a951c1190c0a571"
+      "sha256": "2cc7f52b7c53566919b4f0f65267a191323c2240b73469306b65434169cdc3b0"
     },
     "presentation/InverPINN_Presentation.pdf": {
       "author": "Khadis Aidyn",
-      "bytes": 649015,
+      "bytes": 661089,
       "pages": 10,
-      "sha256": "9cd8002d5d972c613b2fe807f2ce71ad5abf89e4b7f78b5f1b8a3a074fae1e84"
+      "sha256": "7178b851726482e0987b4b37201825a131d2f7b1ce2be722276841648ff8ed86"
     },
     "presentation/InverPINN_Presentation.pptx": {
       "author": "Khadis Aidyn",
-      "bytes": 464089,
+      "bytes": 464252,
       "native_table_slide": 9,
       "notes": 10,
-      "sha256": "b1f0996a1d9e04000ce1d28625d873f30e221d17c0d67c1b06310a5efa4d33c8",
+      "sha256": "35deda3533415b2bc87b577d05668e191a9738aac43679f564fd940cb5ac9d3e",
       "slides": 10
     }
   },

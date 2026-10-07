@@ -49,7 +49,11 @@ redrawn. No model or solver is imported.
 For delivery, the PDF was exported by bundled LibreOffice 26.8.0.0.alpha0 and
 all ten pages were visually inspected. The PPTX was package-validated and
 rendered; it was not tested in Microsoft PowerPoint itself. Rendering in another
-office application may differ. DejaVu Sans is used consistently; install that
-font if the editing application substitutes it.
+office application may differ. Liberation Serif headings and Liberation Sans
+body text use charcoal, burgundy accents and warm neutral table headers.
+Install these font families if the editing application substitutes them.
+The paper and poster use the same palette. Their embedded fonts include a
+DejaVu Serif fallback for mathematical symbols absent from Liberation.
+This typography revision changes no manuscript text, numbers or scientific figures.
 
 No QR code, public URL, email, affiliation or license has been invented.
